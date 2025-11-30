@@ -1,0 +1,76 @@
+# Resume Classifier Configuration
+
+name: resume_classifier
+type: ml
+
+# Architecture (PyTorch Feed-Forward NN)
+architecture:
+  input:
+    tfidf_dim: 5000
+    tech_skills_dim: 300
+    soft_skills_dim: 100
+    # Total: 5400
+  
+  hidden_layers:
+    - dim: 512
+      dropout: 0.3
+      batch_norm: true
+    - dim: 256
+      dropout: 0.3
+      batch_norm: true
+  
+  activation: relu
+  output_classes: null  # Auto-detect from data
+
+# TF-IDF Features
+features:
+  tfidf:
+    max_features: ${model.resume_classifier.architecture.input.tfidf_dim}
+    ngram_range: [1, 2]
+    stop_words: english
+    min_df: 2
+    max_df: 0.95
+    sublinear_tf: true
+
+# Training
+training:
+  epochs: 50
+  batch_size: 64
+  
+  optimizer:
+    type: adam
+    lr: 0.001
+    weight_decay: 0.0001
+  
+  scheduler:
+    type: reduce_on_plateau
+    factor: 0.5
+    patience: 5
+    min_lr: 0.00001
+  
+  loss:
+    type: cross_entropy
+    label_smoothing: 0.1
+  
+  early_stopping:
+    enabled: true
+    patience: 10
+    metric: val_f1
+    mode: max
+
+# Evaluation
+evaluation:
+  metrics:
+    - accuracy
+    - f1_macro
+    - f1_weighted
+  top_k: [1, 3, 5]
+
+# Artifacts
+artifacts:
+  dir: resume_classifier
+  model_file: model.pt
+  tfidf_file: tfidf_vectorizer.pkl
+  skill_encoders_file: skill_encoders.pkl
+  label_encoder_file: label_encoder.pkl
+  config_file: config.json

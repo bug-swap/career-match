@@ -1,0 +1,55 @@
+# Section Classifier Configuration
+
+name: section_classifier
+type: nlp
+
+# Architecture
+architecture:
+  type: hybrid  # hybrid, ml_only, rules_only
+  
+  ml:
+    algorithm: logistic_regression  # logistic_regression, svm
+    
+    logistic_regression:
+      max_iter: 1000
+      multi_class: multinomial
+      solver: lbfgs
+      class_weight: balanced
+      C: 1.0
+    
+    svm:
+      kernel: linear
+      max_iter: 1000
+      class_weight: balanced
+      C: 1.0
+  
+  rules:
+    enabled: true
+    weight: 0.3  # ML gets 0.7
+
+# TF-IDF Features
+features:
+  max_features: 3000
+  ngram_range: [1, 2]
+  stop_words: english
+  min_df: 2
+  max_df: 0.95
+
+# Section Classes
+classes:
+  - contact
+  - summary
+  - education
+  - experience
+  - skills
+  - projects
+  - certifications
+  - awards
+  - other
+
+# Artifacts
+artifacts:
+  dir: section_classifier
+  model_file: model.pkl
+  vectorizer_file: tfidf_vectorizer.pkl
+  label_encoder_file: label_encoder.pkl

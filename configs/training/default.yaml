@@ -1,0 +1,43 @@
+# Training Configuration
+
+# Which models to train
+models:
+  section_classifier: true
+  entity_extractor: true
+  resume_classifier: true
+  job_matcher: true
+
+# General
+general:
+  seed: ${project.seed}
+  deterministic: true
+
+# Checkpointing
+checkpoint:
+  save_best: true
+  save_last: true
+  metric: val_loss
+  mode: min
+
+# Logging
+logging:
+  console:
+    enabled: true
+    log_every_n_steps: 10
+  
+  tensorboard:
+    enabled: false
+    log_dir: ${paths.logs}/tensorboard
+
+# Callbacks
+callbacks:
+  early_stopping: true
+  lr_monitor: true
+  gradient_clip:
+    enabled: true
+    max_norm: 1.0
+
+# Mixed Precision
+mixed_precision:
+  enabled: false
+  dtype: float16

@@ -1,0 +1,44 @@
+# Data Configuration
+
+# Files
+files:
+  resume_csv: Resume.csv
+  resume_processed_csv: Resume_Processed.csv
+  skills_json: skills.json
+  
+  # Structured CSVs (if available)
+  structured:
+    people: structured/people.csv
+    education: structured/education.csv
+    experience: structured/experience.csv
+    person_skills: structured/person_skills.csv
+    skills: structured/skills.csv
+    abilities: structured/abilities.csv
+
+# Column names in Resume CSV
+columns:
+  id: ID
+  category: Category
+  resume_text: Resume_str
+  clean_text: Clean_Text
+
+# Train/Val/Test Split
+split:
+  train: 0.7
+  val: 0.1
+  test: 0.2
+  stratify: ${data.columns.category}
+  random_state: ${project.seed}
+
+# Preprocessing
+preprocessing:
+  lowercase: true
+  remove_special_chars: true
+  remove_extra_whitespace: true
+  min_word_length: 2
+
+# Skill settings
+skills:
+  max_tech_skills: 300
+  max_soft_skills: 100
+  delimiter: ","

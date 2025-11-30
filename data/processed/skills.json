@@ -1,0 +1,6003 @@
+{
+  "skills": [
+    {
+      "canonical": "JavaScript",
+      "category": "Programming Language",
+      "variations": [
+        "js",
+        "javascript",
+        "java script",
+        "es6",
+        "es2015",
+        "ecmascript",
+        "es5",
+        "es2016",
+        "es2017",
+        "vanilla js"
+      ]
+    },
+    {
+      "canonical": "Python",
+      "category": "Programming Language",
+      "variations": [
+        "python3",
+        "python 3",
+        "py",
+        "python2",
+        "python 2.7",
+        "python 3.x"
+      ]
+    },
+    {
+      "canonical": "Java",
+      "category": "Programming Language",
+      "variations": [
+        "java8",
+        "java 8",
+        "java11",
+        "java 11",
+        "j2ee",
+        "java se",
+        "java ee",
+        "core java",
+        "java 17"
+      ]
+    },
+    {
+      "canonical": "C++",
+      "category": "Programming Language",
+      "variations": [
+        "cpp",
+        "c plus plus",
+        "cplusplus",
+        "c++11",
+        "c++14",
+        "c++17"
+      ]
+    },
+    {
+      "canonical": "C#",
+      "category": "Programming Language",
+      "variations": [
+        "csharp",
+        "c sharp",
+        "c-sharp",
+        "c #",
+        ".net c#"
+      ]
+    },
+    {
+      "canonical": "C",
+      "category": "Programming Language",
+      "variations": [
+        "c programming",
+        "c language",
+        "ansi c"
+      ]
+    },
+    {
+      "canonical": "TypeScript",
+      "category": "Programming Language",
+      "variations": [
+        "ts",
+        "type script",
+        "typescript 4"
+      ]
+    },
+    {
+      "canonical": "Go",
+      "category": "Programming Language",
+      "variations": [
+        "golang",
+        "go lang",
+        "go programming"
+      ]
+    },
+    {
+      "canonical": "Ruby",
+      "category": "Programming Language",
+      "variations": [
+        "ruby lang",
+        "ruby programming"
+      ]
+    },
+    {
+      "canonical": "PHP",
+      "category": "Programming Language",
+      "variations": [
+        "php7",
+        "php 7",
+        "php8",
+        "php 8",
+        "php5"
+      ]
+    },
+    {
+      "canonical": "Swift",
+      "category": "Programming Language",
+      "variations": [
+        "swift ui",
+        "swiftui",
+        "swift 5",
+        "ios swift"
+      ]
+    },
+    {
+      "canonical": "Kotlin",
+      "category": "Programming Language",
+      "variations": [
+        "kotlin android",
+        "kotlin jvm"
+      ]
+    },
+    {
+      "canonical": "Rust",
+      "category": "Programming Language",
+      "variations": [
+        "rust lang",
+        "rustlang",
+        "rust programming"
+      ]
+    },
+    {
+      "canonical": "Scala",
+      "category": "Programming Language",
+      "variations": [
+        "scala lang",
+        "scala programming"
+      ]
+    },
+    {
+      "canonical": "R",
+      "category": "Programming Language",
+      "variations": [
+        "r programming",
+        "r language",
+        "r studio",
+        "rstudio",
+        "r statistical"
+      ]
+    },
+    {
+      "canonical": "MATLAB",
+      "category": "Programming Language",
+      "variations": [
+        "mat lab",
+        "matlab programming"
+      ]
+    },
+    {
+      "canonical": "Perl",
+      "category": "Programming Language",
+      "variations": [
+        "perl 5",
+        "perl programming"
+      ]
+    },
+    {
+      "canonical": "Shell Scripting",
+      "category": "Programming Language",
+      "variations": [
+        "bash",
+        "shell",
+        "bash scripting",
+        "sh",
+        "zsh",
+        "shell script"
+      ]
+    },
+    {
+      "canonical": "PowerShell",
+      "category": "Programming Language",
+      "variations": [
+        "power shell",
+        "ps1",
+        "windows powershell"
+      ]
+    },
+    {
+      "canonical": "Objective-C",
+      "category": "Programming Language",
+      "variations": [
+        "objective c",
+        "objc",
+        "obj-c"
+      ]
+    },
+    {
+      "canonical": "Visual Basic",
+      "category": "Programming Language",
+      "variations": [
+        "vb",
+        "vba",
+        "vb.net",
+        "visual basic for applications",
+        "vbscript"
+      ]
+    },
+    {
+      "canonical": "Assembly",
+      "category": "Programming Language",
+      "variations": [
+        "asm",
+        "assembly language",
+        "x86 assembly"
+      ]
+    },
+    {
+      "canonical": "Groovy",
+      "category": "Programming Language",
+      "variations": [
+        "apache groovy"
+      ]
+    },
+    {
+      "canonical": "Lua",
+      "category": "Programming Language",
+      "variations": [
+        "lua scripting"
+      ]
+    },
+    {
+      "canonical": "Haskell",
+      "category": "Programming Language",
+      "variations": [
+        "haskell programming"
+      ]
+    },
+    {
+      "canonical": "Clojure",
+      "category": "Programming Language",
+      "variations": [
+        "clojure programming"
+      ]
+    },
+    {
+      "canonical": "Elixir",
+      "category": "Programming Language",
+      "variations": [
+        "elixir lang",
+        "elixir programming"
+      ]
+    },
+    {
+      "canonical": "Dart",
+      "category": "Programming Language",
+      "variations": [
+        "dart lang",
+        "dart programming"
+      ]
+    },
+    {
+      "canonical": "F#",
+      "category": "Programming Language",
+      "variations": [
+        "fsharp",
+        "f sharp"
+      ]
+    },
+    {
+      "canonical": "COBOL",
+      "category": "Programming Language",
+      "variations": [
+        "cobol programming"
+      ]
+    },
+    {
+      "canonical": "Fortran",
+      "category": "Programming Language",
+      "variations": [
+        "fortran programming"
+      ]
+    },
+    {
+      "canonical": "SQL",
+      "category": "Database",
+      "variations": [
+        "structured query language",
+        "sql queries",
+        "sql programming"
+      ]
+    },
+    {
+      "canonical": "PostgreSQL",
+      "category": "Database",
+      "variations": [
+        "postgres",
+        "psql",
+        "postgresql db",
+        "pg"
+      ]
+    },
+    {
+      "canonical": "MySQL",
+      "category": "Database",
+      "variations": [
+        "my sql",
+        "mysql db",
+        "mysql database"
+      ]
+    },
+    {
+      "canonical": "MariaDB",
+      "category": "Database",
+      "variations": [
+        "maria db"
+      ]
+    },
+    {
+      "canonical": "MongoDB",
+      "category": "Database",
+      "variations": [
+        "mongo",
+        "mongo db",
+        "mongodb atlas"
+      ]
+    },
+    {
+      "canonical": "Redis",
+      "category": "Database",
+      "variations": [
+        "redis cache",
+        "redis db"
+      ]
+    },
+    {
+      "canonical": "Elasticsearch",
+      "category": "Database",
+      "variations": [
+        "elastic search",
+        "elastic",
+        "elk stack"
+      ]
+    },
+    {
+      "canonical": "Oracle Database",
+      "category": "Database",
+      "variations": [
+        "oracle db",
+        "oracle sql",
+        "oracle 11g",
+        "oracle 12c",
+        "pl/sql",
+        "plsql"
+      ]
+    },
+    {
+      "canonical": "Microsoft SQL Server",
+      "category": "Database",
+      "variations": [
+        "mssql",
+        "sql server",
+        "ms sql",
+        "t-sql",
+        "tsql"
+      ]
+    },
+    {
+      "canonical": "SQLite",
+      "category": "Database",
+      "variations": [
+        "sqlite3",
+        "sqlite db"
+      ]
+    },
+    {
+      "canonical": "Cassandra",
+      "category": "Database",
+      "variations": [
+        "apache cassandra",
+        "cassandra db"
+      ]
+    },
+    {
+      "canonical": "DynamoDB",
+      "category": "Database",
+      "variations": [
+        "dynamo db",
+        "aws dynamodb",
+        "amazon dynamodb"
+      ]
+    },
+    {
+      "canonical": "Firebase",
+      "category": "Database",
+      "variations": [
+        "firebase db",
+        "firebase realtime",
+        "firestore"
+      ]
+    },
+    {
+      "canonical": "Neo4j",
+      "category": "Database",
+      "variations": [
+        "neo4j graph",
+        "graph database"
+      ]
+    },
+    {
+      "canonical": "CouchDB",
+      "category": "Database",
+      "variations": [
+        "couch db",
+        "apache couchdb"
+      ]
+    },
+    {
+      "canonical": "InfluxDB",
+      "category": "Database",
+      "variations": [
+        "influx db",
+        "time series db"
+      ]
+    },
+    {
+      "canonical": "Snowflake",
+      "category": "Database",
+      "variations": [
+        "snowflake db",
+        "snowflake data warehouse"
+      ]
+    },
+    {
+      "canonical": "BigQuery",
+      "category": "Database",
+      "variations": [
+        "google bigquery",
+        "bq"
+      ]
+    },
+    {
+      "canonical": "Redshift",
+      "category": "Database",
+      "variations": [
+        "amazon redshift",
+        "aws redshift"
+      ]
+    },
+    {
+      "canonical": "Teradata",
+      "category": "Database",
+      "variations": [
+        "teradata db"
+      ]
+    },
+    {
+      "canonical": "DB2",
+      "category": "Database",
+      "variations": [
+        "ibm db2",
+        "db2 database"
+      ]
+    },
+    {
+      "canonical": "Memcached",
+      "category": "Database",
+      "variations": [
+        "memcache"
+      ]
+    },
+    {
+      "canonical": "HTML",
+      "category": "Web Technology",
+      "variations": [
+        "html5",
+        "html 5",
+        "hypertext markup language"
+      ]
+    },
+    {
+      "canonical": "CSS",
+      "category": "Web Technology",
+      "variations": [
+        "css3",
+        "css 3",
+        "cascading style sheets",
+        "stylesheet"
+      ]
+    },
+    {
+      "canonical": "React",
+      "category": "Web Framework",
+      "variations": [
+        "reactjs",
+        "react.js",
+        "react js",
+        "react 18",
+        "react hooks"
+      ]
+    },
+    {
+      "canonical": "Angular",
+      "category": "Web Framework",
+      "variations": [
+        "angularjs",
+        "angular.js",
+        "angular js",
+        "angular 2",
+        "angular 14",
+        "angular 15"
+      ]
+    },
+    {
+      "canonical": "Vue.js",
+      "category": "Web Framework",
+      "variations": [
+        "vue",
+        "vuejs",
+        "vue js",
+        "vue 3",
+        "vuex"
+      ]
+    },
+    {
+      "canonical": "Node.js",
+      "category": "Web Framework",
+      "variations": [
+        "node",
+        "nodejs",
+        "node js",
+        "node 18"
+      ]
+    },
+    {
+      "canonical": "Django",
+      "category": "Web Framework",
+      "variations": [
+        "django rest",
+        "drf",
+        "django framework",
+        "django python"
+      ]
+    },
+    {
+      "canonical": "Flask",
+      "category": "Web Framework",
+      "variations": [
+        "flask python",
+        "flask api"
+      ]
+    },
+    {
+      "canonical": "FastAPI",
+      "category": "Web Framework",
+      "variations": [
+        "fast api",
+        "fastapi python"
+      ]
+    },
+    {
+      "canonical": "Spring Boot",
+      "category": "Web Framework",
+      "variations": [
+        "spring",
+        "springboot",
+        "spring framework",
+        "spring mvc",
+        "spring cloud"
+      ]
+    },
+    {
+      "canonical": "Express.js",
+      "category": "Web Framework",
+      "variations": [
+        "express",
+        "expressjs",
+        "express node"
+      ]
+    },
+    {
+      "canonical": "Ruby on Rails",
+      "category": "Web Framework",
+      "variations": [
+        "rails",
+        "ror",
+        "ruby rails"
+      ]
+    },
+    {
+      "canonical": "Laravel",
+      "category": "Web Framework",
+      "variations": [
+        "laravel php",
+        "laravel framework"
+      ]
+    },
+    {
+      "canonical": "ASP.NET",
+      "category": "Web Framework",
+      "variations": [
+        "asp.net core",
+        "aspnet",
+        "asp net",
+        ".net core",
+        "dotnet"
+      ]
+    },
+    {
+      "canonical": "Next.js",
+      "category": "Web Framework",
+      "variations": [
+        "nextjs",
+        "next js",
+        "next react"
+      ]
+    },
+    {
+      "canonical": "Nuxt.js",
+      "category": "Web Framework",
+      "variations": [
+        "nuxtjs",
+        "nuxt js",
+        "nuxt vue"
+      ]
+    },
+    {
+      "canonical": "Svelte",
+      "category": "Web Framework",
+      "variations": [
+        "sveltejs",
+        "svelte js",
+        "sveltekit"
+      ]
+    },
+    {
+      "canonical": "jQuery",
+      "category": "Web Framework",
+      "variations": [
+        "jquery js",
+        "j query"
+      ]
+    },
+    {
+      "canonical": "Bootstrap",
+      "category": "Web Framework",
+      "variations": [
+        "bootstrap 5",
+        "bootstrap css",
+        "twitter bootstrap"
+      ]
+    },
+    {
+      "canonical": "Tailwind CSS",
+      "category": "Web Framework",
+      "variations": [
+        "tailwind",
+        "tailwindcss"
+      ]
+    },
+    {
+      "canonical": "Sass",
+      "category": "Web Technology",
+      "variations": [
+        "scss",
+        "sass css"
+      ]
+    },
+    {
+      "canonical": "Less",
+      "category": "Web Technology",
+      "variations": [
+        "less css",
+        "lesscss"
+      ]
+    },
+    {
+      "canonical": "Webpack",
+      "category": "Web Technology",
+      "variations": [
+        "webpack js",
+        "webpack bundler"
+      ]
+    },
+    {
+      "canonical": "REST API",
+      "category": "Web Technology",
+      "variations": [
+        "rest",
+        "restful",
+        "restful api",
+        "rest services",
+        "rest web services"
+      ]
+    },
+    {
+      "canonical": "GraphQL",
+      "category": "Web Technology",
+      "variations": [
+        "graph ql",
+        "graphql api"
+      ]
+    },
+    {
+      "canonical": "WebSocket",
+      "category": "Web Technology",
+      "variations": [
+        "web socket",
+        "websockets",
+        "ws"
+      ]
+    },
+    {
+      "canonical": "gRPC",
+      "category": "Web Technology",
+      "variations": [
+        "grpc api",
+        "google rpc"
+      ]
+    },
+    {
+      "canonical": "OAuth",
+      "category": "Web Technology",
+      "variations": [
+        "oauth2",
+        "oauth 2.0",
+        "oauth authentication"
+      ]
+    },
+    {
+      "canonical": "JWT",
+      "category": "Web Technology",
+      "variations": [
+        "json web token",
+        "jwt auth",
+        "jwt authentication"
+      ]
+    },
+    {
+      "canonical": "Amazon Web Services (AWS)",
+      "category": "Cloud Platform",
+      "variations": [
+        "aws",
+        "amazon aws",
+        "amazon web services",
+        "aws cloud"
+      ]
+    },
+    {
+      "canonical": "Microsoft Azure",
+      "category": "Cloud Platform",
+      "variations": [
+        "azure",
+        "ms azure",
+        "azure cloud",
+        "azure devops"
+      ]
+    },
+    {
+      "canonical": "Google Cloud Platform (GCP)",
+      "category": "Cloud Platform",
+      "variations": [
+        "gcp",
+        "google cloud",
+        "gcloud",
+        "google cloud platform"
+      ]
+    },
+    {
+      "canonical": "AWS EC2",
+      "category": "Cloud Platform",
+      "variations": [
+        "ec2",
+        "elastic compute",
+        "amazon ec2"
+      ]
+    },
+    {
+      "canonical": "AWS S3",
+      "category": "Cloud Platform",
+      "variations": [
+        "s3",
+        "simple storage",
+        "amazon s3"
+      ]
+    },
+    {
+      "canonical": "AWS Lambda",
+      "category": "Cloud Platform",
+      "variations": [
+        "lambda",
+        "aws lambda functions",
+        "serverless lambda"
+      ]
+    },
+    {
+      "canonical": "AWS RDS",
+      "category": "Cloud Platform",
+      "variations": [
+        "rds",
+        "relational database service"
+      ]
+    },
+    {
+      "canonical": "AWS ECS",
+      "category": "Cloud Platform",
+      "variations": [
+        "ecs",
+        "elastic container service"
+      ]
+    },
+    {
+      "canonical": "AWS EKS",
+      "category": "Cloud Platform",
+      "variations": [
+        "eks",
+        "elastic kubernetes service"
+      ]
+    },
+    {
+      "canonical": "AWS CloudFormation",
+      "category": "Cloud Platform",
+      "variations": [
+        "cloudformation",
+        "cfn"
+      ]
+    },
+    {
+      "canonical": "AWS SQS",
+      "category": "Cloud Platform",
+      "variations": [
+        "sqs",
+        "simple queue service"
+      ]
+    },
+    {
+      "canonical": "AWS SNS",
+      "category": "Cloud Platform",
+      "variations": [
+        "sns",
+        "simple notification service"
+      ]
+    },
+    {
+      "canonical": "Azure Functions",
+      "category": "Cloud Platform",
+      "variations": [
+        "azure function",
+        "azure serverless"
+      ]
+    },
+    {
+      "canonical": "Azure DevOps",
+      "category": "Cloud Platform",
+      "variations": [
+        "azure pipelines",
+        "azure boards"
+      ]
+    },
+    {
+      "canonical": "Heroku",
+      "category": "Cloud Platform",
+      "variations": [
+        "heroku cloud",
+        "heroku platform"
+      ]
+    },
+    {
+      "canonical": "DigitalOcean",
+      "category": "Cloud Platform",
+      "variations": [
+        "digital ocean",
+        "do cloud"
+      ]
+    },
+    {
+      "canonical": "Vercel",
+      "category": "Cloud Platform",
+      "variations": [
+        "vercel deploy",
+        "zeit"
+      ]
+    },
+    {
+      "canonical": "Netlify",
+      "category": "Cloud Platform",
+      "variations": [
+        "netlify deploy"
+      ]
+    },
+    {
+      "canonical": "IBM Cloud",
+      "category": "Cloud Platform",
+      "variations": [
+        "ibm cloud platform",
+        "bluemix"
+      ]
+    },
+    {
+      "canonical": "Oracle Cloud",
+      "category": "Cloud Platform",
+      "variations": [
+        "oci",
+        "oracle cloud infrastructure"
+      ]
+    },
+    {
+      "canonical": "Alibaba Cloud",
+      "category": "Cloud Platform",
+      "variations": [
+        "aliyun",
+        "alibaba cloud computing"
+      ]
+    },
+    {
+      "canonical": "Docker",
+      "category": "DevOps",
+      "variations": [
+        "docker container",
+        "containerization",
+        "docker compose",
+        "dockerfile"
+      ]
+    },
+    {
+      "canonical": "Kubernetes",
+      "category": "DevOps",
+      "variations": [
+        "k8s",
+        "kube",
+        "kubernetes cluster",
+        "k8",
+        "kubectl"
+      ]
+    },
+    {
+      "canonical": "Jenkins",
+      "category": "DevOps",
+      "variations": [
+        "jenkins ci",
+        "jenkins cd",
+        "jenkins pipeline"
+      ]
+    },
+    {
+      "canonical": "Terraform",
+      "category": "DevOps",
+      "variations": [
+        "terraform iac",
+        "tf",
+        "hashicorp terraform"
+      ]
+    },
+    {
+      "canonical": "Ansible",
+      "category": "DevOps",
+      "variations": [
+        "ansible automation",
+        "ansible playbook"
+      ]
+    },
+    {
+      "canonical": "CI/CD",
+      "category": "DevOps",
+      "variations": [
+        "cicd",
+        "ci cd",
+        "continuous integration",
+        "continuous deployment",
+        "continuous delivery"
+      ]
+    },
+    {
+      "canonical": "Git",
+      "category": "DevOps",
+      "variations": [
+        "git version control",
+        "git scm"
+      ]
+    },
+    {
+      "canonical": "GitHub",
+      "category": "DevOps",
+      "variations": [
+        "github actions",
+        "gh",
+        "github repos"
+      ]
+    },
+    {
+      "canonical": "GitLab",
+      "category": "DevOps",
+      "variations": [
+        "gitlab ci",
+        "gitlab cd"
+      ]
+    },
+    {
+      "canonical": "Bitbucket",
+      "category": "DevOps",
+      "variations": [
+        "bitbucket pipelines",
+        "atlassian bitbucket"
+      ]
+    },
+    {
+      "canonical": "CircleCI",
+      "category": "DevOps",
+      "variations": [
+        "circle ci"
+      ]
+    },
+    {
+      "canonical": "Travis CI",
+      "category": "DevOps",
+      "variations": [
+        "travis",
+        "travisci"
+      ]
+    },
+    {
+      "canonical": "ArgoCD",
+      "category": "DevOps",
+      "variations": [
+        "argo cd",
+        "argo"
+      ]
+    },
+    {
+      "canonical": "Helm",
+      "category": "DevOps",
+      "variations": [
+        "helm charts",
+        "kubernetes helm"
+      ]
+    },
+    {
+      "canonical": "Prometheus",
+      "category": "DevOps",
+      "variations": [
+        "prometheus monitoring"
+      ]
+    },
+    {
+      "canonical": "Grafana",
+      "category": "DevOps",
+      "variations": [
+        "grafana dashboard",
+        "grafana monitoring"
+      ]
+    },
+    {
+      "canonical": "Datadog",
+      "category": "DevOps",
+      "variations": [
+        "data dog",
+        "datadog monitoring"
+      ]
+    },
+    {
+      "canonical": "New Relic",
+      "category": "DevOps",
+      "variations": [
+        "newrelic",
+        "new relic apm"
+      ]
+    },
+    {
+      "canonical": "Splunk",
+      "category": "DevOps",
+      "variations": [
+        "splunk monitoring",
+        "splunk logs"
+      ]
+    },
+    {
+      "canonical": "Nagios",
+      "category": "DevOps",
+      "variations": [
+        "nagios monitoring"
+      ]
+    },
+    {
+      "canonical": "Puppet",
+      "category": "DevOps",
+      "variations": [
+        "puppet automation"
+      ]
+    },
+    {
+      "canonical": "Chef",
+      "category": "DevOps",
+      "variations": [
+        "chef automation",
+        "chef infrastructure"
+      ]
+    },
+    {
+      "canonical": "Vagrant",
+      "category": "DevOps",
+      "variations": [
+        "vagrant vm",
+        "hashicorp vagrant"
+      ]
+    },
+    {
+      "canonical": "Nginx",
+      "category": "DevOps",
+      "variations": [
+        "nginx server",
+        "nginx proxy"
+      ]
+    },
+    {
+      "canonical": "Apache",
+      "category": "DevOps",
+      "variations": [
+        "apache server",
+        "apache http",
+        "httpd"
+      ]
+    },
+    {
+      "canonical": "Linux",
+      "category": "DevOps",
+      "variations": [
+        "linux os",
+        "linux server",
+        "linux admin",
+        "linux administration"
+      ]
+    },
+    {
+      "canonical": "Unix",
+      "category": "DevOps",
+      "variations": [
+        "unix os",
+        "unix systems"
+      ]
+    },
+    {
+      "canonical": "Windows Server",
+      "category": "DevOps",
+      "variations": [
+        "windows server admin",
+        "windows administration"
+      ]
+    },
+    {
+      "canonical": "VMware",
+      "category": "DevOps",
+      "variations": [
+        "vmware vsphere",
+        "vmware esxi",
+        "virtual machine"
+      ]
+    },
+    {
+      "canonical": "OpenShift",
+      "category": "DevOps",
+      "variations": [
+        "red hat openshift",
+        "openshift container"
+      ]
+    },
+    {
+      "canonical": "Machine Learning",
+      "category": "Machine Learning",
+      "variations": [
+        "ml",
+        "machine-learning",
+        "ml models",
+        "ml algorithms"
+      ]
+    },
+    {
+      "canonical": "Deep Learning",
+      "category": "Machine Learning",
+      "variations": [
+        "dl",
+        "deep-learning",
+        "neural networks",
+        "deep neural networks",
+        "dnn"
+      ]
+    },
+    {
+      "canonical": "TensorFlow",
+      "category": "Machine Learning",
+      "variations": [
+        "tensor flow",
+        "tf",
+        "tensorflow 2"
+      ]
+    },
+    {
+      "canonical": "PyTorch",
+      "category": "Machine Learning",
+      "variations": [
+        "pytorch",
+        "torch",
+        "py torch"
+      ]
+    },
+    {
+      "canonical": "Keras",
+      "category": "Machine Learning",
+      "variations": [
+        "keras deep learning"
+      ]
+    },
+    {
+      "canonical": "Scikit-learn",
+      "category": "Machine Learning",
+      "variations": [
+        "sklearn",
+        "scikit learn",
+        "sk-learn"
+      ]
+    },
+    {
+      "canonical": "Natural Language Processing (NLP)",
+      "category": "Machine Learning",
+      "variations": [
+        "nlp",
+        "text mining",
+        "text analytics",
+        "natural language understanding",
+        "nlu"
+      ]
+    },
+    {
+      "canonical": "Computer Vision",
+      "category": "Machine Learning",
+      "variations": [
+        "cv",
+        "image processing",
+        "image recognition",
+        "object detection"
+      ]
+    },
+    {
+      "canonical": "Neural Networks",
+      "category": "Machine Learning",
+      "variations": [
+        "nn",
+        "artificial neural networks",
+        "ann"
+      ]
+    },
+    {
+      "canonical": "Convolutional Neural Networks",
+      "category": "Machine Learning",
+      "variations": [
+        "cnn",
+        "convnet",
+        "convolutional networks"
+      ]
+    },
+    {
+      "canonical": "Recurrent Neural Networks",
+      "category": "Machine Learning",
+      "variations": [
+        "rnn",
+        "recurrent networks"
+      ]
+    },
+    {
+      "canonical": "LSTM",
+      "category": "Machine Learning",
+      "variations": [
+        "long short term memory",
+        "lstm networks"
+      ]
+    },
+    {
+      "canonical": "Transformer Models",
+      "category": "Machine Learning",
+      "variations": [
+        "transformers",
+        "attention models"
+      ]
+    },
+    {
+      "canonical": "BERT",
+      "category": "Machine Learning",
+      "variations": [
+        "bert model",
+        "bidirectional encoder"
+      ]
+    },
+    {
+      "canonical": "GPT",
+      "category": "Machine Learning",
+      "variations": [
+        "gpt model",
+        "generative pre-trained"
+      ]
+    },
+    {
+      "canonical": "XGBoost",
+      "category": "Machine Learning",
+      "variations": [
+        "xgb",
+        "extreme gradient boosting"
+      ]
+    },
+    {
+      "canonical": "LightGBM",
+      "category": "Machine Learning",
+      "variations": [
+        "light gbm",
+        "lgbm"
+      ]
+    },
+    {
+      "canonical": "Random Forest",
+      "category": "Machine Learning",
+      "variations": [
+        "random forests",
+        "rf"
+      ]
+    },
+    {
+      "canonical": "Gradient Boosting",
+      "category": "Machine Learning",
+      "variations": [
+        "gbm",
+        "gradient boosted"
+      ]
+    },
+    {
+      "canonical": "Support Vector Machines",
+      "category": "Machine Learning",
+      "variations": [
+        "svm",
+        "support vector"
+      ]
+    },
+    {
+      "canonical": "K-Nearest Neighbors",
+      "category": "Machine Learning",
+      "variations": [
+        "knn",
+        "k nearest neighbors"
+      ]
+    },
+    {
+      "canonical": "Clustering",
+      "category": "Machine Learning",
+      "variations": [
+        "k-means",
+        "kmeans",
+        "hierarchical clustering",
+        "dbscan"
+      ]
+    },
+    {
+      "canonical": "Dimensionality Reduction",
+      "category": "Machine Learning",
+      "variations": [
+        "pca",
+        "principal component analysis",
+        "t-sne",
+        "tsne"
+      ]
+    },
+    {
+      "canonical": "Reinforcement Learning",
+      "category": "Machine Learning",
+      "variations": [
+        "rl",
+        "reinforcement learning algorithms"
+      ]
+    },
+    {
+      "canonical": "MLOps",
+      "category": "Machine Learning",
+      "variations": [
+        "ml ops",
+        "machine learning operations"
+      ]
+    },
+    {
+      "canonical": "Model Deployment",
+      "category": "Machine Learning",
+      "variations": [
+        "ml deployment",
+        "model serving"
+      ]
+    },
+    {
+      "canonical": "Feature Engineering",
+      "category": "Machine Learning",
+      "variations": [
+        "feature extraction",
+        "feature selection"
+      ]
+    },
+    {
+      "canonical": "Hyperparameter Tuning",
+      "category": "Machine Learning",
+      "variations": [
+        "hyperparameter optimization",
+        "model tuning"
+      ]
+    },
+    {
+      "canonical": "OpenCV",
+      "category": "Machine Learning",
+      "variations": [
+        "opencv",
+        "open cv",
+        "cv2"
+      ]
+    },
+    {
+      "canonical": "Hugging Face",
+      "category": "Machine Learning",
+      "variations": [
+        "huggingface",
+        "transformers library"
+      ]
+    },
+    {
+      "canonical": "spaCy",
+      "category": "Machine Learning",
+      "variations": [
+        "spacy nlp",
+        "spacy"
+      ]
+    },
+    {
+      "canonical": "NLTK",
+      "category": "Machine Learning",
+      "variations": [
+        "natural language toolkit"
+      ]
+    },
+    {
+      "canonical": "Generative AI",
+      "category": "Machine Learning",
+      "variations": [
+        "genai",
+        "gen ai",
+        "generative models"
+      ]
+    },
+    {
+      "canonical": "Large Language Models",
+      "category": "Machine Learning",
+      "variations": [
+        "llm",
+        "llms",
+        "language models"
+      ]
+    },
+    {
+      "canonical": "Prompt Engineering",
+      "category": "Machine Learning",
+      "variations": [
+        "prompt design",
+        "prompting"
+      ]
+    },
+    {
+      "canonical": "Pandas",
+      "category": "Data Science",
+      "variations": [
+        "pandas python",
+        "pd"
+      ]
+    },
+    {
+      "canonical": "NumPy",
+      "category": "Data Science",
+      "variations": [
+        "numpy",
+        "np",
+        "numerical python"
+      ]
+    },
+    {
+      "canonical": "SciPy",
+      "category": "Data Science",
+      "variations": [
+        "scipy",
+        "scientific python"
+      ]
+    },
+    {
+      "canonical": "Matplotlib",
+      "category": "Data Science",
+      "variations": [
+        "matplotlib plotting",
+        "pyplot"
+      ]
+    },
+    {
+      "canonical": "Seaborn",
+      "category": "Data Science",
+      "variations": [
+        "seaborn visualization"
+      ]
+    },
+    {
+      "canonical": "Plotly",
+      "category": "Data Science",
+      "variations": [
+        "plotly visualization",
+        "plotly dash"
+      ]
+    },
+    {
+      "canonical": "Apache Spark",
+      "category": "Data Science",
+      "variations": [
+        "spark",
+        "pyspark",
+        "spark sql",
+        "apache spark"
+      ]
+    },
+    {
+      "canonical": "Hadoop",
+      "category": "Data Science",
+      "variations": [
+        "apache hadoop",
+        "hdfs",
+        "hadoop ecosystem"
+      ]
+    },
+    {
+      "canonical": "Hive",
+      "category": "Data Science",
+      "variations": [
+        "apache hive",
+        "hive sql"
+      ]
+    },
+    {
+      "canonical": "Tableau",
+      "category": "Data Science",
+      "variations": [
+        "tableau desktop",
+        "tableau server",
+        "tableau visualization"
+      ]
+    },
+    {
+      "canonical": "Power BI",
+      "category": "Data Science",
+      "variations": [
+        "powerbi",
+        "power-bi",
+        "microsoft power bi",
+        "power bi desktop"
+      ]
+    },
+    {
+      "canonical": "Looker",
+      "category": "Data Science",
+      "variations": [
+        "google looker",
+        "looker studio"
+      ]
+    },
+    {
+      "canonical": "Qlik",
+      "category": "Data Science",
+      "variations": [
+        "qlikview",
+        "qlik sense"
+      ]
+    },
+    {
+      "canonical": "Data Visualization",
+      "category": "Data Science",
+      "variations": [
+        "data viz",
+        "visualization",
+        "dashboards"
+      ]
+    },
+    {
+      "canonical": "Data Analysis",
+      "category": "Data Science",
+      "variations": [
+        "data analytics",
+        "analytical skills",
+        "data analyst"
+      ]
+    },
+    {
+      "canonical": "Data Mining",
+      "category": "Data Science",
+      "variations": [
+        "data mining techniques"
+      ]
+    },
+    {
+      "canonical": "Data Warehousing",
+      "category": "Data Science",
+      "variations": [
+        "data warehouse",
+        "dwh",
+        "edw"
+      ]
+    },
+    {
+      "canonical": "ETL",
+      "category": "Data Science",
+      "variations": [
+        "extract transform load",
+        "etl pipeline",
+        "etl process"
+      ]
+    },
+    {
+      "canonical": "Data Pipeline",
+      "category": "Data Science",
+      "variations": [
+        "data pipelines",
+        "data engineering pipeline"
+      ]
+    },
+    {
+      "canonical": "Apache Airflow",
+      "category": "Data Science",
+      "variations": [
+        "airflow",
+        "airflow dag"
+      ]
+    },
+    {
+      "canonical": "Apache Kafka",
+      "category": "Data Science",
+      "variations": [
+        "kafka",
+        "kafka streaming",
+        "kafka streams"
+      ]
+    },
+    {
+      "canonical": "Data Modeling",
+      "category": "Data Science",
+      "variations": [
+        "data models",
+        "dimensional modeling"
+      ]
+    },
+    {
+      "canonical": "Statistical Analysis",
+      "category": "Data Science",
+      "variations": [
+        "statistics",
+        "statistical methods",
+        "statistical modeling"
+      ]
+    },
+    {
+      "canonical": "A/B Testing",
+      "category": "Data Science",
+      "variations": [
+        "ab testing",
+        "split testing",
+        "experimentation"
+      ]
+    },
+    {
+      "canonical": "Hypothesis Testing",
+      "category": "Data Science",
+      "variations": [
+        "statistical testing",
+        "significance testing"
+      ]
+    },
+    {
+      "canonical": "Regression Analysis",
+      "category": "Data Science",
+      "variations": [
+        "linear regression",
+        "logistic regression",
+        "regression models"
+      ]
+    },
+    {
+      "canonical": "Time Series Analysis",
+      "category": "Data Science",
+      "variations": [
+        "time series",
+        "forecasting",
+        "time series forecasting"
+      ]
+    },
+    {
+      "canonical": "Jupyter",
+      "category": "Data Science",
+      "variations": [
+        "jupyter notebook",
+        "jupyter lab",
+        "ipython"
+      ]
+    },
+    {
+      "canonical": "Databricks",
+      "category": "Data Science",
+      "variations": [
+        "databricks platform",
+        "databricks spark"
+      ]
+    },
+    {
+      "canonical": "dbt",
+      "category": "Data Science",
+      "variations": [
+        "data build tool",
+        "dbt analytics"
+      ]
+    },
+    {
+      "canonical": "Agile",
+      "category": "Methodology",
+      "variations": [
+        "agile methodology",
+        "agile development",
+        "agile practices",
+        "agile project management"
+      ]
+    },
+    {
+      "canonical": "Scrum",
+      "category": "Methodology",
+      "variations": [
+        "scrum master",
+        "scrum methodology",
+        "scrum framework",
+        "scrum team"
+      ]
+    },
+    {
+      "canonical": "Kanban",
+      "category": "Methodology",
+      "variations": [
+        "kanban board",
+        "kanban methodology"
+      ]
+    },
+    {
+      "canonical": "Waterfall",
+      "category": "Methodology",
+      "variations": [
+        "waterfall methodology",
+        "waterfall model"
+      ]
+    },
+    {
+      "canonical": "Lean",
+      "category": "Methodology",
+      "variations": [
+        "lean methodology",
+        "lean six sigma",
+        "lean management"
+      ]
+    },
+    {
+      "canonical": "Six Sigma",
+      "category": "Methodology",
+      "variations": [
+        "6 sigma",
+        "six sigma certification",
+        "dmaic"
+      ]
+    },
+    {
+      "canonical": "DevOps",
+      "category": "Methodology",
+      "variations": [
+        "dev ops",
+        "devops practices",
+        "devops culture"
+      ]
+    },
+    {
+      "canonical": "Test-Driven Development",
+      "category": "Methodology",
+      "variations": [
+        "tdd",
+        "test driven"
+      ]
+    },
+    {
+      "canonical": "Behavior-Driven Development",
+      "category": "Methodology",
+      "variations": [
+        "bdd",
+        "behavior driven"
+      ]
+    },
+    {
+      "canonical": "Design Thinking",
+      "category": "Methodology",
+      "variations": [
+        "design thinking process"
+      ]
+    },
+    {
+      "canonical": "SAFe",
+      "category": "Methodology",
+      "variations": [
+        "scaled agile",
+        "scaled agile framework"
+      ]
+    },
+    {
+      "canonical": "JIRA",
+      "category": "Tool",
+      "variations": [
+        "jira software",
+        "atlassian jira",
+        "jira board"
+      ]
+    },
+    {
+      "canonical": "Confluence",
+      "category": "Tool",
+      "variations": [
+        "atlassian confluence"
+      ]
+    },
+    {
+      "canonical": "Trello",
+      "category": "Tool",
+      "variations": [
+        "trello board"
+      ]
+    },
+    {
+      "canonical": "Asana",
+      "category": "Tool",
+      "variations": [
+        "asana project"
+      ]
+    },
+    {
+      "canonical": "Monday.com",
+      "category": "Tool",
+      "variations": [
+        "monday",
+        "monday board"
+      ]
+    },
+    {
+      "canonical": "Slack",
+      "category": "Tool",
+      "variations": [
+        "slack messaging",
+        "slack communication"
+      ]
+    },
+    {
+      "canonical": "Microsoft Teams",
+      "category": "Tool",
+      "variations": [
+        "ms teams",
+        "teams"
+      ]
+    },
+    {
+      "canonical": "Zoom",
+      "category": "Tool",
+      "variations": [
+        "zoom meetings",
+        "zoom video"
+      ]
+    },
+    {
+      "canonical": "Microsoft Office",
+      "category": "Tool",
+      "variations": [
+        "ms office",
+        "office 365",
+        "microsoft 365",
+        "office suite"
+      ]
+    },
+    {
+      "canonical": "Microsoft Excel",
+      "category": "Tool",
+      "variations": [
+        "excel",
+        "ms excel",
+        "spreadsheets",
+        "excel spreadsheet",
+        "advanced excel",
+        "excel formulas",
+        "vlookup",
+        "pivot tables",
+        "excel macros"
+      ]
+    },
+    {
+      "canonical": "Microsoft Word",
+      "category": "Tool",
+      "variations": [
+        "word",
+        "ms word"
+      ]
+    },
+    {
+      "canonical": "Microsoft PowerPoint",
+      "category": "Tool",
+      "variations": [
+        "powerpoint",
+        "ppt",
+        "ms powerpoint",
+        "presentations"
+      ]
+    },
+    {
+      "canonical": "Google Workspace",
+      "category": "Tool",
+      "variations": [
+        "g suite",
+        "google suite",
+        "gsuite"
+      ]
+    },
+    {
+      "canonical": "Google Sheets",
+      "category": "Tool",
+      "variations": [
+        "gsheets",
+        "google spreadsheet"
+      ]
+    },
+    {
+      "canonical": "Google Docs",
+      "category": "Tool",
+      "variations": [
+        "gdocs",
+        "google documents"
+      ]
+    },
+    {
+      "canonical": "Notion",
+      "category": "Tool",
+      "variations": [
+        "notion app",
+        "notion workspace"
+      ]
+    },
+    {
+      "canonical": "Figma",
+      "category": "Tool",
+      "variations": [
+        "figma design",
+        "figma ui"
+      ]
+    },
+    {
+      "canonical": "Sketch",
+      "category": "Tool",
+      "variations": [
+        "sketch app",
+        "sketch design"
+      ]
+    },
+    {
+      "canonical": "Adobe XD",
+      "category": "Tool",
+      "variations": [
+        "xd",
+        "adobe experience design"
+      ]
+    },
+    {
+      "canonical": "InVision",
+      "category": "Tool",
+      "variations": [
+        "invision app",
+        "invision prototype"
+      ]
+    },
+    {
+      "canonical": "Postman",
+      "category": "Tool",
+      "variations": [
+        "postman api",
+        "postman testing"
+      ]
+    },
+    {
+      "canonical": "Swagger",
+      "category": "Tool",
+      "variations": [
+        "swagger api",
+        "openapi"
+      ]
+    },
+    {
+      "canonical": "VS Code",
+      "category": "Tool",
+      "variations": [
+        "visual studio code",
+        "vscode"
+      ]
+    },
+    {
+      "canonical": "IntelliJ IDEA",
+      "category": "Tool",
+      "variations": [
+        "intellij",
+        "idea ide"
+      ]
+    },
+    {
+      "canonical": "Eclipse",
+      "category": "Tool",
+      "variations": [
+        "eclipse ide"
+      ]
+    },
+    {
+      "canonical": "PyCharm",
+      "category": "Tool",
+      "variations": [
+        "pycharm ide"
+      ]
+    },
+    {
+      "canonical": "Xcode",
+      "category": "Tool",
+      "variations": [
+        "xcode ide",
+        "apple xcode"
+      ]
+    },
+    {
+      "canonical": "Android Studio",
+      "category": "Tool",
+      "variations": [
+        "android studio ide"
+      ]
+    },
+    {
+      "canonical": "Accounting",
+      "category": "Accounting",
+      "variations": [
+        "accountancy",
+        "bookkeeping",
+        "book keeping",
+        "account management"
+      ]
+    },
+    {
+      "canonical": "Financial Reporting",
+      "category": "Accounting",
+      "variations": [
+        "financial reports",
+        "financial statements",
+        "financial statement analysis",
+        "financial statement preparation"
+      ]
+    },
+    {
+      "canonical": "Financial Analysis",
+      "category": "Accounting",
+      "variations": [
+        "financial analytics",
+        "finance analysis",
+        "financial modeling",
+        "financial models"
+      ]
+    },
+    {
+      "canonical": "General Ledger",
+      "category": "Accounting",
+      "variations": [
+        "gl",
+        "ledger accounting",
+        "general ledger accounting",
+        "gl accounting",
+        "ledger entries"
+      ]
+    },
+    {
+      "canonical": "Accounts Payable",
+      "category": "Accounting",
+      "variations": [
+        "ap",
+        "a/p",
+        "payables",
+        "accounts payable processing",
+        "ap processing",
+        "vendor payments"
+      ]
+    },
+    {
+      "canonical": "Accounts Receivable",
+      "category": "Accounting",
+      "variations": [
+        "ar",
+        "a/r",
+        "receivables",
+        "accounts receivable management",
+        "ar management",
+        "collections"
+      ]
+    },
+    {
+      "canonical": "GAAP",
+      "category": "Accounting",
+      "variations": [
+        "generally accepted accounting principles",
+        "us gaap",
+        "gaap compliance",
+        "gaap standards"
+      ]
+    },
+    {
+      "canonical": "IFRS",
+      "category": "Accounting",
+      "variations": [
+        "international financial reporting standards",
+        "ifrs standards"
+      ]
+    },
+    {
+      "canonical": "Budgeting",
+      "category": "Accounting",
+      "variations": [
+        "budget planning",
+        "budget management",
+        "budget preparation",
+        "budget analysis",
+        "budget forecasting",
+        "annual budget"
+      ]
+    },
+    {
+      "canonical": "Forecasting",
+      "category": "Accounting",
+      "variations": [
+        "financial forecasting",
+        "forecast modeling",
+        "revenue forecasting",
+        "sales forecasting"
+      ]
+    },
+    {
+      "canonical": "Auditing",
+      "category": "Accounting",
+      "variations": [
+        "audit",
+        "internal audit",
+        "external audit",
+        "audit procedures",
+        "audit compliance",
+        "financial audit",
+        "sox audit"
+      ]
+    },
+    {
+      "canonical": "Tax Preparation",
+      "category": "Accounting",
+      "variations": [
+        "tax",
+        "tax filing",
+        "tax returns",
+        "tax compliance",
+        "tax planning",
+        "income tax",
+        "corporate tax",
+        "tax accounting"
+      ]
+    },
+    {
+      "canonical": "Payroll",
+      "category": "Accounting",
+      "variations": [
+        "payroll processing",
+        "payroll management",
+        "payroll administration",
+        "payroll taxes"
+      ]
+    },
+    {
+      "canonical": "QuickBooks",
+      "category": "Accounting",
+      "variations": [
+        "quickbooks online",
+        "qb",
+        "quickbooks desktop",
+        "intuit quickbooks"
+      ]
+    },
+    {
+      "canonical": "SAP",
+      "category": "Accounting",
+      "variations": [
+        "sap erp",
+        "sap hana",
+        "sap fico",
+        "sap fi",
+        "sap co",
+        "sap mm",
+        "sap sd",
+        "sap business one"
+      ]
+    },
+    {
+      "canonical": "Oracle Financials",
+      "category": "Accounting",
+      "variations": [
+        "oracle financial",
+        "oracle erp",
+        "oracle ebs"
+      ]
+    },
+    {
+      "canonical": "NetSuite",
+      "category": "Accounting",
+      "variations": [
+        "oracle netsuite",
+        "netsuite erp"
+      ]
+    },
+    {
+      "canonical": "Xero",
+      "category": "Accounting",
+      "variations": [
+        "xero accounting"
+      ]
+    },
+    {
+      "canonical": "Sage",
+      "category": "Accounting",
+      "variations": [
+        "sage accounting",
+        "sage 50",
+        "sage 100",
+        "sage intacct"
+      ]
+    },
+    {
+      "canonical": "FreshBooks",
+      "category": "Accounting",
+      "variations": [
+        "fresh books"
+      ]
+    },
+    {
+      "canonical": "Reconciliation",
+      "category": "Accounting",
+      "variations": [
+        "account reconciliation",
+        "bank reconciliation",
+        "reconciling accounts",
+        "reconciliations"
+      ]
+    },
+    {
+      "canonical": "Journal Entries",
+      "category": "Accounting",
+      "variations": [
+        "journal entry",
+        "je",
+        "adjusting entries",
+        "journal posting"
+      ]
+    },
+    {
+      "canonical": "Month-End Close",
+      "category": "Accounting",
+      "variations": [
+        "month end",
+        "monthly close",
+        "period close",
+        "closing entries",
+        "year-end close",
+        "year end close"
+      ]
+    },
+    {
+      "canonical": "Variance Analysis",
+      "category": "Accounting",
+      "variations": [
+        "budget variance",
+        "variance reporting"
+      ]
+    },
+    {
+      "canonical": "Cost Accounting",
+      "category": "Accounting",
+      "variations": [
+        "cost analysis",
+        "cost management",
+        "cost control"
+      ]
+    },
+    {
+      "canonical": "Fixed Assets",
+      "category": "Accounting",
+      "variations": [
+        "fixed asset accounting",
+        "asset management",
+        "depreciation",
+        "asset depreciation"
+      ]
+    },
+    {
+      "canonical": "Revenue Recognition",
+      "category": "Accounting",
+      "variations": [
+        "revenue accounting",
+        "asc 606"
+      ]
+    },
+    {
+      "canonical": "Consolidation",
+      "category": "Accounting",
+      "variations": [
+        "financial consolidation",
+        "consolidated statements"
+      ]
+    },
+    {
+      "canonical": "Intercompany Accounting",
+      "category": "Accounting",
+      "variations": [
+        "intercompany",
+        "intercompany transactions",
+        "intercompany eliminations"
+      ]
+    },
+    {
+      "canonical": "Cash Flow Management",
+      "category": "Accounting",
+      "variations": [
+        "cash flow",
+        "cash management",
+        "cash flow analysis",
+        "cash flow statement"
+      ]
+    },
+    {
+      "canonical": "Financial Planning",
+      "category": "Accounting",
+      "variations": [
+        "fp&a",
+        "financial planning and analysis",
+        "fpa"
+      ]
+    },
+    {
+      "canonical": "SOX Compliance",
+      "category": "Accounting",
+      "variations": [
+        "sox",
+        "sarbanes oxley",
+        "sarbanes-oxley",
+        "sox controls",
+        "internal controls"
+      ]
+    },
+    {
+      "canonical": "ERP",
+      "category": "Accounting",
+      "variations": [
+        "enterprise resource planning",
+        "erp systems",
+        "erp implementation"
+      ]
+    },
+    {
+      "canonical": "Billing",
+      "category": "Accounting",
+      "variations": [
+        "invoicing",
+        "invoice processing",
+        "billing management"
+      ]
+    },
+    {
+      "canonical": "Credit Analysis",
+      "category": "Accounting",
+      "variations": [
+        "credit assessment",
+        "credit evaluation"
+      ]
+    },
+    {
+      "canonical": "Treasury",
+      "category": "Accounting",
+      "variations": [
+        "treasury management",
+        "treasury operations",
+        "cash treasury"
+      ]
+    },
+    {
+      "canonical": "Lease Accounting",
+      "category": "Accounting",
+      "variations": [
+        "asc 842",
+        "lease management"
+      ]
+    },
+    {
+      "canonical": "Legal Research",
+      "category": "Legal",
+      "variations": [
+        "legal analysis",
+        "case research",
+        "legal investigation"
+      ]
+    },
+    {
+      "canonical": "Litigation",
+      "category": "Legal",
+      "variations": [
+        "litigation support",
+        "civil litigation",
+        "commercial litigation"
+      ]
+    },
+    {
+      "canonical": "Contract Law",
+      "category": "Legal",
+      "variations": [
+        "contracts",
+        "contract drafting",
+        "contract review",
+        "contract negotiation",
+        "contract management"
+      ]
+    },
+    {
+      "canonical": "Corporate Law",
+      "category": "Legal",
+      "variations": [
+        "corporate legal",
+        "business law",
+        "company law"
+      ]
+    },
+    {
+      "canonical": "Compliance",
+      "category": "Legal",
+      "variations": [
+        "legal compliance",
+        "regulatory compliance",
+        "compliance management",
+        "compliance officer"
+      ]
+    },
+    {
+      "canonical": "Intellectual Property",
+      "category": "Legal",
+      "variations": [
+        "ip",
+        "ip law",
+        "patents",
+        "trademarks",
+        "copyrights"
+      ]
+    },
+    {
+      "canonical": "Employment Law",
+      "category": "Legal",
+      "variations": [
+        "labor law",
+        "employment legal",
+        "workplace law"
+      ]
+    },
+    {
+      "canonical": "Real Estate Law",
+      "category": "Legal",
+      "variations": [
+        "property law",
+        "real estate legal"
+      ]
+    },
+    {
+      "canonical": "Criminal Law",
+      "category": "Legal",
+      "variations": [
+        "criminal defense",
+        "criminal justice"
+      ]
+    },
+    {
+      "canonical": "Family Law",
+      "category": "Legal",
+      "variations": [
+        "divorce law",
+        "custody"
+      ]
+    },
+    {
+      "canonical": "Immigration Law",
+      "category": "Legal",
+      "variations": [
+        "immigration",
+        "visa",
+        "immigration legal"
+      ]
+    },
+    {
+      "canonical": "Legal Writing",
+      "category": "Legal",
+      "variations": [
+        "legal drafting",
+        "legal documentation"
+      ]
+    },
+    {
+      "canonical": "Court Proceedings",
+      "category": "Legal",
+      "variations": [
+        "court",
+        "courtroom",
+        "trial",
+        "hearings"
+      ]
+    },
+    {
+      "canonical": "Legal Advice",
+      "category": "Legal",
+      "variations": [
+        "legal counsel",
+        "legal consultation"
+      ]
+    },
+    {
+      "canonical": "Due Diligence",
+      "category": "Legal",
+      "variations": [
+        "legal due diligence",
+        "dd"
+      ]
+    },
+    {
+      "canonical": "Mergers and Acquisitions",
+      "category": "Legal",
+      "variations": [
+        "m&a",
+        "m & a",
+        "mergers",
+        "acquisitions"
+      ]
+    },
+    {
+      "canonical": "Westlaw",
+      "category": "Legal",
+      "variations": [
+        "westlaw research"
+      ]
+    },
+    {
+      "canonical": "LexisNexis",
+      "category": "Legal",
+      "variations": [
+        "lexis nexis",
+        "lexis"
+      ]
+    },
+    {
+      "canonical": "Case Management",
+      "category": "Legal",
+      "variations": [
+        "legal case management"
+      ]
+    },
+    {
+      "canonical": "Paralegal",
+      "category": "Legal",
+      "variations": [
+        "paralegal skills",
+        "legal assistant"
+      ]
+    },
+    {
+      "canonical": "Notary",
+      "category": "Legal",
+      "variations": [
+        "notary public",
+        "notarization"
+      ]
+    },
+    {
+      "canonical": "Sales",
+      "category": "Sales",
+      "variations": [
+        "selling",
+        "sales skills",
+        "sales experience"
+      ]
+    },
+    {
+      "canonical": "Business Development",
+      "category": "Sales",
+      "variations": [
+        "biz dev",
+        "bd",
+        "business dev",
+        "new business development"
+      ]
+    },
+    {
+      "canonical": "Account Management",
+      "category": "Sales",
+      "variations": [
+        "account manager",
+        "client management",
+        "customer account management",
+        "key account management"
+      ]
+    },
+    {
+      "canonical": "Lead Generation",
+      "category": "Sales",
+      "variations": [
+        "lead gen",
+        "prospecting",
+        "leads",
+        "lead qualification"
+      ]
+    },
+    {
+      "canonical": "CRM",
+      "category": "Sales",
+      "variations": [
+        "customer relationship management",
+        "crm software",
+        "crm systems"
+      ]
+    },
+    {
+      "canonical": "Salesforce",
+      "category": "Sales",
+      "variations": [
+        "sfdc",
+        "salesforce crm",
+        "salesforce.com",
+        "sfdc admin",
+        "salesforce administrator"
+      ]
+    },
+    {
+      "canonical": "HubSpot",
+      "category": "Sales",
+      "variations": [
+        "hubspot crm",
+        "hubspot sales"
+      ]
+    },
+    {
+      "canonical": "Pipeline Management",
+      "category": "Sales",
+      "variations": [
+        "sales pipeline",
+        "pipeline tracking"
+      ]
+    },
+    {
+      "canonical": "Negotiation",
+      "category": "Sales",
+      "variations": [
+        "negotiating",
+        "negotiation skills",
+        "deal negotiation",
+        "contract negotiation"
+      ]
+    },
+    {
+      "canonical": "Cold Calling",
+      "category": "Sales",
+      "variations": [
+        "cold calls",
+        "outbound calling",
+        "telemarketing"
+      ]
+    },
+    {
+      "canonical": "B2B Sales",
+      "category": "Sales",
+      "variations": [
+        "b2b",
+        "business to business",
+        "enterprise sales"
+      ]
+    },
+    {
+      "canonical": "B2C Sales",
+      "category": "Sales",
+      "variations": [
+        "b2c",
+        "business to consumer",
+        "retail sales"
+      ]
+    },
+    {
+      "canonical": "Inside Sales",
+      "category": "Sales",
+      "variations": [
+        "inside sales rep",
+        "inbound sales"
+      ]
+    },
+    {
+      "canonical": "Outside Sales",
+      "category": "Sales",
+      "variations": [
+        "field sales",
+        "external sales"
+      ]
+    },
+    {
+      "canonical": "Sales Strategy",
+      "category": "Sales",
+      "variations": [
+        "sales planning",
+        "go to market",
+        "gtm"
+      ]
+    },
+    {
+      "canonical": "Quota Achievement",
+      "category": "Sales",
+      "variations": [
+        "quota attainment",
+        "sales quota",
+        "hitting targets",
+        "exceeding quota"
+      ]
+    },
+    {
+      "canonical": "Revenue Growth",
+      "category": "Sales",
+      "variations": [
+        "revenue generation",
+        "revenue increase",
+        "growing revenue"
+      ]
+    },
+    {
+      "canonical": "Client Retention",
+      "category": "Sales",
+      "variations": [
+        "customer retention",
+        "retention strategies",
+        "reducing churn"
+      ]
+    },
+    {
+      "canonical": "Upselling",
+      "category": "Sales",
+      "variations": [
+        "upsell",
+        "cross-selling",
+        "cross sell"
+      ]
+    },
+    {
+      "canonical": "Sales Presentations",
+      "category": "Sales",
+      "variations": [
+        "sales pitch",
+        "pitching",
+        "product demos",
+        "demonstrations"
+      ]
+    },
+    {
+      "canonical": "Proposal Writing",
+      "category": "Sales",
+      "variations": [
+        "proposals",
+        "rfp response",
+        "business proposals"
+      ]
+    },
+    {
+      "canonical": "Territory Management",
+      "category": "Sales",
+      "variations": [
+        "territory planning",
+        "sales territory"
+      ]
+    },
+    {
+      "canonical": "Partner Sales",
+      "category": "Sales",
+      "variations": [
+        "channel sales",
+        "partner management",
+        "channel management"
+      ]
+    },
+    {
+      "canonical": "Solution Selling",
+      "category": "Sales",
+      "variations": [
+        "consultative selling",
+        "value selling"
+      ]
+    },
+    {
+      "canonical": "SaaS Sales",
+      "category": "Sales",
+      "variations": [
+        "software sales",
+        "saas selling"
+      ]
+    },
+    {
+      "canonical": "Digital Marketing",
+      "category": "Marketing",
+      "variations": [
+        "digital media marketing",
+        "online marketing",
+        "internet marketing"
+      ]
+    },
+    {
+      "canonical": "Content Marketing",
+      "category": "Marketing",
+      "variations": [
+        "content strategy",
+        "content creation",
+        "content management"
+      ]
+    },
+    {
+      "canonical": "Social Media Marketing",
+      "category": "Marketing",
+      "variations": [
+        "social media",
+        "smm",
+        "social media management",
+        "social media strategy"
+      ]
+    },
+    {
+      "canonical": "SEO",
+      "category": "Marketing",
+      "variations": [
+        "search engine optimization",
+        "seo optimization",
+        "organic search",
+        "on-page seo",
+        "off-page seo",
+        "technical seo"
+      ]
+    },
+    {
+      "canonical": "SEM",
+      "category": "Marketing",
+      "variations": [
+        "search engine marketing",
+        "paid search"
+      ]
+    },
+    {
+      "canonical": "PPC",
+      "category": "Marketing",
+      "variations": [
+        "pay per click",
+        "ppc advertising",
+        "paid advertising"
+      ]
+    },
+    {
+      "canonical": "Google Ads",
+      "category": "Marketing",
+      "variations": [
+        "google adwords",
+        "adwords",
+        "google advertising"
+      ]
+    },
+    {
+      "canonical": "Facebook Ads",
+      "category": "Marketing",
+      "variations": [
+        "meta ads",
+        "fb ads",
+        "facebook advertising",
+        "instagram ads"
+      ]
+    },
+    {
+      "canonical": "LinkedIn Ads",
+      "category": "Marketing",
+      "variations": [
+        "linkedin advertising",
+        "linkedin marketing"
+      ]
+    },
+    {
+      "canonical": "Email Marketing",
+      "category": "Marketing",
+      "variations": [
+        "email campaigns",
+        "email automation",
+        "newsletter",
+        "email newsletter"
+      ]
+    },
+    {
+      "canonical": "Marketing Automation",
+      "category": "Marketing",
+      "variations": [
+        "marketing automation tools",
+        "automated marketing"
+      ]
+    },
+    {
+      "canonical": "Mailchimp",
+      "category": "Marketing",
+      "variations": [
+        "mail chimp",
+        "mailchimp email"
+      ]
+    },
+    {
+      "canonical": "Marketo",
+      "category": "Marketing",
+      "variations": [
+        "adobe marketo",
+        "marketo automation"
+      ]
+    },
+    {
+      "canonical": "Pardot",
+      "category": "Marketing",
+      "variations": [
+        "salesforce pardot"
+      ]
+    },
+    {
+      "canonical": "Brand Management",
+      "category": "Marketing",
+      "variations": [
+        "branding",
+        "brand strategy",
+        "brand development",
+        "brand identity"
+      ]
+    },
+    {
+      "canonical": "Market Research",
+      "category": "Marketing",
+      "variations": [
+        "marketing research",
+        "consumer research",
+        "market analysis"
+      ]
+    },
+    {
+      "canonical": "Competitive Analysis",
+      "category": "Marketing",
+      "variations": [
+        "competitor analysis",
+        "competitive intelligence"
+      ]
+    },
+    {
+      "canonical": "Marketing Strategy",
+      "category": "Marketing",
+      "variations": [
+        "marketing planning",
+        "strategic marketing"
+      ]
+    },
+    {
+      "canonical": "Campaign Management",
+      "category": "Marketing",
+      "variations": [
+        "marketing campaigns",
+        "campaign planning",
+        "campaign execution"
+      ]
+    },
+    {
+      "canonical": "Google Analytics",
+      "category": "Marketing",
+      "variations": [
+        "ga",
+        "ga4",
+        "google analytics 4",
+        "analytics"
+      ]
+    },
+    {
+      "canonical": "Adobe Analytics",
+      "category": "Marketing",
+      "variations": [
+        "omniture",
+        "adobe analytics"
+      ]
+    },
+    {
+      "canonical": "Marketing Analytics",
+      "category": "Marketing",
+      "variations": [
+        "marketing metrics",
+        "marketing data"
+      ]
+    },
+    {
+      "canonical": "Conversion Rate Optimization",
+      "category": "Marketing",
+      "variations": [
+        "cro",
+        "conversion optimization"
+      ]
+    },
+    {
+      "canonical": "Affiliate Marketing",
+      "category": "Marketing",
+      "variations": [
+        "affiliate programs",
+        "affiliate management"
+      ]
+    },
+    {
+      "canonical": "Influencer Marketing",
+      "category": "Marketing",
+      "variations": [
+        "influencer outreach",
+        "influencer partnerships"
+      ]
+    },
+    {
+      "canonical": "Public Relations",
+      "category": "Marketing",
+      "variations": [
+        "pr",
+        "media relations",
+        "press relations"
+      ]
+    },
+    {
+      "canonical": "Press Release",
+      "category": "Marketing",
+      "variations": [
+        "press releases",
+        "media release"
+      ]
+    },
+    {
+      "canonical": "Event Marketing",
+      "category": "Marketing",
+      "variations": [
+        "event planning",
+        "trade shows",
+        "conferences"
+      ]
+    },
+    {
+      "canonical": "Product Marketing",
+      "category": "Marketing",
+      "variations": [
+        "product launch",
+        "go-to-market"
+      ]
+    },
+    {
+      "canonical": "Growth Marketing",
+      "category": "Marketing",
+      "variations": [
+        "growth hacking",
+        "growth strategy"
+      ]
+    },
+    {
+      "canonical": "Demand Generation",
+      "category": "Marketing",
+      "variations": [
+        "demand gen",
+        "lead generation marketing"
+      ]
+    },
+    {
+      "canonical": "ABM",
+      "category": "Marketing",
+      "variations": [
+        "account based marketing",
+        "account-based marketing"
+      ]
+    },
+    {
+      "canonical": "Copywriting",
+      "category": "Marketing",
+      "variations": [
+        "copy writing",
+        "ad copy",
+        "marketing copy"
+      ]
+    },
+    {
+      "canonical": "Video Marketing",
+      "category": "Marketing",
+      "variations": [
+        "video content",
+        "youtube marketing"
+      ]
+    },
+    {
+      "canonical": "Podcast Marketing",
+      "category": "Marketing",
+      "variations": [
+        "podcasting",
+        "podcast production"
+      ]
+    },
+    {
+      "canonical": "Human Resources",
+      "category": "Human Resources",
+      "variations": [
+        "hr",
+        "human resource management",
+        "hrm",
+        "people operations",
+        "people ops"
+      ]
+    },
+    {
+      "canonical": "Recruiting",
+      "category": "Human Resources",
+      "variations": [
+        "recruitment",
+        "talent acquisition",
+        "hiring",
+        "staffing",
+        "sourcing"
+      ]
+    },
+    {
+      "canonical": "Talent Management",
+      "category": "Human Resources",
+      "variations": [
+        "talent development",
+        "talent strategy"
+      ]
+    },
+    {
+      "canonical": "Onboarding",
+      "category": "Human Resources",
+      "variations": [
+        "employee onboarding",
+        "new hire orientation",
+        "orientation"
+      ]
+    },
+    {
+      "canonical": "Employee Relations",
+      "category": "Human Resources",
+      "variations": [
+        "er",
+        "labor relations",
+        "workplace relations"
+      ]
+    },
+    {
+      "canonical": "Performance Management",
+      "category": "Human Resources",
+      "variations": [
+        "performance reviews",
+        "performance evaluation",
+        "performance appraisal"
+      ]
+    },
+    {
+      "canonical": "Compensation",
+      "category": "Human Resources",
+      "variations": [
+        "compensation and benefits",
+        "comp and benefits",
+        "salary administration",
+        "pay structure"
+      ]
+    },
+    {
+      "canonical": "Benefits Administration",
+      "category": "Human Resources",
+      "variations": [
+        "employee benefits",
+        "benefits management",
+        "benefits enrollment"
+      ]
+    },
+    {
+      "canonical": "HRIS",
+      "category": "Human Resources",
+      "variations": [
+        "hr information systems",
+        "hris systems",
+        "hr systems"
+      ]
+    },
+    {
+      "canonical": "Workday",
+      "category": "Human Resources",
+      "variations": [
+        "workday hcm",
+        "workday hr"
+      ]
+    },
+    {
+      "canonical": "ADP",
+      "category": "Human Resources",
+      "variations": [
+        "adp payroll",
+        "adp workforce"
+      ]
+    },
+    {
+      "canonical": "UltiPro",
+      "category": "Human Resources",
+      "variations": [
+        "ukg",
+        "ultimate software"
+      ]
+    },
+    {
+      "canonical": "BambooHR",
+      "category": "Human Resources",
+      "variations": [
+        "bamboo hr"
+      ]
+    },
+    {
+      "canonical": "SuccessFactors",
+      "category": "Human Resources",
+      "variations": [
+        "sap successfactors",
+        "success factors"
+      ]
+    },
+    {
+      "canonical": "Training and Development",
+      "category": "Human Resources",
+      "variations": [
+        "l&d",
+        "learning and development",
+        "employee training",
+        "professional development"
+      ]
+    },
+    {
+      "canonical": "Organizational Development",
+      "category": "Human Resources",
+      "variations": [
+        "od",
+        "org development",
+        "change management"
+      ]
+    },
+    {
+      "canonical": "Employee Engagement",
+      "category": "Human Resources",
+      "variations": [
+        "engagement surveys",
+        "employee satisfaction"
+      ]
+    },
+    {
+      "canonical": "Diversity and Inclusion",
+      "category": "Human Resources",
+      "variations": [
+        "d&i",
+        "dei",
+        "diversity equity inclusion",
+        "inclusion"
+      ]
+    },
+    {
+      "canonical": "HR Policy",
+      "category": "Human Resources",
+      "variations": [
+        "hr policies",
+        "employee handbook",
+        "policy development"
+      ]
+    },
+    {
+      "canonical": "Labor Law Compliance",
+      "category": "Human Resources",
+      "variations": [
+        "employment law compliance",
+        "hr compliance",
+        "eeoc"
+      ]
+    },
+    {
+      "canonical": "FMLA",
+      "category": "Human Resources",
+      "variations": [
+        "family medical leave",
+        "fmla administration"
+      ]
+    },
+    {
+      "canonical": "Workers Compensation",
+      "category": "Human Resources",
+      "variations": [
+        "workers comp",
+        "work comp"
+      ]
+    },
+    {
+      "canonical": "Background Checks",
+      "category": "Human Resources",
+      "variations": [
+        "background screening",
+        "pre-employment screening"
+      ]
+    },
+    {
+      "canonical": "Interviewing",
+      "category": "Human Resources",
+      "variations": [
+        "interview skills",
+        "behavioral interviewing",
+        "candidate interviews"
+      ]
+    },
+    {
+      "canonical": "Job Descriptions",
+      "category": "Human Resources",
+      "variations": [
+        "job postings",
+        "position descriptions"
+      ]
+    },
+    {
+      "canonical": "Applicant Tracking System",
+      "category": "Human Resources",
+      "variations": [
+        "ats",
+        "applicant tracking",
+        "recruiting software"
+      ]
+    },
+    {
+      "canonical": "Greenhouse",
+      "category": "Human Resources",
+      "variations": [
+        "greenhouse ats"
+      ]
+    },
+    {
+      "canonical": "Lever",
+      "category": "Human Resources",
+      "variations": [
+        "lever ats"
+      ]
+    },
+    {
+      "canonical": "LinkedIn Recruiter",
+      "category": "Human Resources",
+      "variations": [
+        "linkedin recruiting",
+        "linkedin talent solutions"
+      ]
+    },
+    {
+      "canonical": "Succession Planning",
+      "category": "Human Resources",
+      "variations": [
+        "succession management"
+      ]
+    },
+    {
+      "canonical": "Workforce Planning",
+      "category": "Human Resources",
+      "variations": [
+        "workforce management",
+        "headcount planning"
+      ]
+    },
+    {
+      "canonical": "Healthcare",
+      "category": "Healthcare",
+      "variations": [
+        "health care",
+        "medical care"
+      ]
+    },
+    {
+      "canonical": "Patient Care",
+      "category": "Healthcare",
+      "variations": [
+        "patient management",
+        "patient services",
+        "patient support",
+        "bedside manner"
+      ]
+    },
+    {
+      "canonical": "Nursing",
+      "category": "Healthcare",
+      "variations": [
+        "registered nurse",
+        "rn",
+        "nurse",
+        "nursing care",
+        "lpn",
+        "lvn"
+      ]
+    },
+    {
+      "canonical": "Clinical",
+      "category": "Healthcare",
+      "variations": [
+        "clinical skills",
+        "clinical experience",
+        "clinical care"
+      ]
+    },
+    {
+      "canonical": "Medical Records",
+      "category": "Healthcare",
+      "variations": [
+        "health records",
+        "patient records",
+        "medical documentation",
+        "medical charting"
+      ]
+    },
+    {
+      "canonical": "EHR",
+      "category": "Healthcare",
+      "variations": [
+        "electronic health records",
+        "ehr systems",
+        "electronic medical records"
+      ]
+    },
+    {
+      "canonical": "EMR",
+      "category": "Healthcare",
+      "variations": [
+        "electronic medical records",
+        "emr systems"
+      ]
+    },
+    {
+      "canonical": "Epic",
+      "category": "Healthcare",
+      "variations": [
+        "epic ehr",
+        "epic systems",
+        "epic emr"
+      ]
+    },
+    {
+      "canonical": "Cerner",
+      "category": "Healthcare",
+      "variations": [
+        "cerner ehr",
+        "cerner systems"
+      ]
+    },
+    {
+      "canonical": "HIPAA",
+      "category": "Healthcare",
+      "variations": [
+        "hipaa compliance",
+        "hipaa regulations",
+        "patient privacy"
+      ]
+    },
+    {
+      "canonical": "Medical Terminology",
+      "category": "Healthcare",
+      "variations": [
+        "medical terms",
+        "clinical terminology"
+      ]
+    },
+    {
+      "canonical": "Medical Coding",
+      "category": "Healthcare",
+      "variations": [
+        "icd-10",
+        "cpt coding",
+        "medical billing and coding",
+        "icd coding"
+      ]
+    },
+    {
+      "canonical": "Medical Billing",
+      "category": "Healthcare",
+      "variations": [
+        "healthcare billing",
+        "insurance billing"
+      ]
+    },
+    {
+      "canonical": "Vital Signs",
+      "category": "Healthcare",
+      "variations": [
+        "vitals",
+        "patient vitals"
+      ]
+    },
+    {
+      "canonical": "Medication Administration",
+      "category": "Healthcare",
+      "variations": [
+        "med administration",
+        "administering medication"
+      ]
+    },
+    {
+      "canonical": "IV Therapy",
+      "category": "Healthcare",
+      "variations": [
+        "iv insertion",
+        "intravenous therapy"
+      ]
+    },
+    {
+      "canonical": "Phlebotomy",
+      "category": "Healthcare",
+      "variations": [
+        "blood draw",
+        "venipuncture"
+      ]
+    },
+    {
+      "canonical": "CPR",
+      "category": "Healthcare",
+      "variations": [
+        "cpr certified",
+        "basic life support",
+        "bls"
+      ]
+    },
+    {
+      "canonical": "First Aid",
+      "category": "Healthcare",
+      "variations": [
+        "first aid certified",
+        "emergency first aid"
+      ]
+    },
+    {
+      "canonical": "ACLS",
+      "category": "Healthcare",
+      "variations": [
+        "advanced cardiac life support",
+        "acls certified"
+      ]
+    },
+    {
+      "canonical": "Infection Control",
+      "category": "Healthcare",
+      "variations": [
+        "infection prevention",
+        "sterile technique"
+      ]
+    },
+    {
+      "canonical": "Wound Care",
+      "category": "Healthcare",
+      "variations": [
+        "wound management",
+        "wound dressing"
+      ]
+    },
+    {
+      "canonical": "Physical Therapy",
+      "category": "Healthcare",
+      "variations": [
+        "pt",
+        "physiotherapy",
+        "physical rehabilitation"
+      ]
+    },
+    {
+      "canonical": "Occupational Therapy",
+      "category": "Healthcare",
+      "variations": [
+        "ot",
+        "occupational rehabilitation"
+      ]
+    },
+    {
+      "canonical": "Pharmacy",
+      "category": "Healthcare",
+      "variations": [
+        "pharmacist",
+        "pharmaceutical",
+        "pharmacy technician"
+      ]
+    },
+    {
+      "canonical": "Radiology",
+      "category": "Healthcare",
+      "variations": [
+        "x-ray",
+        "imaging",
+        "diagnostic imaging",
+        "radiologic"
+      ]
+    },
+    {
+      "canonical": "Laboratory",
+      "category": "Healthcare",
+      "variations": [
+        "lab",
+        "lab technician",
+        "clinical laboratory"
+      ]
+    },
+    {
+      "canonical": "Surgery",
+      "category": "Healthcare",
+      "variations": [
+        "surgical",
+        "operating room",
+        "or"
+      ]
+    },
+    {
+      "canonical": "Emergency Medicine",
+      "category": "Healthcare",
+      "variations": [
+        "er",
+        "emergency room",
+        "emergency department",
+        "ed"
+      ]
+    },
+    {
+      "canonical": "Pediatrics",
+      "category": "Healthcare",
+      "variations": [
+        "pediatric care",
+        "child health"
+      ]
+    },
+    {
+      "canonical": "Geriatrics",
+      "category": "Healthcare",
+      "variations": [
+        "geriatric care",
+        "elderly care"
+      ]
+    },
+    {
+      "canonical": "Mental Health",
+      "category": "Healthcare",
+      "variations": [
+        "behavioral health",
+        "psychiatric",
+        "psychology"
+      ]
+    },
+    {
+      "canonical": "Telehealth",
+      "category": "Healthcare",
+      "variations": [
+        "telemedicine",
+        "virtual care"
+      ]
+    },
+    {
+      "canonical": "Care Coordination",
+      "category": "Healthcare",
+      "variations": [
+        "care management",
+        "case management"
+      ]
+    },
+    {
+      "canonical": "Teaching",
+      "category": "Education",
+      "variations": [
+        "instruction",
+        "educating",
+        "educator"
+      ]
+    },
+    {
+      "canonical": "Curriculum Development",
+      "category": "Education",
+      "variations": [
+        "curriculum design",
+        "course development",
+        "curriculum planning",
+        "lesson planning"
+      ]
+    },
+    {
+      "canonical": "Classroom Management",
+      "category": "Education",
+      "variations": [
+        "classroom instruction",
+        "class management"
+      ]
+    },
+    {
+      "canonical": "Lesson Planning",
+      "category": "Education",
+      "variations": [
+        "lesson plans",
+        "lesson design",
+        "instructional planning"
+      ]
+    },
+    {
+      "canonical": "Student Assessment",
+      "category": "Education",
+      "variations": [
+        "assessment",
+        "grading",
+        "evaluation",
+        "student evaluation"
+      ]
+    },
+    {
+      "canonical": "Special Education",
+      "category": "Education",
+      "variations": [
+        "special ed",
+        "sped",
+        "special needs"
+      ]
+    },
+    {
+      "canonical": "ESL",
+      "category": "Education",
+      "variations": [
+        "english as second language",
+        "esl teaching",
+        "tefl",
+        "tesol",
+        "ell"
+      ]
+    },
+    {
+      "canonical": "Early Childhood Education",
+      "category": "Education",
+      "variations": [
+        "ece",
+        "preschool",
+        "early childhood"
+      ]
+    },
+    {
+      "canonical": "K-12 Education",
+      "category": "Education",
+      "variations": [
+        "k-12",
+        "elementary",
+        "middle school",
+        "high school"
+      ]
+    },
+    {
+      "canonical": "Higher Education",
+      "category": "Education",
+      "variations": [
+        "college teaching",
+        "university teaching",
+        "post-secondary"
+      ]
+    },
+    {
+      "canonical": "Online Teaching",
+      "category": "Education",
+      "variations": [
+        "virtual teaching",
+        "remote teaching",
+        "e-learning"
+      ]
+    },
+    {
+      "canonical": "Tutoring",
+      "category": "Education",
+      "variations": [
+        "tutor",
+        "academic tutoring",
+        "private tutoring"
+      ]
+    },
+    {
+      "canonical": "Educational Technology",
+      "category": "Education",
+      "variations": [
+        "edtech",
+        "ed tech",
+        "learning technology"
+      ]
+    },
+    {
+      "canonical": "Learning Management System",
+      "category": "Education",
+      "variations": [
+        "lms",
+        "canvas",
+        "blackboard",
+        "moodle"
+      ]
+    },
+    {
+      "canonical": "Google Classroom",
+      "category": "Education",
+      "variations": [
+        "google classroom teaching"
+      ]
+    },
+    {
+      "canonical": "Instructional Design",
+      "category": "Education",
+      "variations": [
+        "instructional designer",
+        "learning design"
+      ]
+    },
+    {
+      "canonical": "Training",
+      "category": "Education",
+      "variations": [
+        "corporate training",
+        "employee training",
+        "training delivery"
+      ]
+    },
+    {
+      "canonical": "Facilitation",
+      "category": "Education",
+      "variations": [
+        "workshop facilitation",
+        "group facilitation"
+      ]
+    },
+    {
+      "canonical": "Mentoring",
+      "category": "Education",
+      "variations": [
+        "mentor",
+        "mentorship"
+      ]
+    },
+    {
+      "canonical": "Coaching",
+      "category": "Education",
+      "variations": [
+        "academic coaching",
+        "performance coaching"
+      ]
+    },
+    {
+      "canonical": "Project Management",
+      "category": "Management",
+      "variations": [
+        "pm",
+        "project manager",
+        "project planning",
+        "project coordination",
+        "project delivery"
+      ]
+    },
+    {
+      "canonical": "Program Management",
+      "category": "Management",
+      "variations": [
+        "program manager",
+        "pgm"
+      ]
+    },
+    {
+      "canonical": "Product Management",
+      "category": "Management",
+      "variations": [
+        "product manager",
+        "product owner",
+        "product development"
+      ]
+    },
+    {
+      "canonical": "PMP",
+      "category": "Management",
+      "variations": [
+        "pmp certified",
+        "project management professional"
+      ]
+    },
+    {
+      "canonical": "Prince2",
+      "category": "Management",
+      "variations": [
+        "prince 2",
+        "prince2 certified"
+      ]
+    },
+    {
+      "canonical": "Stakeholder Management",
+      "category": "Management",
+      "variations": [
+        "stakeholder engagement",
+        "stakeholder communication"
+      ]
+    },
+    {
+      "canonical": "Risk Management",
+      "category": "Management",
+      "variations": [
+        "risk assessment",
+        "risk mitigation",
+        "risk analysis"
+      ]
+    },
+    {
+      "canonical": "Resource Management",
+      "category": "Management",
+      "variations": [
+        "resource planning",
+        "resource allocation"
+      ]
+    },
+    {
+      "canonical": "Budget Management",
+      "category": "Management",
+      "variations": [
+        "budget control",
+        "budget oversight",
+        "financial management"
+      ]
+    },
+    {
+      "canonical": "Schedule Management",
+      "category": "Management",
+      "variations": [
+        "scheduling",
+        "timeline management",
+        "project scheduling"
+      ]
+    },
+    {
+      "canonical": "Scope Management",
+      "category": "Management",
+      "variations": [
+        "scope control",
+        "requirements management"
+      ]
+    },
+    {
+      "canonical": "Change Management",
+      "category": "Management",
+      "variations": [
+        "organizational change",
+        "change leadership"
+      ]
+    },
+    {
+      "canonical": "Strategic Planning",
+      "category": "Management",
+      "variations": [
+        "strategy",
+        "strategic thinking",
+        "business strategy"
+      ]
+    },
+    {
+      "canonical": "Operations Management",
+      "category": "Management",
+      "variations": [
+        "operations",
+        "ops management",
+        "business operations"
+      ]
+    },
+    {
+      "canonical": "Supply Chain Management",
+      "category": "Management",
+      "variations": [
+        "supply chain",
+        "scm",
+        "logistics management"
+      ]
+    },
+    {
+      "canonical": "Vendor Management",
+      "category": "Management",
+      "variations": [
+        "vendor relations",
+        "supplier management",
+        "third party management"
+      ]
+    },
+    {
+      "canonical": "Quality Management",
+      "category": "Management",
+      "variations": [
+        "quality control",
+        "qc",
+        "quality assurance",
+        "qa"
+      ]
+    },
+    {
+      "canonical": "Process Improvement",
+      "category": "Management",
+      "variations": [
+        "process optimization",
+        "continuous improvement",
+        "kaizen"
+      ]
+    },
+    {
+      "canonical": "Business Analysis",
+      "category": "Management",
+      "variations": [
+        "ba",
+        "business analyst",
+        "requirements analysis"
+      ]
+    },
+    {
+      "canonical": "Consulting",
+      "category": "Management",
+      "variations": [
+        "management consulting",
+        "business consulting",
+        "advisory"
+      ]
+    },
+    {
+      "canonical": "Construction Management",
+      "category": "Construction",
+      "variations": [
+        "construction project management",
+        "site management"
+      ]
+    },
+    {
+      "canonical": "Building",
+      "category": "Construction",
+      "variations": [
+        "building construction",
+        "building projects"
+      ]
+    },
+    {
+      "canonical": "Site Supervision",
+      "category": "Construction",
+      "variations": [
+        "site supervisor",
+        "construction supervision"
+      ]
+    },
+    {
+      "canonical": "Blueprint Reading",
+      "category": "Construction",
+      "variations": [
+        "blueprints",
+        "construction drawings",
+        "plan reading"
+      ]
+    },
+    {
+      "canonical": "Estimating",
+      "category": "Construction",
+      "variations": [
+        "cost estimating",
+        "construction estimating",
+        "quantity surveying"
+      ]
+    },
+    {
+      "canonical": "Safety Management",
+      "category": "Construction",
+      "variations": [
+        "construction safety",
+        "site safety",
+        "safety compliance"
+      ]
+    },
+    {
+      "canonical": "OSHA",
+      "category": "Construction",
+      "variations": [
+        "osha 10",
+        "osha 30",
+        "osha compliance",
+        "workplace safety"
+      ]
+    },
+    {
+      "canonical": "Concrete",
+      "category": "Construction",
+      "variations": [
+        "concrete work",
+        "concrete construction"
+      ]
+    },
+    {
+      "canonical": "Framing",
+      "category": "Construction",
+      "variations": [
+        "wood framing",
+        "steel framing"
+      ]
+    },
+    {
+      "canonical": "Plumbing",
+      "category": "Construction",
+      "variations": [
+        "plumber",
+        "plumbing systems"
+      ]
+    },
+    {
+      "canonical": "Electrical",
+      "category": "Construction",
+      "variations": [
+        "electrical work",
+        "electrician",
+        "electrical systems"
+      ]
+    },
+    {
+      "canonical": "HVAC",
+      "category": "Construction",
+      "variations": [
+        "heating ventilation air conditioning",
+        "hvac systems",
+        "hvac technician"
+      ]
+    },
+    {
+      "canonical": "Roofing",
+      "category": "Construction",
+      "variations": [
+        "roof installation",
+        "roofing systems"
+      ]
+    },
+    {
+      "canonical": "Carpentry",
+      "category": "Construction",
+      "variations": [
+        "carpenter",
+        "woodwork",
+        "finish carpentry"
+      ]
+    },
+    {
+      "canonical": "Masonry",
+      "category": "Construction",
+      "variations": [
+        "bricklaying",
+        "brick work",
+        "stone work"
+      ]
+    },
+    {
+      "canonical": "Welding",
+      "category": "Construction",
+      "variations": [
+        "welder",
+        "welding certification",
+        "mig welding",
+        "tig welding"
+      ]
+    },
+    {
+      "canonical": "Heavy Equipment",
+      "category": "Construction",
+      "variations": [
+        "heavy equipment operation",
+        "equipment operator"
+      ]
+    },
+    {
+      "canonical": "Excavation",
+      "category": "Construction",
+      "variations": [
+        "excavator",
+        "earthwork"
+      ]
+    },
+    {
+      "canonical": "AutoCAD",
+      "category": "Construction",
+      "variations": [
+        "auto cad",
+        "autocad drafting"
+      ]
+    },
+    {
+      "canonical": "Revit",
+      "category": "Construction",
+      "variations": [
+        "autodesk revit",
+        "revit architecture"
+      ]
+    },
+    {
+      "canonical": "BIM",
+      "category": "Construction",
+      "variations": [
+        "building information modeling",
+        "bim coordination"
+      ]
+    },
+    {
+      "canonical": "Procore",
+      "category": "Construction",
+      "variations": [
+        "procore software",
+        "procore construction"
+      ]
+    },
+    {
+      "canonical": "Primavera",
+      "category": "Construction",
+      "variations": [
+        "primavera p6",
+        "oracle primavera"
+      ]
+    },
+    {
+      "canonical": "General Contracting",
+      "category": "Construction",
+      "variations": [
+        "general contractor",
+        "gc"
+      ]
+    },
+    {
+      "canonical": "Subcontractor Management",
+      "category": "Construction",
+      "variations": [
+        "subcontractor coordination",
+        "sub management"
+      ]
+    },
+    {
+      "canonical": "Permit Management",
+      "category": "Construction",
+      "variations": [
+        "building permits",
+        "permit acquisition"
+      ]
+    },
+    {
+      "canonical": "Inspection",
+      "category": "Construction",
+      "variations": [
+        "construction inspection",
+        "building inspection",
+        "quality inspection"
+      ]
+    },
+    {
+      "canonical": "LEED",
+      "category": "Construction",
+      "variations": [
+        "leed certification",
+        "green building",
+        "sustainable construction"
+      ]
+    },
+    {
+      "canonical": "Culinary Arts",
+      "category": "Culinary",
+      "variations": [
+        "culinary",
+        "culinary skills",
+        "cooking"
+      ]
+    },
+    {
+      "canonical": "Food Preparation",
+      "category": "Culinary",
+      "variations": [
+        "food prep",
+        "prep cook",
+        "mise en place"
+      ]
+    },
+    {
+      "canonical": "Menu Development",
+      "category": "Culinary",
+      "variations": [
+        "menu planning",
+        "menu creation",
+        "menu design"
+      ]
+    },
+    {
+      "canonical": "Kitchen Management",
+      "category": "Culinary",
+      "variations": [
+        "kitchen operations",
+        "back of house",
+        "boh"
+      ]
+    },
+    {
+      "canonical": "Line Cook",
+      "category": "Culinary",
+      "variations": [
+        "line cooking",
+        "station cook"
+      ]
+    },
+    {
+      "canonical": "Sous Chef",
+      "category": "Culinary",
+      "variations": [
+        "sous chef experience"
+      ]
+    },
+    {
+      "canonical": "Executive Chef",
+      "category": "Culinary",
+      "variations": [
+        "head chef",
+        "chef de cuisine"
+      ]
+    },
+    {
+      "canonical": "Pastry",
+      "category": "Culinary",
+      "variations": [
+        "pastry chef",
+        "baking",
+        "baker",
+        "pastry arts"
+      ]
+    },
+    {
+      "canonical": "Food Safety",
+      "category": "Culinary",
+      "variations": [
+        "servsafe",
+        "food hygiene",
+        "food handling",
+        "haccp"
+      ]
+    },
+    {
+      "canonical": "Inventory Management",
+      "category": "Culinary",
+      "variations": [
+        "food inventory",
+        "stock management",
+        "inventory control"
+      ]
+    },
+    {
+      "canonical": "Cost Control",
+      "category": "Culinary",
+      "variations": [
+        "food cost",
+        "cost management",
+        "food cost control"
+      ]
+    },
+    {
+      "canonical": "Catering",
+      "category": "Culinary",
+      "variations": [
+        "catering services",
+        "event catering",
+        "banquet"
+      ]
+    },
+    {
+      "canonical": "Restaurant Management",
+      "category": "Culinary",
+      "variations": [
+        "restaurant operations",
+        "foh management"
+      ]
+    },
+    {
+      "canonical": "Fine Dining",
+      "category": "Culinary",
+      "variations": [
+        "fine dining experience",
+        "upscale dining"
+      ]
+    },
+    {
+      "canonical": "Nutrition",
+      "category": "Culinary",
+      "variations": [
+        "nutritional knowledge",
+        "dietary"
+      ]
+    },
+    {
+      "canonical": "Recipe Development",
+      "category": "Culinary",
+      "variations": [
+        "recipe creation",
+        "recipe testing"
+      ]
+    },
+    {
+      "canonical": "Knife Skills",
+      "category": "Culinary",
+      "variations": [
+        "knife techniques",
+        "culinary knife skills"
+      ]
+    },
+    {
+      "canonical": "Graphic Design",
+      "category": "Design",
+      "variations": [
+        "graphic designer",
+        "visual design",
+        "graphics"
+      ]
+    },
+    {
+      "canonical": "UI Design",
+      "category": "Design",
+      "variations": [
+        "user interface design",
+        "ui designer",
+        "interface design"
+      ]
+    },
+    {
+      "canonical": "UX Design",
+      "category": "Design",
+      "variations": [
+        "user experience design",
+        "ux designer",
+        "ux research"
+      ]
+    },
+    {
+      "canonical": "UI/UX Design",
+      "category": "Design",
+      "variations": [
+        "ui ux",
+        "ux/ui",
+        "ui ux design"
+      ]
+    },
+    {
+      "canonical": "Web Design",
+      "category": "Design",
+      "variations": [
+        "website design",
+        "web designer"
+      ]
+    },
+    {
+      "canonical": "Mobile Design",
+      "category": "Design",
+      "variations": [
+        "app design",
+        "mobile app design"
+      ]
+    },
+    {
+      "canonical": "Product Design",
+      "category": "Design",
+      "variations": [
+        "product designer",
+        "digital product design"
+      ]
+    },
+    {
+      "canonical": "Brand Design",
+      "category": "Design",
+      "variations": [
+        "branding design",
+        "brand identity design"
+      ]
+    },
+    {
+      "canonical": "Logo Design",
+      "category": "Design",
+      "variations": [
+        "logo creation",
+        "logo designer"
+      ]
+    },
+    {
+      "canonical": "Typography",
+      "category": "Design",
+      "variations": [
+        "type design",
+        "font selection"
+      ]
+    },
+    {
+      "canonical": "Color Theory",
+      "category": "Design",
+      "variations": [
+        "color design",
+        "color palette"
+      ]
+    },
+    {
+      "canonical": "Layout Design",
+      "category": "Design",
+      "variations": [
+        "page layout",
+        "composition"
+      ]
+    },
+    {
+      "canonical": "Print Design",
+      "category": "Design",
+      "variations": [
+        "print materials",
+        "print production"
+      ]
+    },
+    {
+      "canonical": "Packaging Design",
+      "category": "Design",
+      "variations": [
+        "package design",
+        "packaging"
+      ]
+    },
+    {
+      "canonical": "Motion Graphics",
+      "category": "Design",
+      "variations": [
+        "motion design",
+        "animation"
+      ]
+    },
+    {
+      "canonical": "Video Editing",
+      "category": "Design",
+      "variations": [
+        "video production",
+        "video editor"
+      ]
+    },
+    {
+      "canonical": "Adobe Creative Suite",
+      "category": "Design",
+      "variations": [
+        "adobe cc",
+        "creative cloud",
+        "adobe creative cloud"
+      ]
+    },
+    {
+      "canonical": "Adobe Photoshop",
+      "category": "Design",
+      "variations": [
+        "photoshop",
+        "ps",
+        "photo editing"
+      ]
+    },
+    {
+      "canonical": "Adobe Illustrator",
+      "category": "Design",
+      "variations": [
+        "illustrator",
+        "ai",
+        "vector graphics"
+      ]
+    },
+    {
+      "canonical": "Adobe InDesign",
+      "category": "Design",
+      "variations": [
+        "indesign",
+        "id",
+        "page layout"
+      ]
+    },
+    {
+      "canonical": "Adobe After Effects",
+      "category": "Design",
+      "variations": [
+        "after effects",
+        "ae",
+        "motion graphics"
+      ]
+    },
+    {
+      "canonical": "Adobe Premiere Pro",
+      "category": "Design",
+      "variations": [
+        "premiere",
+        "premiere pro",
+        "video editing"
+      ]
+    },
+    {
+      "canonical": "Final Cut Pro",
+      "category": "Design",
+      "variations": [
+        "final cut",
+        "fcp"
+      ]
+    },
+    {
+      "canonical": "Canva",
+      "category": "Design",
+      "variations": [
+        "canva design"
+      ]
+    },
+    {
+      "canonical": "Wireframing",
+      "category": "Design",
+      "variations": [
+        "wireframes",
+        "low fidelity design"
+      ]
+    },
+    {
+      "canonical": "Prototyping",
+      "category": "Design",
+      "variations": [
+        "prototype",
+        "interactive prototype"
+      ]
+    },
+    {
+      "canonical": "User Research",
+      "category": "Design",
+      "variations": [
+        "ux research",
+        "user testing",
+        "usability testing"
+      ]
+    },
+    {
+      "canonical": "Design Systems",
+      "category": "Design",
+      "variations": [
+        "design system",
+        "component library"
+      ]
+    },
+    {
+      "canonical": "Responsive Design",
+      "category": "Design",
+      "variations": [
+        "mobile responsive",
+        "adaptive design"
+      ]
+    },
+    {
+      "canonical": "Accessibility Design",
+      "category": "Design",
+      "variations": [
+        "a11y",
+        "accessible design",
+        "wcag"
+      ]
+    },
+    {
+      "canonical": "3D Design",
+      "category": "Design",
+      "variations": [
+        "3d modeling",
+        "3d graphics"
+      ]
+    },
+    {
+      "canonical": "Blender",
+      "category": "Design",
+      "variations": [
+        "blender 3d"
+      ]
+    },
+    {
+      "canonical": "SolidWorks",
+      "category": "Design",
+      "variations": [
+        "solid works",
+        "solidworks cad"
+      ]
+    },
+    {
+      "canonical": "Fitness Training",
+      "category": "Fitness",
+      "variations": [
+        "fitness",
+        "personal training",
+        "fitness instructor"
+      ]
+    },
+    {
+      "canonical": "Personal Trainer",
+      "category": "Fitness",
+      "variations": [
+        "pt",
+        "personal training certification"
+      ]
+    },
+    {
+      "canonical": "Group Fitness",
+      "category": "Fitness",
+      "variations": [
+        "group exercise",
+        "group fitness instructor"
+      ]
+    },
+    {
+      "canonical": "Strength Training",
+      "category": "Fitness",
+      "variations": [
+        "weight training",
+        "resistance training",
+        "strength and conditioning"
+      ]
+    },
+    {
+      "canonical": "Cardio Training",
+      "category": "Fitness",
+      "variations": [
+        "cardiovascular training",
+        "aerobic exercise"
+      ]
+    },
+    {
+      "canonical": "HIIT",
+      "category": "Fitness",
+      "variations": [
+        "high intensity interval training",
+        "hiit training"
+      ]
+    },
+    {
+      "canonical": "CrossFit",
+      "category": "Fitness",
+      "variations": [
+        "crossfit training",
+        "crossfit coach"
+      ]
+    },
+    {
+      "canonical": "Yoga",
+      "category": "Fitness",
+      "variations": [
+        "yoga instructor",
+        "yoga teaching",
+        "ryt"
+      ]
+    },
+    {
+      "canonical": "Pilates",
+      "category": "Fitness",
+      "variations": [
+        "pilates instructor",
+        "pilates teaching"
+      ]
+    },
+    {
+      "canonical": "Spin",
+      "category": "Fitness",
+      "variations": [
+        "spinning",
+        "indoor cycling",
+        "cycling instructor"
+      ]
+    },
+    {
+      "canonical": "Sports Coaching",
+      "category": "Fitness",
+      "variations": [
+        "athletic coaching",
+        "sports training"
+      ]
+    },
+    {
+      "canonical": "Nutrition Coaching",
+      "category": "Fitness",
+      "variations": [
+        "nutrition counseling",
+        "diet coaching"
+      ]
+    },
+    {
+      "canonical": "Weight Loss",
+      "category": "Fitness",
+      "variations": [
+        "weight management",
+        "fat loss"
+      ]
+    },
+    {
+      "canonical": "Fitness Assessment",
+      "category": "Fitness",
+      "variations": [
+        "fitness testing",
+        "body composition"
+      ]
+    },
+    {
+      "canonical": "ACE",
+      "category": "Fitness",
+      "variations": [
+        "ace certified",
+        "american council on exercise"
+      ]
+    },
+    {
+      "canonical": "NASM",
+      "category": "Fitness",
+      "variations": [
+        "nasm certified",
+        "national academy of sports medicine"
+      ]
+    },
+    {
+      "canonical": "Aviation",
+      "category": "Aviation",
+      "variations": [
+        "airline",
+        "aircraft",
+        "aerospace"
+      ]
+    },
+    {
+      "canonical": "Pilot",
+      "category": "Aviation",
+      "variations": [
+        "commercial pilot",
+        "airline pilot",
+        "flight crew"
+      ]
+    },
+    {
+      "canonical": "Flight Operations",
+      "category": "Aviation",
+      "variations": [
+        "flight ops",
+        "airline operations"
+      ]
+    },
+    {
+      "canonical": "Aircraft Maintenance",
+      "category": "Aviation",
+      "variations": [
+        "aviation maintenance",
+        "a&p mechanic"
+      ]
+    },
+    {
+      "canonical": "Air Traffic Control",
+      "category": "Aviation",
+      "variations": [
+        "atc",
+        "air traffic"
+      ]
+    },
+    {
+      "canonical": "Flight Dispatch",
+      "category": "Aviation",
+      "variations": [
+        "dispatcher",
+        "flight planning"
+      ]
+    },
+    {
+      "canonical": "Cabin Crew",
+      "category": "Aviation",
+      "variations": [
+        "flight attendant",
+        "cabin service"
+      ]
+    },
+    {
+      "canonical": "Ground Operations",
+      "category": "Aviation",
+      "variations": [
+        "ground handling",
+        "ramp operations"
+      ]
+    },
+    {
+      "canonical": "Aviation Safety",
+      "category": "Aviation",
+      "variations": [
+        "flight safety",
+        "sms"
+      ]
+    },
+    {
+      "canonical": "FAA Regulations",
+      "category": "Aviation",
+      "variations": [
+        "far",
+        "federal aviation regulations"
+      ]
+    },
+    {
+      "canonical": "Navigation",
+      "category": "Aviation",
+      "variations": [
+        "flight navigation",
+        "avionics"
+      ]
+    },
+    {
+      "canonical": "Banking",
+      "category": "Banking",
+      "variations": [
+        "bank",
+        "financial services",
+        "banking industry"
+      ]
+    },
+    {
+      "canonical": "Commercial Banking",
+      "category": "Banking",
+      "variations": [
+        "corporate banking",
+        "business banking"
+      ]
+    },
+    {
+      "canonical": "Retail Banking",
+      "category": "Banking",
+      "variations": [
+        "consumer banking",
+        "personal banking"
+      ]
+    },
+    {
+      "canonical": "Investment Banking",
+      "category": "Banking",
+      "variations": [
+        "ib",
+        "investment bank"
+      ]
+    },
+    {
+      "canonical": "Private Banking",
+      "category": "Banking",
+      "variations": [
+        "wealth management",
+        "private wealth"
+      ]
+    },
+    {
+      "canonical": "Loans",
+      "category": "Banking",
+      "variations": [
+        "lending",
+        "loan processing",
+        "loan origination",
+        "credit"
+      ]
+    },
+    {
+      "canonical": "Mortgage",
+      "category": "Banking",
+      "variations": [
+        "mortgage lending",
+        "home loans",
+        "mortgage origination"
+      ]
+    },
+    {
+      "canonical": "Underwriting",
+      "category": "Banking",
+      "variations": [
+        "loan underwriting",
+        "credit underwriting"
+      ]
+    },
+    {
+      "canonical": "KYC",
+      "category": "Banking",
+      "variations": [
+        "know your customer",
+        "kyc compliance",
+        "aml",
+        "anti money laundering"
+      ]
+    },
+    {
+      "canonical": "Core Banking",
+      "category": "Banking",
+      "variations": [
+        "core banking system",
+        "cbs"
+      ]
+    },
+    {
+      "canonical": "Fintech",
+      "category": "Banking",
+      "variations": [
+        "financial technology",
+        "fin tech"
+      ]
+    },
+    {
+      "canonical": "Payment Processing",
+      "category": "Banking",
+      "variations": [
+        "payments",
+        "payment systems"
+      ]
+    },
+    {
+      "canonical": "Trade Finance",
+      "category": "Banking",
+      "variations": [
+        "international trade",
+        "letters of credit",
+        "lc"
+      ]
+    },
+    {
+      "canonical": "Securities",
+      "category": "Banking",
+      "variations": [
+        "securities trading",
+        "fixed income",
+        "equities"
+      ]
+    },
+    {
+      "canonical": "Asset Management",
+      "category": "Banking",
+      "variations": [
+        "investment management",
+        "portfolio management"
+      ]
+    },
+    {
+      "canonical": "Customer Service",
+      "category": "Banking",
+      "variations": [
+        "client service",
+        "customer support",
+        "customer relations",
+        "client relations"
+      ]
+    },
+    {
+      "canonical": "Agriculture",
+      "category": "Agriculture",
+      "variations": [
+        "farming",
+        "agricultural"
+      ]
+    },
+    {
+      "canonical": "Crop Production",
+      "category": "Agriculture",
+      "variations": [
+        "crop management",
+        "crop farming"
+      ]
+    },
+    {
+      "canonical": "Livestock",
+      "category": "Agriculture",
+      "variations": [
+        "animal husbandry",
+        "livestock management"
+      ]
+    },
+    {
+      "canonical": "Horticulture",
+      "category": "Agriculture",
+      "variations": [
+        "plant cultivation",
+        "gardening"
+      ]
+    },
+    {
+      "canonical": "Agronomy",
+      "category": "Agriculture",
+      "variations": [
+        "agronomist",
+        "soil science"
+      ]
+    },
+    {
+      "canonical": "Irrigation",
+      "category": "Agriculture",
+      "variations": [
+        "irrigation systems",
+        "water management"
+      ]
+    },
+    {
+      "canonical": "Pest Management",
+      "category": "Agriculture",
+      "variations": [
+        "pest control",
+        "ipm",
+        "integrated pest management"
+      ]
+    },
+    {
+      "canonical": "Fertilizer",
+      "category": "Agriculture",
+      "variations": [
+        "fertilization",
+        "nutrient management"
+      ]
+    },
+    {
+      "canonical": "Farm Equipment",
+      "category": "Agriculture",
+      "variations": [
+        "agricultural equipment",
+        "farm machinery",
+        "tractors"
+      ]
+    },
+    {
+      "canonical": "Harvest",
+      "category": "Agriculture",
+      "variations": [
+        "harvesting",
+        "crop harvest"
+      ]
+    },
+    {
+      "canonical": "Organic Farming",
+      "category": "Agriculture",
+      "variations": [
+        "organic agriculture",
+        "sustainable farming"
+      ]
+    },
+    {
+      "canonical": "Precision Agriculture",
+      "category": "Agriculture",
+      "variations": [
+        "precision farming",
+        "smart farming"
+      ]
+    },
+    {
+      "canonical": "Farm Management",
+      "category": "Agriculture",
+      "variations": [
+        "farm operations",
+        "agricultural management"
+      ]
+    },
+    {
+      "canonical": "Communication",
+      "category": "Soft Skill",
+      "variations": [
+        "communication skills",
+        "verbal communication",
+        "written communication",
+        "communications"
+      ]
+    },
+    {
+      "canonical": "Leadership",
+      "category": "Soft Skill",
+      "variations": [
+        "team leadership",
+        "leadership skills",
+        "leading teams"
+      ]
+    },
+    {
+      "canonical": "Problem Solving",
+      "category": "Soft Skill",
+      "variations": [
+        "problem-solving",
+        "analytical thinking",
+        "troubleshooting"
+      ]
+    },
+    {
+      "canonical": "Critical Thinking",
+      "category": "Soft Skill",
+      "variations": [
+        "critical-thinking",
+        "analytical skills",
+        "critical analysis"
+      ]
+    },
+    {
+      "canonical": "Teamwork",
+      "category": "Soft Skill",
+      "variations": [
+        "team player",
+        "collaboration",
+        "team collaboration",
+        "collaborative"
+      ]
+    },
+    {
+      "canonical": "Time Management",
+      "category": "Soft Skill",
+      "variations": [
+        "time-management",
+        "prioritization",
+        "managing time"
+      ]
+    },
+    {
+      "canonical": "Adaptability",
+      "category": "Soft Skill",
+      "variations": [
+        "flexibility",
+        "adaptable",
+        "flexible"
+      ]
+    },
+    {
+      "canonical": "Attention to Detail",
+      "category": "Soft Skill",
+      "variations": [
+        "detail oriented",
+        "detail-oriented",
+        "meticulous"
+      ]
+    },
+    {
+      "canonical": "Organization",
+      "category": "Soft Skill",
+      "variations": [
+        "organizational skills",
+        "organized"
+      ]
+    },
+    {
+      "canonical": "Interpersonal Skills",
+      "category": "Soft Skill",
+      "variations": [
+        "interpersonal",
+        "people skills",
+        "relationship building"
+      ]
+    },
+    {
+      "canonical": "Presentation Skills",
+      "category": "Soft Skill",
+      "variations": [
+        "presenting",
+        "public speaking",
+        "presentations"
+      ]
+    },
+    {
+      "canonical": "Conflict Resolution",
+      "category": "Soft Skill",
+      "variations": [
+        "conflict management",
+        "resolving conflicts"
+      ]
+    },
+    {
+      "canonical": "Decision Making",
+      "category": "Soft Skill",
+      "variations": [
+        "decision-making",
+        "making decisions"
+      ]
+    },
+    {
+      "canonical": "Creativity",
+      "category": "Soft Skill",
+      "variations": [
+        "creative thinking",
+        "innovative thinking",
+        "innovation"
+      ]
+    },
+    {
+      "canonical": "Initiative",
+      "category": "Soft Skill",
+      "variations": [
+        "self-starter",
+        "proactive",
+        "self motivated"
+      ]
+    },
+    {
+      "canonical": "Work Ethic",
+      "category": "Soft Skill",
+      "variations": [
+        "hardworking",
+        "dedicated",
+        "reliable"
+      ]
+    },
+    {
+      "canonical": "Emotional Intelligence",
+      "category": "Soft Skill",
+      "variations": [
+        "eq",
+        "empathy",
+        "emotional awareness"
+      ]
+    },
+    {
+      "canonical": "Multitasking",
+      "category": "Soft Skill",
+      "variations": [
+        "multi-tasking",
+        "juggling tasks"
+      ]
+    },
+    {
+      "canonical": "Customer Focus",
+      "category": "Soft Skill",
+      "variations": [
+        "customer oriented",
+        "client focused"
+      ]
+    },
+    {
+      "canonical": "Results Oriented",
+      "category": "Soft Skill",
+      "variations": [
+        "results-driven",
+        "goal oriented",
+        "achievement oriented"
+      ]
+    },
+    {
+      "canonical": "Mobile Development",
+      "category": "Mobile",
+      "variations": [
+        "mobile app development",
+        "mobile apps",
+        "app development"
+      ]
+    },
+    {
+      "canonical": "iOS Development",
+      "category": "Mobile",
+      "variations": [
+        "ios",
+        "iphone development",
+        "ipad development"
+      ]
+    },
+    {
+      "canonical": "Android Development",
+      "category": "Mobile",
+      "variations": [
+        "android",
+        "android apps"
+      ]
+    },
+    {
+      "canonical": "React Native",
+      "category": "Mobile",
+      "variations": [
+        "react-native",
+        "rn"
+      ]
+    },
+    {
+      "canonical": "Flutter",
+      "category": "Mobile",
+      "variations": [
+        "flutter dart",
+        "flutter development"
+      ]
+    },
+    {
+      "canonical": "Automotive",
+      "category": "Automotive",
+      "variations": [
+        "automobile",
+        "auto",
+        "vehicle"
+      ]
+    },
+    {
+      "canonical": "Automotive Repair",
+      "category": "Automotive",
+      "variations": [
+        "auto repair",
+        "car repair",
+        "vehicle repair"
+      ]
+    },
+    {
+      "canonical": "Automotive Technician",
+      "category": "Automotive",
+      "variations": [
+        "auto technician",
+        "mechanic",
+        "auto mechanic"
+      ]
+    },
+    {
+      "canonical": "Engine Repair",
+      "category": "Automotive",
+      "variations": [
+        "engine diagnostics",
+        "engine service"
+      ]
+    },
+    {
+      "canonical": "Brake Systems",
+      "category": "Automotive",
+      "variations": [
+        "brakes",
+        "brake repair"
+      ]
+    },
+    {
+      "canonical": "Transmission",
+      "category": "Automotive",
+      "variations": [
+        "transmission repair",
+        "automatic transmission"
+      ]
+    },
+    {
+      "canonical": "Diagnostics",
+      "category": "Automotive",
+      "variations": [
+        "obd",
+        "diagnostic equipment",
+        "vehicle diagnostics"
+      ]
+    },
+    {
+      "canonical": "ASE Certification",
+      "category": "Automotive",
+      "variations": [
+        "ase certified",
+        "ase"
+      ]
+    },
+    {
+      "canonical": "Automotive Sales",
+      "category": "Automotive",
+      "variations": [
+        "car sales",
+        "vehicle sales",
+        "auto sales"
+      ]
+    },
+    {
+      "canonical": "Service Advisor",
+      "category": "Automotive",
+      "variations": [
+        "service writer",
+        "service consultant"
+      ]
+    },
+    {
+      "canonical": "Fashion Design",
+      "category": "Apparel",
+      "variations": [
+        "fashion",
+        "apparel design",
+        "clothing design"
+      ]
+    },
+    {
+      "canonical": "Textile",
+      "category": "Apparel",
+      "variations": [
+        "textiles",
+        "fabric",
+        "fabric design"
+      ]
+    },
+    {
+      "canonical": "Garment Construction",
+      "category": "Apparel",
+      "variations": [
+        "garment making",
+        "sewing",
+        "pattern making"
+      ]
+    },
+    {
+      "canonical": "Merchandising",
+      "category": "Apparel",
+      "variations": [
+        "fashion merchandising",
+        "retail merchandising"
+      ]
+    },
+    {
+      "canonical": "Visual Merchandising",
+      "category": "Apparel",
+      "variations": [
+        "store display",
+        "retail display"
+      ]
+    },
+    {
+      "canonical": "Trend Analysis",
+      "category": "Apparel",
+      "variations": [
+        "fashion trends",
+        "trend forecasting"
+      ]
+    },
+    {
+      "canonical": "Retail Management",
+      "category": "Apparel",
+      "variations": [
+        "store management",
+        "retail operations"
+      ]
+    },
+    {
+      "canonical": "Buying",
+      "category": "Apparel",
+      "variations": [
+        "fashion buying",
+        "retail buying"
+      ]
+    },
+    {
+      "canonical": "Sourcing",
+      "category": "Apparel",
+      "variations": [
+        "apparel sourcing",
+        "fabric sourcing"
+      ]
+    },
+    {
+      "canonical": "Styling",
+      "category": "Apparel",
+      "variations": [
+        "fashion styling",
+        "wardrobe styling"
+      ]
+    },
+    {
+      "canonical": "Call Center",
+      "category": "BPO",
+      "variations": [
+        "contact center",
+        "call centre"
+      ]
+    },
+    {
+      "canonical": "Customer Support",
+      "category": "BPO",
+      "variations": [
+        "customer service",
+        "client support",
+        "help desk"
+      ]
+    },
+    {
+      "canonical": "Inbound Calls",
+      "category": "BPO",
+      "variations": [
+        "inbound",
+        "incoming calls"
+      ]
+    },
+    {
+      "canonical": "Outbound Calls",
+      "category": "BPO",
+      "variations": [
+        "outbound",
+        "outgoing calls"
+      ]
+    },
+    {
+      "canonical": "Technical Support",
+      "category": "BPO",
+      "variations": [
+        "tech support",
+        "it support",
+        "technical assistance"
+      ]
+    },
+    {
+      "canonical": "Chat Support",
+      "category": "BPO",
+      "variations": [
+        "live chat",
+        "chat agent"
+      ]
+    },
+    {
+      "canonical": "Email Support",
+      "category": "BPO",
+      "variations": [
+        "email handling",
+        "email response"
+      ]
+    },
+    {
+      "canonical": "Ticket Management",
+      "category": "BPO",
+      "variations": [
+        "ticketing system",
+        "case management"
+      ]
+    },
+    {
+      "canonical": "Zendesk",
+      "category": "BPO",
+      "variations": [
+        "zendesk support"
+      ]
+    },
+    {
+      "canonical": "Freshdesk",
+      "category": "BPO",
+      "variations": [
+        "freshdesk support"
+      ]
+    },
+    {
+      "canonical": "ServiceNow",
+      "category": "BPO",
+      "variations": [
+        "service now",
+        "snow"
+      ]
+    },
+    {
+      "canonical": "Data Entry",
+      "category": "BPO",
+      "variations": [
+        "data input",
+        "keying"
+      ]
+    },
+    {
+      "canonical": "Back Office",
+      "category": "BPO",
+      "variations": [
+        "back office operations",
+        "administrative support"
+      ]
+    },
+    {
+      "canonical": "Quality Assurance",
+      "category": "Testing",
+      "variations": [
+        "qa",
+        "quality testing",
+        "qa testing"
+      ]
+    },
+    {
+      "canonical": "Manual Testing",
+      "category": "Testing",
+      "variations": [
+        "manual qa",
+        "manual test"
+      ]
+    },
+    {
+      "canonical": "Automation Testing",
+      "category": "Testing",
+      "variations": [
+        "test automation",
+        "automated testing",
+        "qa automation"
+      ]
+    },
+    {
+      "canonical": "Selenium",
+      "category": "Testing",
+      "variations": [
+        "selenium webdriver",
+        "selenium testing"
+      ]
+    },
+    {
+      "canonical": "Cypress",
+      "category": "Testing",
+      "variations": [
+        "cypress testing",
+        "cypress.io"
+      ]
+    },
+    {
+      "canonical": "JUnit",
+      "category": "Testing",
+      "variations": [
+        "junit testing",
+        "junit 5"
+      ]
+    },
+    {
+      "canonical": "TestNG",
+      "category": "Testing",
+      "variations": [
+        "testng framework"
+      ]
+    },
+    {
+      "canonical": "Jest",
+      "category": "Testing",
+      "variations": [
+        "jest testing",
+        "jest js"
+      ]
+    },
+    {
+      "canonical": "PyTest",
+      "category": "Testing",
+      "variations": [
+        "pytest",
+        "python testing"
+      ]
+    },
+    {
+      "canonical": "API Testing",
+      "category": "Testing",
+      "variations": [
+        "api test",
+        "rest api testing"
+      ]
+    },
+    {
+      "canonical": "Performance Testing",
+      "category": "Testing",
+      "variations": [
+        "load testing",
+        "stress testing"
+      ]
+    },
+    {
+      "canonical": "JMeter",
+      "category": "Testing",
+      "variations": [
+        "apache jmeter",
+        "jmeter testing"
+      ]
+    },
+    {
+      "canonical": "Security Testing",
+      "category": "Testing",
+      "variations": [
+        "penetration testing",
+        "pen testing",
+        "vulnerability testing"
+      ]
+    },
+    {
+      "canonical": "Test Cases",
+      "category": "Testing",
+      "variations": [
+        "test case design",
+        "test scenarios"
+      ]
+    },
+    {
+      "canonical": "Test Plans",
+      "category": "Testing",
+      "variations": [
+        "test planning",
+        "test strategy"
+      ]
+    },
+    {
+      "canonical": "Bug Tracking",
+      "category": "Testing",
+      "variations": [
+        "defect tracking",
+        "bug reporting"
+      ]
+    },
+    {
+      "canonical": "Regression Testing",
+      "category": "Testing",
+      "variations": [
+        "regression",
+        "regression suite"
+      ]
+    },
+    {
+      "canonical": "UAT",
+      "category": "Testing",
+      "variations": [
+        "user acceptance testing",
+        "user acceptance"
+      ]
+    },
+    {
+      "canonical": "Unit Testing",
+      "category": "Testing",
+      "variations": [
+        "unit test",
+        "unit tests"
+      ]
+    },
+    {
+      "canonical": "Cybersecurity",
+      "category": "Security",
+      "variations": [
+        "cyber security",
+        "information security",
+        "infosec"
+      ]
+    },
+    {
+      "canonical": "Network Security",
+      "category": "Security",
+      "variations": [
+        "network protection",
+        "network defense"
+      ]
+    },
+    {
+      "canonical": "Application Security",
+      "category": "Security",
+      "variations": [
+        "appsec",
+        "app security",
+        "software security"
+      ]
+    },
+    {
+      "canonical": "Cloud Security",
+      "category": "Security",
+      "variations": [
+        "cloud protection",
+        "aws security",
+        "azure security"
+      ]
+    },
+    {
+      "canonical": "Penetration Testing",
+      "category": "Security",
+      "variations": [
+        "pen testing",
+        "ethical hacking",
+        "pentest"
+      ]
+    },
+    {
+      "canonical": "Vulnerability Assessment",
+      "category": "Security",
+      "variations": [
+        "vulnerability scanning",
+        "vuln assessment"
+      ]
+    },
+    {
+      "canonical": "SIEM",
+      "category": "Security",
+      "variations": [
+        "security information and event management",
+        "splunk siem"
+      ]
+    },
+    {
+      "canonical": "SOC",
+      "category": "Security",
+      "variations": [
+        "security operations center",
+        "soc analyst"
+      ]
+    },
+    {
+      "canonical": "Incident Response",
+      "category": "Security",
+      "variations": [
+        "ir",
+        "security incident"
+      ]
+    },
+    {
+      "canonical": "Firewall",
+      "category": "Security",
+      "variations": [
+        "firewall management",
+        "firewall configuration"
+      ]
+    },
+    {
+      "canonical": "Endpoint Security",
+      "category": "Security",
+      "variations": [
+        "endpoint protection",
+        "edr"
+      ]
+    },
+    {
+      "canonical": "Identity Management",
+      "category": "Security",
+      "variations": [
+        "iam",
+        "identity and access management"
+      ]
+    },
+    {
+      "canonical": "CISSP",
+      "category": "Security",
+      "variations": [
+        "cissp certified"
+      ]
+    },
+    {
+      "canonical": "CEH",
+      "category": "Security",
+      "variations": [
+        "certified ethical hacker"
+      ]
+    },
+    {
+      "canonical": "CompTIA Security+",
+      "category": "Security",
+      "variations": [
+        "security+",
+        "sec+"
+      ]
+    },
+    {
+      "canonical": "GDPR",
+      "category": "Security",
+      "variations": [
+        "gdpr compliance",
+        "data protection"
+      ]
+    },
+    {
+      "canonical": "PCI DSS",
+      "category": "Security",
+      "variations": [
+        "pci compliance",
+        "payment card security"
+      ]
+    },
+    {
+      "canonical": "ISO 27001",
+      "category": "Security",
+      "variations": [
+        "iso27001",
+        "isms"
+      ]
+    },
+    {
+      "canonical": "Encryption",
+      "category": "Security",
+      "variations": [
+        "data encryption",
+        "cryptography"
+      ]
+    },
+    {
+      "canonical": "VPN",
+      "category": "Security",
+      "variations": [
+        "virtual private network",
+        "vpn configuration"
+      ]
+    },
+    {
+      "canonical": "microservices",
+      "category": "Other",
+      "variations": []
+    },
+    {
+      "canonical": "marketing",
+      "category": "Other",
+      "variations": []
+    },
+    {
+      "canonical": "cad",
+      "category": "Other",
+      "variations": []
+    },
+    {
+      "canonical": "electrical engineering",
+      "category": "Other",
+      "variations": []
+    },
+    {
+      "canonical": "mechanical design",
+      "category": "Other",
+      "variations": []
+    }
+  ]
+}

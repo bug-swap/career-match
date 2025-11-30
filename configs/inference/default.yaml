@@ -1,0 +1,54 @@
+# Inference Configuration
+
+# Pipeline Stages
+pipeline:
+  stages:
+    pdf_extraction: true
+    preprocessing: true
+    section_classification: true
+    entity_extraction: true
+    skill_normalization: true
+    category_classification: true
+    job_matching: true
+
+# Model Loading
+model_loading:
+  lazy_load: true
+  preload: false
+  cache_embeddings: true
+
+# PDF Extraction
+pdf:
+  engine: pymupdf  # pymupdf, pdfplumber
+  max_pages: null
+
+# Output Format
+output:
+  format: json
+  include_confidence: true
+  include_processing_time: true
+  
+  sections:
+    min_confidence: 0.5
+  
+  category:
+    top_k: 3
+    min_confidence: 0.1
+  
+  job_matching:
+    max_matches: 10
+    min_score: 0.3
+
+# API Settings
+api:
+  host: 0.0.0.0
+  port: 8000
+  workers: 4
+  max_file_size_mb: 10
+  timeout_seconds: 60
+  
+  cors:
+    enabled: true
+    origins:
+      - http://localhost:3000
+      - http://localhost:8080

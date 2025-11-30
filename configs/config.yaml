@@ -1,0 +1,32 @@
+# Main Configuration - Composes all sub-configs
+defaults:
+  - data: default
+  - model/section_classifier
+  - model/entity_extractor
+  - model/resume_classifier
+  - model/job_matcher
+  - training: default
+  - inference: default
+  - _self_
+
+project:
+  name: careermatch-ai
+  version: 1.0.0
+  seed: 42
+
+paths:
+  root: ${hydra:runtime.cwd}
+  data_raw: ${paths.root}/data/raw
+  data_processed: ${paths.root}/data/processed
+  artifacts: ${paths.root}/data/artifacts
+  logs: ${paths.root}/logs
+
+device:
+  type: auto  # auto, cpu, cuda, mps
+  gpu_id: 0
+
+hydra:
+  run:
+    dir: ${paths.logs}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: false

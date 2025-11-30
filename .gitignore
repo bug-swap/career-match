@@ -1,0 +1,305 @@
+# ============================================================
+# PYTHON
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.conda/
+conda-env/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Cython
+cython_debug/
+
+# ============================================================
+# DATA & MODELS (Large files - store in DVC or cloud)
+# ============================================================
+data/raw/pdfs/
+data/raw/structured/
+data/processed/*
+data/artifacts/
+
+!skills.json
+
+# Model weights
+*.pt
+*.pth
+*.pkl
+*.joblib
+*.h5
+*.onnx
+*.bin
+
+# Specific model directories
+**/section_classifier/*.pt
+**/section_classifier/*.pkl
+**/entity_extractor/spacy_model/
+**/resume_classifier/*.pt
+**/job_matcher/*.pt
+
+# ============================================================
+# LOGS & OUTPUTS
+# ============================================================
+logs/
+outputs/
+*.log
+*.out
+
+# Hydra outputs
+multirun/
+
+# TensorBoard
+runs/
+tensorboard/
+
+# Weights & Biases
+wandb/
+
+# ============================================================
+# JUPYTER NOTEBOOKS
+# ============================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+notebooks/.ipynb_checkpoints/
+
+# ============================================================
+# IDE & EDITORS
+# ============================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ============================================================
+# OS FILES
+# ============================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# ENVIRONMENT & SECRETS
+# ============================================================
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# API keys, credentials
+secrets/
+*.pem
+*.key
+credentials.json
+
+# ============================================================
+# TESTING
+# ============================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ============================================================
+# DOCUMENTATION
+# ============================================================
+docs/_build/
+site/
+
+# ============================================================
+# JAVA / SPRING BOOT (backend/)
+# ============================================================
+backend/target/
+backend/*.jar
+backend/*.war
+backend/*.class
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# Gradle
+backend/.gradle/
+backend/build/
+
+# Eclipse
+backend/.classpath
+backend/.project
+backend/.settings/
+
+# ============================================================
+# NODE / REACT (frontend/)
+# ============================================================
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+frontend/.cache/
+
+# npm
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.npm/
+
+# ============================================================
+# DOCKER
+# ============================================================
+*.log
+docker-compose.override.yml
+
+# ============================================================
+# TEMPORARY FILES
+# ============================================================
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# ============================================================
+# MISC
+# ============================================================
+# Byte-compiled / optimized files
+*.pyc
+*.pyo
+*.pyd
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Ruff
+.ruff_cache/

@@ -1,0 +1,46 @@
+# Entity Extractor Configuration
+
+name: entity_extractor
+type: nlp
+
+# Architecture
+architecture:
+  type: spacy  # spacy, transformers
+  base_model: en_core_web_sm
+
+# Entity Types
+entities:
+  - PERSON
+  - EMAIL
+  - PHONE
+  - LINKEDIN
+  - COMPANY
+  - JOB_TITLE
+  - INSTITUTION
+  - DEGREE
+  - SKILL
+  - DATE
+  - LOCATION
+
+# Training
+training:
+  n_iter: 30
+  dropout: 0.35
+  batch_size: 16
+  learn_rate: 0.001
+
+# Regex Fallback
+regex:
+  enabled: true
+  confidence: 0.9
+  
+  patterns:
+    email: '[\w\.-]+@[\w\.-]+\.\w+'
+    phone: '\+?[\d\-\(\)\s]{10,}'
+    linkedin: 'linkedin\.com/in/[\w-]+'
+    date: '\d{1,2}/\d{4}|\d{4}\s*[-–]\s*(present|\d{4})'
+
+# Artifacts
+artifacts:
+  dir: entity_extractor
+  model_dir: spacy_model
