@@ -19,7 +19,7 @@ files:
 columns:
   id: ID
   category: Category
-  resume_text: Resume_str
+  resume_text: Resume_text
   clean_text: Clean_Text
 
 # Train/Val/Test Split

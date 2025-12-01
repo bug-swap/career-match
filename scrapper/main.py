@@ -132,7 +132,22 @@ def process_scraped_job(job_data_dict, category, logger):
 
     return job_record
 
-
+def send_to_generate_embeddings(scrapped_jobs, logger):
+    try:
+        import requests
+        api_url = os.getenv("EMBEDDING_API_URL")
+        if not api_url:
+            logger.error("EMBEDDING_API_URL not set in environment")
+            return
+        payload = {"jobs": scrapped_jobs}
+        headers = {"Content-Type": "application/json"}  
+        response = requests.post(api_url, json=payload, headers=headers)
+        if response.status_code == 200:
+            logger.info(f"Sent jobs for embedding generation")
+        else:
+            logger.error(f"Failed to send jobs for embedding: {response.text}")
+    except Exception as e:
+        logger.error(f"Error sending jobs for embedding: {e}")
 @functions_framework.http
 def main(request):
     logger = setup_logger()
@@ -190,12 +205,13 @@ def main(request):
 
         inserted = 0
         skipped = 0
-
+        jobs = []
         for _, row in scraped_jobs.iterrows():
             job_dict = row.to_dict()
             processed = process_scraped_job(job_dict, category, logger)
-
-            if not processed:
+            if processed:
+                jobs.append(processed)
+            else:
                 skipped += 1
                 continue
 
@@ -208,6 +224,8 @@ def main(request):
                 else:
                     skipped += 1
                     logger.error(f"Failed to insert: {e}")
+
+        send_to_generate_embeddings(jobs, logger)
 
         return {
             "status": "success",
