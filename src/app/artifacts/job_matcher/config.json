@@ -1,0 +1,10 @@
+{
+  "sbert_model": "all-MiniLM-L6-v2",
+  "embedding_dim": 128,
+  "hidden_dims": [
+    512,
+    256
+  ],
+  "dropout": 0.3,
+  "margin": 0.5
+}

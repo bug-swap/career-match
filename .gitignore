@@ -62,6 +62,7 @@ data/artifacts/
 **/entity_extractor/spacy_model/
 **/resume_classifier/*.pt
 **/job_matcher/*.pt
+app/api/artifacts/**
 
 # ============================================================
 # LOGS & OUTPUTS

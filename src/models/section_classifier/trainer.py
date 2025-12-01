@@ -273,5 +273,5 @@ if __name__ == "__main__":
     )
     
     trainer = SectionClassifierTrainer()
-    trainer.train()
+    # trainer.train()
     trainer.test()

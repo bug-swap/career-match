@@ -1,0 +1,11 @@
+{
+  "tfidf_max_features": 7000,
+  "hidden_dims": [
+    768,
+    384,
+    192
+  ],
+  "dropout": 0.4,
+  "input_dim": 9000,
+  "num_classes": 24
+}
