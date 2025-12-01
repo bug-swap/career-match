@@ -1,5 +1,0 @@
-{
-  "spacy_model": "en_core_web_sm",
-  "use_spacy": true,
-  "use_regex": true
-}
