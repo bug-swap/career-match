@@ -26,12 +26,20 @@ class ResumeClassifierModel(BaseModelWrapper):
         if not self.model:
             return
         logger.info(
-            "[ResumeClassifier] fitted=%s classes=%s",
+            "[ResumeClassifier] fitted=%s classes=%s embed_dim=%s num_layers=%s",
             getattr(self.model, 'is_fitted', False),
             getattr(self.model, 'num_classes', 'unknown'),
+            getattr(self.model, 'embed_dim', 'unknown'),
+            getattr(self.model, 'num_layers', 'unknown'),
         )
 
     def predict(self, text: str, skills: Optional[List[str]] = None, top_k: int = 3) -> Dict:
+        """
+        Predict category for resume text
+        
+        Note: skills parameter is kept for backwards compatibility but not used.
+        New model uses SBERT embeddings which capture semantic meaning.
+        """
         if not self.is_loaded():
             return {
                 'category': 'UNKNOWN',
@@ -40,7 +48,8 @@ class ResumeClassifierModel(BaseModelWrapper):
             }
         try:
             classifier = self.require_model()
-            result = classifier.predict(text, skills=skills, top_k=top_k)
+            # New model doesn't use skills - uses SBERT embeddings
+            result = classifier.predict(text, top_k=top_k)
             return {
                 'category': result.category,
                 'confidence': float(result.confidence),

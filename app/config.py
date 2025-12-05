@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import field_validator
-from typing import List, Union
+from typing import List, Union, Optional
 
 
 class Settings(BaseSettings):
@@ -25,9 +25,12 @@ class Settings(BaseSettings):
     
     # Security
     SECRET_KEY: str = "your-secret-key-here-change-in-production"
+    SUPABASE_URL: Optional[str] = None
+    SUPABASE_KEY: Optional[str] = None
     
     # Paths
     BASE_DIR: Path = Path(__file__).parent
+    REPO_PATH : Path = BASE_DIR.parent
     MODELS_DIR: Path = BASE_DIR / 'artifacts'
     SECTION_CLASSIFIER_PATH: Path = MODELS_DIR / 'section_classifier'
     ENTITY_EXTRACTOR_PATH: Path = MODELS_DIR / 'entity_extractor'

@@ -53,3 +53,15 @@ class JobMatcherService(BaseService):
         resume_lower = resume_text.lower()
         hits = sum(1 for skill in required_skills if skill.lower() in resume_lower)
         return hits / len(required_skills)
+    
+
+    def get_embedding(self, text: str) -> List[float]:
+        if not self.matcher or not self.matcher.is_loaded():
+            logger.warning("[JobMatcherService] model unavailable")
+            return []
+        try:
+            embedding = self.matcher.encode_single(text)
+            return embedding.tolist()
+        except Exception as exc:
+            logger.error("[JobMatcherService] get_embedding failure: %s", exc, exc_info=True)
+            return []

@@ -1,11 +1,10 @@
 {
-  "tfidf_max_features": 7000,
-  "hidden_dims": [
-    768,
-    384,
-    192
-  ],
-  "dropout": 0.4,
-  "input_dim": 9000,
+  "sbert_model": "all-MiniLM-L6-v2",
+  "embed_dim": 512,
+  "num_heads": 8,
+  "num_layers": 3,
+  "ff_dim": 2048,
+  "dropout": 0.3,
+  "input_dim": 384,
   "num_classes": 24
 }

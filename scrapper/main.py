@@ -98,8 +98,8 @@ def scrape_jobs_from_site(location, position, results_limit, hours_old, site_nam
         results_wanted=results_limit,
         hours_old=hours_old,
         country_indeed="USA",
+        linkedin_fetch_description=True,
     )
-
     logger.info(f"Scraped {len(scraped) if scraped is not None else 0} jobs")
     return scraped
 
@@ -114,6 +114,7 @@ def process_scraped_job(job_data_dict, category, logger):
     job_record = {
         "id": safe_string_value(job_data_dict.get("id", "")),
         "title": job_title,
+        "category": category,
         "company": safe_string_value(job_data_dict.get("company", "")),
         "location": safe_string_value(job_data_dict.get("location", "")),
         "date_posted": safe_datetime_value(job_data_dict.get("date_posted", "")),
@@ -123,7 +124,7 @@ def process_scraped_job(job_data_dict, category, logger):
         "max_amount": safe_float_value(job_data_dict.get("max_amount")),
         "currency": safe_string_value(job_data_dict.get("currency", "")),
         "job_url": safe_string_value(job_data_dict.get("job_url", "")),
-        "category": category,
+        "description": safe_string_value(job_data_dict.get("description", "")),
     }
 
     if not job_record["id"] or not job_record["job_url"]:

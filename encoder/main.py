@@ -67,6 +67,10 @@ def job_to_text(job: Dict[str, Any]) -> str:
         parts.append(f"in {job['location']}")
     if job.get("is_remote"):
         parts.append("(Remote)")
+    if job.get("category"):
+        parts.append(f"[Category: {job['category']}]")
+    if job.get("description"):
+        parts.append(job["description"])
     return " ".join(parts)
 
 

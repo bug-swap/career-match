@@ -97,6 +97,8 @@ LOG_FORMAT=text  # or 'json' for JSON logging
 ```bash
 cd app
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
+uvicorn app:app --reload --host 0.0.0.0 --port 80
+00
 ```
 
 **Production:**

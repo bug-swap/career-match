@@ -5,12 +5,14 @@ load_dotenv()
 import os
 import time
 from contextlib import asynccontextmanager
+from typing import Optional
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from config import settings
 from utils.logging_config import setup_logging
+from api.modules.database.service import DatabaseService
 
 # Setup logging
 logger = setup_logging()
@@ -23,17 +25,35 @@ async def lifespan(app: FastAPI):
     # Startup: Load ML models
     logger.info("🚀 Starting application...")
     from api.core.loader import ModelLoader
+
+    db_service: Optional[DatabaseService] = None
+
     try:
+        db_service = DatabaseService(
+            logger=logger,
+            project_url=settings.SUPABASE_URL,
+            api_key=settings.SUPABASE_KEY,
+        )
+        if not db_service.connect():
+            raise RuntimeError("Unable to connect to Supabase")
+
+        app.state.db_service = db_service
+        logger.info("✅ Database connection established")
         ModelLoader.get_instance()
         logger.info("✅ All models loaded successfully")
     except Exception as e:
-        logger.error(f"❌ Failed to load models: {e}")
+        logger.error(f"❌ Startup failed: {e}")
+        if db_service:
+            db_service.disconnect()
         raise
     
     yield
     
     # Shutdown
     logger.info("👋 Shutting down application...")
+    if db_service:
+        db_service.disconnect()
+        logger.info("🔌 Database connection closed")
 
 
 def create_app() -> FastAPI:

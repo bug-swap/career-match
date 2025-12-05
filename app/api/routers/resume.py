@@ -3,14 +3,16 @@ from __future__ import annotations
 
 import logging
 import time
-from typing import Dict, Tuple
+from typing import Dict, List, Tuple
 
-from fastapi import APIRouter, File, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
 
 from api.modules.entity_extractor.service import EntityExtractorService
 from api.modules.pdf.service import PDFService
 from api.modules.resume_classifier.service import ResumeClassifierService
 from api.modules.section_classifier.service import SectionClassifierService
+from api.modules.database.service import DatabaseService, get_db
+from api.modules.job_matcher.service import JobMatcherService
 from api.schemas.request import TextParseRequest
 from api.schemas.response import (
     CategoryOnlyResponse,
@@ -119,7 +121,6 @@ def _classify_resume(text: str, entities: Dict) -> Dict:
         classification.get('confidence'),
     )
     return classification
-
 
 @router.post('/parse', response_model=ResumeParseResponse)
 async def parse_resume(file: UploadFile = File(...)):
