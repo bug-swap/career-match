@@ -1,235 +1,567 @@
-import pickle
+import re
 import logging
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Dict, List, Optional, Tuple, Set
 from dataclasses import dataclass
 
-import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import LinearSVC
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, f1_score
-
-from .rules import SectionRules
-
 logger = logging.getLogger(__name__)
+
+try:
+    import spacy
+    try:
+        nlp = spacy.load("en_core_web_lg")
+        SPACY_MODEL = "lg"
+    except OSError:
+        nlp = spacy.load("en_core_web_sm")
+        SPACY_MODEL = "sm"
+    SPACY_AVAILABLE = True
+except (ImportError, OSError):
+    logger.warning("spaCy not available")
+    SPACY_AVAILABLE = False
+    nlp = None
+    SPACY_MODEL = None
 
 
 @dataclass
 class SectionPrediction:
-    """Prediction result for a text block"""
     section: str
     confidence: float
     all_scores: Dict[str, float]
 
 
 class SectionClassifier:
-    """
-    Hybrid Section Classifier
-    - TF-IDF + ML classifier (configurable weight)
-    - Rule-based keyword matching
-    """
-
-    BASE_SECTION_CLASSES = [
-        "person_skills"  # structured data produces this label even if rules do not
-    ]
+    SECTIONS = ["contact", "experience", "education", "project", "skills", "languages", "publication"]
     
-    def __init__(
-        self,
-        algorithm: str = "logistic_regression",
-        tfidf_max_features: int = 3000,
-        tfidf_ngram_range: Tuple[int, int] = (1, 2),
-        rule_weight: float = 0.3,
-        random_state: int = 42,
-        section_classes: Optional[List[str]] = None
-    ):
-        self.algorithm = algorithm
-        self.tfidf_max_features = tfidf_max_features
-        self.tfidf_ngram_range = tfidf_ngram_range
-        self.rule_weight = rule_weight
-        self.ml_weight = 1 - rule_weight
-        self.random_state = random_state
-        
-        self.vectorizer: Optional[TfidfVectorizer] = None
-        self.classifier = None
-        self.label_encoder: Optional[LabelEncoder] = None
-        self.rules = SectionRules(weight=rule_weight)
-        self.section_classes = section_classes or self._default_section_classes()
-        self._section_class_set = set(self.section_classes)
-        self.is_fitted = False
+    SECTION_KEYWORDS = {
+        "contact": ["contact", "email", "phone", "mobile", "address", "linkedin", "github"],
+        "experience": ["experience", "employment", "work", "job", "intern", "responsibilities", "career"],
+        "education": ["education", "degree", "university", "college", "bachelor", "master", "phd", "gpa"],
+        "project": ["project", "portfolio", "developed", "built", "created", "implemented", "demo"],
+        "skills": ["skills", "technical", "expertise", "technologies", "programming", "proficient"],
+        "languages": ["languages", "fluent", "native", "proficiency", "bilingual"],
+        "publication": ["publications", "research", "published", "journal", "conference", "doi", "arxiv"]
+    }
 
-    @classmethod
-    def _default_section_classes(cls) -> List[str]:
-        classes = set(SectionRules.SECTION_KEYWORDS.keys()) | set(cls.BASE_SECTION_CLASSES)
-        return sorted(classes)
+    DATE_PATTERN = r'\b((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{4}|\d{1,2}[/-]\d{4}|\d{4}\s*[-–—]\s*(?:\d{4}|Present|Current|present|current))\b'
     
-    def _create_classifier(self):
-        if self.algorithm == "logistic_regression":
-            return LogisticRegression(
-                max_iter=1000,
-                multi_class="multinomial",
-                solver="lbfgs",
-                class_weight="balanced",
-                random_state=self.random_state
-            )
-        elif self.algorithm == "svm":
-            return LinearSVC(
-                max_iter=1000,
-                class_weight="balanced",
-                random_state=self.random_state
-            )
-        else:
-            raise ValueError(f"Unknown algorithm: {self.algorithm}")
-    
-    def fit(
-        self, 
-        texts: List[str], 
-        labels: List[str],
-        val_split: float = 0.1
-    ) -> Dict[str, float]:
-        """Train the classifier"""
-        logger.info(f"Training Section Classifier with {len(texts)} samples")
-        
-        self.vectorizer = TfidfVectorizer(
-            max_features=self.tfidf_max_features,
-            ngram_range=self.tfidf_ngram_range,
-            stop_words="english",
-            min_df=2,
-            max_df=0.98
-        )
-        
-        self.label_encoder = LabelEncoder()
-        self.label_encoder.fit(self.section_classes)
-        self.classifier = self._create_classifier()
-        
-        valid_texts: List[str] = []
-        valid_labels: List[str] = []
-        invalid_labels: set[str] = set()
-        for text, label in zip(texts, labels):
-            if label in self._section_class_set:
-                valid_texts.append(text)
-                valid_labels.append(label)
-            else:
-                invalid_labels.add(label)
-
-        if not valid_texts:
-            raise ValueError("No samples with supported section labels were provided")
-
-        if invalid_labels:
-            logger.warning(
-                "Dropping %d samples with unsupported labels: %s",
-                len(texts) - len(valid_texts),
-                ", ".join(sorted(invalid_labels))
-            )
-
-        y = self.label_encoder.transform(valid_labels)
-        
-        X_train, X_val, y_train, y_val = train_test_split(
-            valid_texts, y, test_size=val_split, stratify=y, random_state=self.random_state
-        )
-        
-        X_train_tfidf = self.vectorizer.fit_transform(X_train)
-        X_val_tfidf = self.vectorizer.transform(X_val)
-        
-        self.classifier.fit(X_train_tfidf, y_train)
-        
-        y_pred = self.classifier.predict(X_val_tfidf)
-        f1 = f1_score(y_val, y_pred, average="macro")
-        
-        logger.info(f"Validation F1 (macro): {f1:.4f}")
-        logger.info("\n" + classification_report(y_val, y_pred, target_names=self.label_encoder.classes_))
-        
+    def __init__(self):
+        self._compile_patterns()
         self.is_fitted = True
-        return {"val_f1_macro": f1, "n_train": len(X_train), "n_val": len(X_val)}
-    
-    def _get_ml_probabilities(self, text: str) -> Dict[str, float]:
-        X = self.vectorizer.transform([text])
-        if hasattr(self.classifier, "predict_proba"):
-            logger.debug("Using predict_proba for probabilities")
-            probs = self.classifier.predict_proba(X)[0]
-        else:
-            logger.debug("Using decision_function for probabilities")
-            decision = self.classifier.decision_function(X)[0]
-            exp_scores = np.exp(decision - np.max(decision))
-            probs = exp_scores / exp_scores.sum()
-        return {label: float(prob) for label, prob in zip(self.label_encoder.classes_, probs)}
-    
-    def predict(self, text: str) -> SectionPrediction:
-        """Predict section for a text block"""
-        if not self.is_fitted:
-            raise RuntimeError("Model not fitted. Call fit() first.")
         
-        ml_scores = self._get_ml_probabilities(text)
-        rule_scores = self.rules.score_text(text)
+    def _compile_patterns(self):
+        self.date_pattern = re.compile(self.DATE_PATTERN, re.IGNORECASE)
+        self.email_pattern = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+        self.phone_pattern = re.compile(r'[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,5}[-\s\.]?[0-9]{1,5}')
+        self.url_pattern = re.compile(r'https?://[^\s]+|(?:www\.|github\.com/|linkedin\.com/in/)[\w\-./]+', re.IGNORECASE)
+        self.gpa_pattern = re.compile(r'\b(?:GPA|CGPA)[\s:]*(\d+\.?\d*)\s*(?:/\s*(\d+\.?\d*))?\b', re.IGNORECASE)
+        self.degree_pattern = re.compile(
+            r'\b(Bachelor|Master|PhD|Doctorate|B\.?Tech|M\.?Tech|B\.?S\.?|M\.?S\.?|MBA|Diploma|Associate)\b',
+            re.IGNORECASE
+        )
         
-        combined = {}
-        for section in self.section_classes:
-            combined[section] = (
-                self.ml_weight * ml_scores.get(section, 0.0) + 
-                self.rule_weight * rule_scores.get(section, 0.0)
-            )
-        
-        best = max(combined, key=combined.get)
-        return SectionPrediction(section=best, confidence=combined[best], all_scores=combined)
+    def preprocess_resume(self, text: str) -> str:
+        text = text.replace('\u2013', '-').replace('\u2014', '-').replace('\u2022', '-')
+        text = re.sub(r'[●○■□▪▫•‣⁃◘◦⦾⦿►▸▹▻▷]', '- ', text)
+        text = re.sub(r'^\s*(?:Page\s+)?\d+\s*(?:of\s*\d+)?\s*$', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r' {2,}', ' ', text)
+        text = re.sub(r'\n{4,}', '\n\n\n', text)
+        return '\n'.join(line.rstrip() for line in text.split('\n'))
     
-    def predict_batch(self, texts: List[str]) -> List[SectionPrediction]:
-        return [self.predict(text) for text in texts]
-    
-    def segment_resume(self, resume_text: str, min_confidence: float = 0.3) -> Dict[str, str]:
-        """Segment a full resume into sections"""
-        rule_segments = self.rules.segment_resume(resume_text)
-        final = {}
+    def _is_header(self, line: str) -> bool:
+        line = line.strip()
+        if not line or len(line) < 2 or len(line) > 100:
+            return False
+            
+        score = 0
+        line_lower = line.lower()
+        line_clean = re.sub(r'[*#:\-_]+', ' ', line_lower).strip()
         
-        for section, content in rule_segments.items():
-            if not content.strip():
+        if any(section in line_clean for section in self.SECTIONS):
+            score += 5
+        
+        for section, keywords in self.SECTION_KEYWORDS.items():
+            if any(kw in line_clean for kw in keywords[:2]):
+                score += 3
+                break
+        
+        if line.isupper() and len(line) > 3:
+            score += 2
+        if line.endswith(':'):
+            score += 2
+        if len(line) < 30:
+            score += 1
+        
+        if self.date_pattern.search(line):
+            score -= 4
+        if self.email_pattern.search(line):
+            score -= 4
+        if line.startswith(('-', '•', '*', '>')):
+            score -= 5
+            
+        return score >= 5
+    
+    def _detect_section_type(self, header: str) -> Optional[str]:
+        header_lower = header.lower().strip()
+        header_clean = re.sub(r'[*#:\-_]+', ' ', header_lower).strip()
+        
+        for section in self.SECTIONS:
+            if section in header_clean:
+                return section
+                
+        for section, keywords in self.SECTION_KEYWORDS.items():
+            if any(kw in header_clean for kw in keywords[:3]):
+                return section
+                
+        return None
+    
+    def segment_resume(self, resume_text: str) -> Dict[str, str]:
+        resume_text = self.preprocess_resume(resume_text)
+        lines = resume_text.split('\n')
+        sections = {}
+        boundaries = []
+        
+        for i, line in enumerate(lines):
+            if self._is_header(line):
+                section = self._detect_section_type(line)
+                if section and (not boundaries or boundaries[-1][1] != section):
+                    boundaries.append((i, section))
+        
+        for idx, (start, name) in enumerate(boundaries):
+            end = boundaries[idx + 1][0] if idx + 1 < len(boundaries) else len(lines)
+            content = '\n'.join(lines[start + 1:end]).strip()
+            if content:
+                sections[name] = sections.get(name, '') + ('\n\n' + content if name in sections else content)
+        
+        if "contact" not in sections and boundaries:
+            sections["contact"] = '\n'.join(lines[:boundaries[0][0]]).strip()
+            
+        return sections
+    
+    def _extract_entities(self, text: str, filter_low_confidence: bool = True) -> Dict[str, List[str]]:
+        """Enhanced entity extraction with better filtering"""
+        if not SPACY_AVAILABLE or not nlp:
+            return {"ORG": [], "GPE": [], "DATE": [], "PERSON": []}
+            
+        doc = nlp(text)
+        entities = {"ORG": [], "GPE": [], "DATE": [], "PERSON": []}
+        
+        for ent in doc.ents:
+            if ent.label_ not in entities:
                 continue
-            pred = self.predict(content)
-            final_section = pred.section if pred.confidence >= min_confidence else section
-            final[final_section] = final.get(final_section, '') + '\n' + content
-        
-        return {k: v.strip() for k, v in final.items()}
+                
+            clean_text = ent.text.strip()
+            if not clean_text or clean_text in entities[ent.label_]:
+                continue
+            
+            if ent.label_ == "ORG":
+                if any(word in clean_text.lower() for word in ['university', 'college', 'institute', 'school']):
+                    entities[ent.label_].append(clean_text)
+                elif any(word in clean_text.lower() for word in ['limited', 'ltd', 'inc', 'corp', 'llc', 'systems', 'solutions', 'software', 'technologies']):
+                    entities[ent.label_].append(clean_text)
+                elif not filter_low_confidence:
+                    entities[ent.label_].append(clean_text)
+            else:
+                entities[ent.label_].append(clean_text)
+                
+        return entities
     
-    def save(self, path: Union[str, Path]) -> None:
-        path = Path(path)
-        path.mkdir(parents=True, exist_ok=True)
+    def _is_likely_job_title(self, text: str) -> bool:
+        """Use NLP to determine if text is a job title"""
+        job_keywords = ['engineer', 'developer', 'manager', 'analyst', 'intern', 
+                       'specialist', 'consultant', 'architect', 'designer', 'scientist',
+                       'director', 'lead', 'senior', 'junior', 'associate', 'coordinator',
+                       'researcher', 'software', 'data', 'product', 'project']
         
-        with open(path / "tfidf_vectorizer.pkl", "wb") as f:
-            pickle.dump(self.vectorizer, f)
-        with open(path / "classifier.pkl", "wb") as f:
-            pickle.dump(self.classifier, f)
-        with open(path / "label_encoder.pkl", "wb") as f:
-            pickle.dump(self.label_encoder, f)
+        text_lower = text.lower()
+        if any(kw in text_lower for kw in job_keywords):
+            return True
         
-        config = {
-            "algorithm": self.algorithm,
-            "tfidf_max_features": self.tfidf_max_features,
-            "tfidf_ngram_range": self.tfidf_ngram_range,
-            "rule_weight": self.rule_weight,
-            "random_state": self.random_state
+        if SPACY_AVAILABLE and nlp:
+            doc = nlp(text)
+            pos_tags = [token.pos_ for token in doc]
+            return 'NOUN' in pos_tags or 'PROPN' in pos_tags
+            
+        return False
+    
+    def _extract_company_fallback(self, text: str) -> Optional[str]:
+        """Fallback regex-based company extraction"""
+        company_patterns = [
+            r'([A-Z][A-Za-z0-9\s&]+(?:Private\s+Limited|Pvt\.?\s*Ltd\.?|Limited|Ltd\.?|Inc\.?|Corp\.?|LLC|LLP|Co\.?))',
+            r'([A-Z][A-Za-z0-9\s&]+(?:Technologies|Systems|Solutions|Software|Labs|Group|Consulting|Services))',
+        ]
+        
+        for pattern in company_patterns:
+            if match := re.search(pattern, text):
+                return match.group(1).strip()
+        
+        return None
+    
+    def _parse_experience_items(self, text: str) -> List[Dict]:
+        lines = [l.strip() for l in text.split('\n') if l.strip()]
+        items = []
+        
+        date_indices = []
+        for i, line in enumerate(lines):
+            if self.date_pattern.search(line) and not line.startswith(('-', '•', '*', '>')):
+                date_indices.append(i)
+        
+        for date_idx in date_indices:
+            date_line = lines[date_idx]
+            is_present = 'present' in date_line.lower() or 'current' in date_line.lower()
+            
+            title = ""
+            company = ""
+            location = ""
+            
+            search_start = max(0, date_idx - 4)
+            context_lines = []
+            
+            for i in range(date_idx - 1, search_start - 1, -1):
+                if i < 0:
+                    break
+                line = lines[i]
+                if line.startswith(('-', '•', '*', '>')):
+                    continue
+                if self.date_pattern.search(line):
+                    break
+                context_lines.insert(0, line)
+            
+            for line in context_lines:
+                entities = self._extract_entities(line)
+                
+                if not company:
+                    if entities["ORG"]:
+                        company = entities["ORG"][0]
+                        if entities["GPE"]:
+                            location = entities["GPE"][0]
+                    else:
+                        regex_company = self._extract_company_fallback(line)
+                        if regex_company:
+                            company = regex_company
+                            loc_entities = self._extract_entities(line)
+                            if loc_entities["GPE"]:
+                                location = loc_entities["GPE"][0]
+            
+            for line in context_lines:
+                if company and company in line:
+                    continue
+                if self._is_likely_job_title(line) and len(line) > 2:
+                    title = line
+                    break
+            
+            if not title:
+                for line in context_lines:
+                    if company and company in line:
+                        continue
+                    if len(line) > 2:
+                        title = line
+                        break
+            
+            responsibilities = []
+            for i in range(date_idx + 1, len(lines)):
+                line = lines[i]
+                if self.date_pattern.search(line):
+                    break
+                if line.startswith(('-', '•', '*', '>')):
+                    resp = line.lstrip('-•*> ').strip()
+                    if resp:
+                        responsibilities.append(resp)
+            
+            items.append({
+                "title": title,
+                "company": company,
+                "date": date_line,
+                "isPresent": is_present,
+                "location": location,
+                "responsibilities": responsibilities
+            })
+        
+        return items
+    
+    def _parse_education_items(self, text: str) -> List[Dict]:
+        lines = [l.strip() for l in text.split('\n') if l.strip()]
+        items = []
+        processed_indices: Set[int] = set()
+        
+        i = 0
+        while i < len(lines):
+            if i in processed_indices:
+                i += 1
+                continue
+                
+            line = lines[i]
+            window_end = min(i + 6, len(lines))
+            window_lines = lines[i:window_end]
+            window_text = '\n'.join(window_lines)
+            
+            entities = self._extract_entities(window_text, filter_low_confidence=False)
+            has_org = bool(entities["ORG"])
+            has_degree = bool(self.degree_pattern.search(window_text))
+            
+            if has_org or has_degree:
+                institution = ""
+                degree = ""
+                major = ""
+                location = ""
+                date = ""
+                gpa = ""
+                
+                institution_line_idx = None
+                degree_line_idx = None
+                
+                for j, w_line in enumerate(window_lines):
+                    line_entities = self._extract_entities(w_line, filter_low_confidence=False)
+                    
+                    if line_entities["ORG"] and not institution:
+                        institution = line_entities["ORG"][0]
+                        institution_line_idx = j
+                        if line_entities["GPE"]:
+                            location = line_entities["GPE"][0]
+                    
+                    if self.degree_pattern.search(w_line) and not degree:
+                        degree_line_idx = j
+                        if in_match := re.search(r'(.+?)\s+in\s+(.+?)(?:\s*(?:GPA|,|$))', w_line, re.IGNORECASE):
+                            degree = in_match.group(1).strip()
+                            major_text = in_match.group(2).strip()
+                            major = self.gpa_pattern.sub('', major_text).strip(' ,')
+                            major = self.date_pattern.sub('', major).strip(' ,')
+                        else:
+                            degree_match = self.degree_pattern.search(w_line)
+                            degree = degree_match.group(0)
+                    
+                    if not location and line_entities["GPE"] and j != institution_line_idx:
+                        location = line_entities["GPE"][0]
+                    
+                    if not date and (date_match := self.date_pattern.search(w_line)):
+                        date = date_match.group(0)
+                    
+                    if not gpa and (gpa_match := self.gpa_pattern.search(w_line)):
+                        gpa = f"{gpa_match.group(1)}/{gpa_match.group(2)}" if gpa_match.group(2) else gpa_match.group(1)
+                
+                if institution.startswith(degree):
+                    institution = ""
+                
+                if degree or institution:
+                    items.append({
+                        "degree": degree,
+                        "major": major,
+                        "institution": institution,
+                        "location": location,
+                        "date": date,
+                        "gpa": gpa
+                    })
+                    
+                    for idx in range(i, min(i + 4, len(lines))):
+                        processed_indices.add(idx)
+                
+                i = window_end
+            else:
+                i += 1
+        
+        return items
+    
+    def _parse_project_items(self, text: str) -> List[Dict]:
+        lines = [l.strip() for l in text.split('\n') if l.strip()]
+        items = []
+        current = None
+        
+        i = 0
+        while i < len(lines):
+            line = lines[i]
+            is_bullet = line.startswith(('-', '•', '*', '>'))
+            
+            if is_bullet:
+                if current:
+                    current["description"].append(line.lstrip('-•*> ').strip())
+                i += 1
+                continue
+            
+            has_pipe = '|' in line
+            has_date = bool(self.date_pattern.search(line))
+            next_line_is_bullet = (i + 1 < len(lines) and lines[i + 1].startswith(('-', '•', '*', '>')))
+            
+            is_project_header = has_pipe and not is_bullet
+            
+            if is_project_header:
+                if current:
+                    items.append(current)
+                
+                parts = [p.strip() for p in line.split('|')]
+                name = parts[0].strip()
+                
+                url_list = []
+                for url_match in self.url_pattern.finditer(line):
+                    url_list.append(url_match.group())
+                
+                url = url_list[0] if url_list else ""
+                
+                for u in url_list:
+                    name = name.replace(u, '').strip()
+                
+                tech = ""
+                date_str = ""
+                
+                if len(parts) >= 2:
+                    for j in range(1, len(parts)):
+                        part = parts[j]
+                        
+                        for u in url_list:
+                            part = part.replace(u, '').strip()
+                        
+                        if self.date_pattern.search(part):
+                            if date_match := self.date_pattern.search(part):
+                                date_str = date_match.group(0)
+                            part = self.date_pattern.sub('', part).strip()
+                        
+                        part = re.sub(r'\b(Github|Demo|Playstore|AppStore|Paper|Link)\b', '', part, flags=re.IGNORECASE).strip()
+                        part = re.sub(r'\s+', ' ', part).strip()
+                        
+                        if part and len(part) > 2 and not tech:
+                            tech = part
+                
+                current = {
+                    "name": name.strip(),
+                    "url": url,
+                    "description": [],
+                    "technologies": tech,
+                    "date": date_str
+                }
+            
+            i += 1
+        
+        if current:
+            items.append(current)
+        
+        return items
+    
+    def _parse_publication_items(self, text: str) -> List[Dict]:
+        lines = [l.strip() for l in text.split('\n') if l.strip()]
+        items = []
+        current_pub = []
+        
+        for line in lines:
+            line = line.lstrip('-•* ').strip()
+            if not line:
+                continue
+            
+            if re.search(r',\s*\d{4}\s*$', line) or (current_pub and len(' '.join(current_pub)) > 100):
+                current_pub.append(line)
+                full_text = ' '.join(current_pub)
+                
+                doi = ""
+                if doi_match := re.search(r'doi:\s*(10\.\S+)', full_text, re.IGNORECASE):
+                    doi = doi_match.group(1)
+                
+                year = ""
+                if year_match := re.search(r'\b(\d{4})\b', full_text):
+                    year = year_match.group(1)
+                
+                items.append({"title": full_text.strip(), "year": year, "doi": doi})
+                current_pub = []
+            else:
+                current_pub.append(line)
+        
+        if current_pub:
+            full_text = ' '.join(current_pub)
+            doi = ""
+            if doi_match := re.search(r'doi:\s*(10\.\S+)', full_text, re.IGNORECASE):
+                doi = doi_match.group(1)
+            year = ""
+            if year_match := re.search(r'\b(\d{4})\b', full_text):
+                year = year_match.group(1)
+            items.append({"title": full_text.strip(), "year": year, "doi": doi})
+        
+        return items
+    
+    def _parse_skills_items(self, text: str) -> List[str]:
+        skills = []
+        text = text.replace('\n', '|||')
+        
+        for part in text.split(','):
+            for item in part.split('|||'):
+                item = item.strip().lstrip('-•* ').strip()
+                item = re.sub(r'^[A-Za-z/&\s]+:\s*', '', item)
+                if item and len(item) > 1:
+                    skills.append(item)
+        
+        seen = set()
+        return [s for s in skills if not (s.lower() in seen or seen.add(s.lower()))]
+    
+    def _parse_languages_items(self, text: str) -> List[Dict]:
+        items = []
+        lines = text.split('\n') if '\n' in text else text.split(',')
+        
+        for line in lines:
+            line = line.strip().lstrip('-•* ').strip()
+            if not line:
+                continue
+            
+            proficiency = ""
+            language = line
+            
+            if match := re.search(r'(.+?)\s*[\(\-]\s*(.+?)[\)]?$', line):
+                language = match.group(1).strip()
+                proficiency = match.group(2).strip().rstrip(')')
+            
+            items.append({"language": language, "proficiency": proficiency})
+        
+        return items
+    
+    def _parse_contact_items(self, text: str) -> Dict:
+        contact = {"name": "", "email": "", "phone": "", "linkedin": "", "github": "", "website": ""}
+        
+        if email := self.email_pattern.search(text):
+            contact["email"] = email.group()
+        if phone := self.phone_pattern.search(text):
+            contact["phone"] = phone.group()
+        
+        for url_match in self.url_pattern.finditer(text):
+            url = url_match.group()
+            if 'linkedin' in url.lower():
+                contact["linkedin"] = url
+            elif 'github' in url.lower():
+                contact["github"] = url
+            elif not contact["website"]:
+                contact["website"] = url
+        
+        lines = [l.strip() for l in text.split('\n') if l.strip()][:10]
+        for line in lines:
+            if self.email_pattern.search(line) or self.url_pattern.search(line):
+                continue
+            if self.phone_pattern.search(line) and len(line) < 25:
+                continue
+            
+            if not contact["name"]:
+                name = self.email_pattern.sub('', line)
+                name = self.phone_pattern.sub('', name)
+                name = self.url_pattern.sub('', name)
+                name = re.sub(r'[\|,]\s*', ' ', name).strip()
+                
+                if len(name) > 2 and not any(c.isdigit() for c in name[:5]):
+                    contact["name"] = name
+                    break
+        
+        return contact
+    
+    def parse_sections(self, sections: Dict[str, str]) -> Dict:
+        parsed = {}
+        
+        parsers = {
+            "experience": self._parse_experience_items,
+            "education": self._parse_education_items,
+            "project": self._parse_project_items,
+            "publication": self._parse_publication_items,
+            "skills": self._parse_skills_items,
+            "languages": self._parse_languages_items,
+            "contact": self._parse_contact_items
         }
-        with open(path / "config.pkl", "wb") as f:
-            pickle.dump(config, f)
         
-        logger.info(f"Model saved to {path}")
+        for section_name, content in sections.items():
+            parser = parsers.get(section_name)
+            parsed[section_name] = parser(content) if parser else content
+        
+        return parsed
     
     @classmethod
-    def load(cls, path: Union[str, Path]) -> "SectionClassifier":
-        path = Path(path)
-        
-        with open(path / "config.pkl", "rb") as f:
-            config = pickle.load(f)
-        
-        model = cls(**config)
-        
-        with open(path / "tfidf_vectorizer.pkl", "rb") as f:
-            model.vectorizer = pickle.load(f)
-        with open(path / "classifier.pkl", "rb") as f:
-            model.classifier = pickle.load(f)
-        with open(path / "label_encoder.pkl", "rb") as f:
-            model.label_encoder = pickle.load(f)
-        
-        model.is_fitted = True
-        logger.info(f"Model loaded from {path}")
-        return model
+    def load(cls, path=None):
+        logger.info(f"Loading SectionClassifier with spaCy model: {SPACY_MODEL}")
+        return cls()

@@ -178,7 +178,7 @@ class SiameseNetwork(nn.Module):
         return (loss_similar + loss_dissimilar).mean()
 
 
-class JobMatcher:
+class JobEmbeddor:
     """
     Job Matcher - wrapper for training and inference
     
@@ -477,7 +477,7 @@ class JobMatcher:
         logger.info(f"Model saved to {path}")
     
     @classmethod
-    def load(cls, path: Union[str, Path], device: Optional[torch.device] = None) -> "JobMatcher":
+    def load(cls, path: Union[str, Path], device: Optional[torch.device] = None) -> "JobEmbeddor":
         """Load model"""
         path = Path(path)
         

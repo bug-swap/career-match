@@ -69,7 +69,7 @@ class Metadata(BaseModel):
 class ResumeData(BaseModel):
     """Resume parsing data"""
     contact: Dict[str, Any] = Field(default_factory=dict, description="Contact information")
-    sections: Dict[str, str] = Field(default_factory=dict, description="Resume sections")
+    sections: Dict[str, Any] = Field(default_factory=dict, description="Resume sections (structured)")
     entities: EntityInfo = Field(..., description="Extracted entities")
     classification: Classification = Field(..., description="Resume classification")
     metadata: Metadata = Field(..., description="Processing metadata")
@@ -105,6 +105,7 @@ class ExtractedTextResponse(BaseModel):
 class SectionsMetadata(BaseModel):
     """Sections classification metadata"""
     section_count: int = Field(..., description="Number of sections identified")
+    total_items: int = Field(..., description="Total number of items across all sections")
     total_char_count: int = Field(..., description="Total character count")
     processing_time_ms: int = Field(..., description="Processing time in milliseconds")
 
@@ -112,7 +113,7 @@ class SectionsMetadata(BaseModel):
 class SectionsOnlyResponse(BaseModel):
     """Response for section classification endpoint"""
     success: bool = Field(..., description="Whether classification was successful")
-    sections: Dict[str, str] = Field(..., description="Classified resume sections")
+    sections: Dict[str, Any] = Field(..., description="Classified resume sections (structured)")
     metadata: SectionsMetadata = Field(..., description="Classification metadata")
 
 
@@ -151,7 +152,7 @@ class CategoryOnlyResponse(BaseModel):
 class SectionsResponse(BaseModel):
     """Sections classification response"""
     success: bool = Field(..., description="Whether classification was successful")
-    sections: Dict[str, str] = Field(..., description="Classified sections")
+    sections: Dict[str, Any] = Field(..., description="Classified sections (structured)")
 
 
 class CategoryResponse(BaseModel):
@@ -159,18 +160,9 @@ class CategoryResponse(BaseModel):
     success: bool = Field(..., description="Whether classification was successful")
     classification: Classification = Field(..., description="Classification result")
 
-
-class JobMatch(BaseModel):
-    """Job match result schema"""
-    job_id: str = Field(..., description="Job identifier")
-    match_score: float = Field(..., description="Overall match score")
-    skill_match: float = Field(..., description="Skill match score")
-    experience_match: float = Field(..., description="Experience match score")
-    education_match: bool = Field(..., description="Education requirement match")
-    location_match: bool = Field(..., description="Location match")
-
-
-class JobMatchResponse(BaseModel):
-    """Job matching response schema"""
-    success: bool = Field(..., description="Whether matching was successful")
-    matches: List[JobMatch] = Field(..., description="List of job matches sorted by score")
+class EmbeddingResponse(BaseModel):
+    """Embedding response"""
+    success: bool = Field(..., description="Whether embedding was successful")
+    embedding: List[float] = Field(..., description="Generated embedding vector")
+    processing_time_ms: int = Field(..., description="Processing time in milliseconds")
+    

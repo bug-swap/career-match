@@ -61,6 +61,12 @@ A high-performance ML service built with FastAPI for resume parsing, classificat
 ### Job Matching (JSON)
 - `POST /api/v1/match/jobs` - Match resume with job descriptions
 
+### Embedding Service (PDF Multipart Form)
+- **`POST /api/v1/embedding/{any_subpath}`** - Generate a resume embedding for downstream similarity search
+  - Accepts: PDF file (multipart/form-data)
+  - Returns: Vector embedding plus processing metadata
+  - Notes: `{any_subpath}` is optional; any suffix after `/api/v1/embedding/` is routed to the same handler, so calls like `/api/v1/embedding`, `/api/v1/embedding/foo`, or `/api/v1/embedding/foo/bar` all work.
+
 ## Quick Start
 
 ### 1. Install Dependencies

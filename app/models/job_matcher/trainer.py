@@ -10,12 +10,12 @@ from typing import Dict, List, Optional
 import numpy as np
 import pandas as pd
 
-from .model import JobMatcher, get_device
+from .model import JobEmbeddor, get_device
 
 logger = logging.getLogger(__name__)
 
 
-class JobMatcherTrainer:
+class JobEmbeddorTrainer:
     """
     Trainer for Job Matcher
     
@@ -42,7 +42,7 @@ class JobMatcherTrainer:
         self.margin = margin
         
         self.device = get_device()
-        self.model: Optional[JobMatcher] = None
+        self.model: Optional[JobEmbeddor] = None
         
         logger.info(f"Using device: {self.device}")
     
@@ -88,7 +88,7 @@ class JobMatcherTrainer:
         
         texts, categories = self.load_data(csv_path, text_column, category_column)
         
-        self.model = JobMatcher(
+        self.model = JobEmbeddor(
             sbert_model=self.sbert_model,
             embedding_dim=self.embedding_dim,
             hidden_dims=self.hidden_dims,
@@ -129,7 +129,7 @@ class JobMatcherTrainer:
         are from the same category
         """
         if self.model is None:
-            self.model = JobMatcher.load(self.artifacts_dir)
+            self.model = JobEmbeddor.load(self.artifacts_dir)
         
         texts, categories = self.load_data(csv_path, text_column, category_column)
         
@@ -182,7 +182,7 @@ class JobMatcherTrainer:
     def test(self):
         """Test the model with sample queries"""
         if self.model is None:
-            self.model = JobMatcher.load(self.artifacts_dir)
+            self.model = JobEmbeddor.load(self.artifacts_dir)
         
         # Sample resumes
         test_resumes = [
@@ -221,7 +221,7 @@ if __name__ == "__main__":
         format="%(asctime)s - %(levelname)s - %(message)s"
     )
     
-    trainer = JobMatcherTrainer()
+    trainer = JobEmbeddorTrainer()
     trainer.train(epochs=80, batch_size=64, pairs_per_epoch=10000)
     trainer.evaluate(n_queries=100)
     trainer.test()

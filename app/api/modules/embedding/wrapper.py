@@ -6,19 +6,19 @@ import numpy as np
 import torch
 
 from api.core.base_model import BaseModelWrapper
-from models import JobMatcher
+from models import JobEmbeddor
 
 logger = logging.getLogger(__name__)
 
 
-class JobMatcherModel(BaseModelWrapper):
-    MODEL_NAME = "JobMatcher"
+class EmbeddingModel(BaseModelWrapper):
+    MODEL_NAME = "Embedding Model"
 
     def __init__(self, model_path: Path):
         super().__init__(model_path)
 
     def _load_model(self):
-        model = JobMatcher.load(self.model_path, device=torch.device('cpu'))
+        model = JobEmbeddor.load(self.model_path, device=torch.device('cpu'))
         if model and getattr(model, 'encoder', None):
             model.encoder.eval()
         return model
@@ -27,7 +27,7 @@ class JobMatcherModel(BaseModelWrapper):
         if not self.model:
             return
         logger.info(
-            "[JobMatcher] fitted=%s embedding_dim=%s",
+            "[JobEmbeddor] fitted=%s embedding_dim=%s",
             getattr(self.model, 'is_fitted', False),
             getattr(self.model, 'embedding_dim', 'unknown'),
         )
@@ -38,7 +38,7 @@ class JobMatcherModel(BaseModelWrapper):
         try:
             return self.require_model().encode(texts)
         except Exception as exc:
-            logger.error("[JobMatcher] encode failure: %s", exc, exc_info=True)
+            logger.error("[JobEmbeddor] encode failure: %s", exc, exc_info=True)
             return np.array([])
 
     def encode_single(self, text: str) -> np.ndarray:
@@ -47,7 +47,7 @@ class JobMatcherModel(BaseModelWrapper):
         try:
             return self.require_model().encode_single(text)
         except Exception as exc:
-            logger.error("[JobMatcher] encode_single failure: %s", exc, exc_info=True)
+            logger.error("[JobEmbeddor] encode_single failure: %s", exc, exc_info=True)
             return np.array([])
 
     def similarity(self, resume_embedding: np.ndarray, job_embeddings: np.ndarray) -> np.ndarray:
@@ -56,7 +56,7 @@ class JobMatcherModel(BaseModelWrapper):
         try:
             return self.require_model().compute_similarity(resume_embedding, job_embeddings)
         except Exception as exc:
-            logger.error("[JobMatcher] similarity failure: %s", exc, exc_info=True)
+            logger.error("[JobEmbeddor] similarity failure: %s", exc, exc_info=True)
             return np.array([])
 
     def is_loaded(self) -> bool:

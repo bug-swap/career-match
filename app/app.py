@@ -1,5 +1,6 @@
 from pathlib import Path
 from dotenv import load_dotenv
+
 load_dotenv()
 
 import os
@@ -12,7 +13,6 @@ from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from config import settings
 from utils.logging_config import setup_logging
-from api.modules.database.service import DatabaseService
 
 # Setup logging
 logger = setup_logging()
@@ -25,36 +25,15 @@ async def lifespan(app: FastAPI):
     # Startup: Load ML models
     logger.info("🚀 Starting application...")
     from api.core.loader import ModelLoader
-
-    db_service: Optional[DatabaseService] = None
-
     try:
-        db_service = DatabaseService(
-            logger=logger,
-            project_url=settings.SUPABASE_URL,
-            api_key=settings.SUPABASE_KEY,
-        )
-        if not db_service.connect():
-            raise RuntimeError("Unable to connect to Supabase")
-
-        app.state.db_service = db_service
-        logger.info("✅ Database connection established")
         ModelLoader.get_instance()
         logger.info("✅ All models loaded successfully")
     except Exception as e:
         logger.error(f"❌ Startup failed: {e}")
-        if db_service:
-            db_service.disconnect()
         raise
     
     yield
     
-    # Shutdown
-    logger.info("👋 Shutting down application...")
-    if db_service:
-        db_service.disconnect()
-        logger.info("🔌 Database connection closed")
-
 
 def create_app() -> FastAPI:
     """Create and configure FastAPI application"""
@@ -139,12 +118,12 @@ def create_app() -> FastAPI:
     app.add_exception_handler(Exception, general_exception_handler)
     
     # Register routers
-    from api.routers import classification, health, matching, resume
+    from api.routers import classification, embedding, health, resume
     
     app.include_router(health.router, prefix="/api/v1", tags=["Health"])
     app.include_router(resume.router, prefix="/api/v1/resume", tags=["Resume"])
     app.include_router(classification.router, prefix="/api/v1/classify", tags=["Classification"])
-    app.include_router(matching.router, prefix="/api/v1/match", tags=["Matching"])
+    app.include_router(embedding.router, prefix="/api/v1/embedding", tags=["Embedding"])
     
     # Custom 404 handler for undefined routes
     @app.get("/{full_path:path}", include_in_schema=False)

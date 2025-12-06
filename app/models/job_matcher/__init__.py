@@ -1,4 +1,4 @@
-from .model import JobMatcher, ResumeEncoder
-from .trainer import JobMatcherTrainer
+from .model import JobEmbeddor, ResumeEncoder
+from .trainer import JobEmbeddorTrainer
 
-__all__ = ["JobMatcher", "ResumeEncoder", "JobMatcherTrainer"]
+__all__ = ["JobEmbeddor", "ResumeEncoder", "JobEmbeddorTrainer"]

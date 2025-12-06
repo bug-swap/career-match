@@ -1,5 +1,5 @@
 import logging
-from typing import Dict
+from typing import Dict, Any
 
 from api.core.base_service import BaseService
 
@@ -13,7 +13,14 @@ class SectionClassifierService(BaseService):
         super().__init__()
         self.classifier = self.get_model('section_classifier', SectionClassifierModel)
 
-    def classify(self, text: str) -> Dict[str, str]:
+    def classify(self, text: str) -> Dict[str, Any]:
+        """
+        Classify resume text into structured sections
+
+        Returns:
+            Dictionary with section names as keys and structured data as values
+            (lists for experience/projects/publications, dict for contact, etc.)
+        """
         logger.info("[SectionClassifierService] classifying text length=%s", len(text))
         if not self.classifier or not self.classifier.is_loaded():
             logger.error("[SectionClassifierService] model unavailable")

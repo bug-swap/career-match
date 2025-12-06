@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.4'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.careermatch'
+version = '0.0.1-SNAPSHOT'
+description = 'CareerMatch Backend - Resume Parser with AI'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starters
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Environment Variables
+    implementation 'me.paulschwarz:spring-dotenv:4.0.0'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    // Database
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Apache Tika for PDF parsing (includes PDFBox internally)
+    implementation 'org.apache.tika:tika-core:2.9.1'
+    implementation 'org.apache.tika:tika-parsers-standard-package:2.9.1'
+
+    // Apache POI for DOCX parsing
+    implementation 'org.apache.poi:poi-ooxml:5.2.5'
+
+    // Jackson for JSON processing (already included in spring-boot-starter-web)
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+    // Google GenAI SDK
+    implementation 'com.google.genai:google-genai:1.29.0'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

@@ -60,25 +60,17 @@ class JobDescription(BaseModel):
         }
 
 
-class JobMatchRequest(BaseModel):
-    """Request schema for job matching"""
-    resume_text: str = Field(..., min_length=100, description="Resume text content")
-    jobs: List[JobDescription] = Field(..., min_items=1, description="List of job descriptions")
-    top_k: int = Field(default=10, ge=1, le=50, description="Number of top matches to return")
-    
+class EmbeddingResponse(BaseModel):
+    """Response schema for embedding extraction"""
+    success: bool = Field(..., description="Whether embedding extraction was successful")
+    embedding: List[float] = Field(..., description="Extracted embedding vector")
+    processing_time_ms: int = Field(..., description="Processing time in milliseconds")
+
     class Config:
         json_schema_extra = {
             "example": {
-                "resume_text": "Experienced software engineer with 5 years...",
-                "jobs": [
-                    {
-                        "job_id": "J001",
-                        "title": "Senior Software Engineer",
-                        "description": "Looking for experienced Python developer...",
-                        "required_skills": ["Python", "Django"],
-                        "location": "Remote"
-                    }
-                ],
-                "top_k": 5
+                "success": True,
+                "embedding": [0.123, 0.456, 0.789, ...],
+                "processing_time_ms": 150
             }
         }

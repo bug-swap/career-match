@@ -1,4 +1,3 @@
-"""Resume processing endpoints using the new module services."""
 from __future__ import annotations
 
 import logging
@@ -11,8 +10,6 @@ from api.modules.entity_extractor.service import EntityExtractorService
 from api.modules.pdf.service import PDFService
 from api.modules.resume_classifier.service import ResumeClassifierService
 from api.modules.section_classifier.service import SectionClassifierService
-from api.modules.database.service import DatabaseService, get_db
-from api.modules.job_matcher.service import JobMatcherService
 from api.schemas.request import TextParseRequest
 from api.schemas.response import (
     CategoryOnlyResponse,
@@ -68,9 +65,18 @@ def _entities_metadata(entities: Dict, duration_ms: int) -> Dict:
     }
 
 
-def _sections_metadata(sections: Dict[str, str], clean_text: str, duration_ms: int) -> Dict:
+def _sections_metadata(sections: Dict, clean_text: str, duration_ms: int) -> Dict:
+    # Count items in each section (for lists) or 1 for dicts/strings
+    total_items = 0
+    for value in sections.values():
+        if isinstance(value, list):
+            total_items += len(value)
+        elif value:  # dict or string
+            total_items += 1
+
     return {
         'section_count': len(sections),
+        'total_items': total_items,
         'total_char_count': len(clean_text),
         'processing_time_ms': duration_ms,
     }

@@ -11,7 +11,7 @@ from api.core.base_model import BaseModelWrapper
 from api.modules.entity_extractor.wrapper import EntityExtractorModel
 from api.modules.section_classifier.wrapper import SectionClassifierModel
 from api.modules.resume_classifier.wrapper import ResumeClassifierModel
-from api.modules.job_matcher.wrapper import JobMatcherModel
+from api.modules.embedding.wrapper import EmbeddingModel
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +40,7 @@ class ModelLoader:
             'section_classifier': (SectionClassifierModel, settings.SECTION_CLASSIFIER_PATH),
             'entity_extractor': (EntityExtractorModel, settings.ENTITY_EXTRACTOR_PATH),
             'resume_classifier': (ResumeClassifierModel, settings.RESUME_CLASSIFIER_PATH),
-            'job_matcher': (JobMatcherModel, settings.JOB_MATCHER_PATH),
+            'job_matcher': (EmbeddingModel, settings.JOB_MATCHER_PATH),
         }
 
         for key, (wrapper_cls, path) in registry.items():

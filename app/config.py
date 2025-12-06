@@ -39,7 +39,7 @@ class Settings(BaseSettings):
     
     # Upload settings
     MAX_UPLOAD_SIZE: int = 16 * 1024 * 1024  # 16MB
-    ALLOWED_EXTENSIONS: set = {'pdf'}
+    ALLOWED_EXTENSIONS: set = {'pdf', 'docx', 'txt'}
     
     # Processing settings
     PROCESSING_TIMEOUT: int = 60  # seconds
