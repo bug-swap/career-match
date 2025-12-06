@@ -28,9 +28,11 @@ public class JobService {
     /**
      * Get similar jobs by resume using embeddings and category classification
      * @param resumeFile The resume file to analyze
+     * @param categoryOverride Optional category to override ML classification
+     * @param limit Maximum number of results to return (default: 10)
      * @return Similar jobs response from RPC
      */
-    public SimilarJobsResponse getSimilarJobsByResume(MultipartFile resumeFile) {
+    public SimilarJobsResponse getSimilarJobsByResume(MultipartFile resumeFile, String categoryOverride, Integer limit) {
         log.info("Processing resume to find similar jobs: {}", resumeFile.getOriginalFilename());
 
         // Get embeddings from Python ML Service
@@ -42,16 +44,41 @@ public class JobService {
         Double[] embedding = embeddingResponse.getEmbedding();
         log.info("Successfully generated embedding with {} dimensions", embedding.length);
 
-        // Get category classification from Python ML Service
-        CategoryResponse categoryResponse = pythonMLService.classifyCategory(resumeFile);
-        if (categoryResponse == null || !categoryResponse.getSuccess() || categoryResponse.getClassification() == null) {
-            throw new IllegalStateException("Failed to classify resume category");
+        // Determine which category to use
+        String searchCategory;
+        Classification classification = null;
+
+        if (categoryOverride != null && !categoryOverride.trim().isEmpty()) {
+            // Use provided category override
+            searchCategory = categoryOverride.trim().toUpperCase();
+            log.info("Using category override: {}", searchCategory);
+        } else {
+            // Get category classification from Python ML Service
+            CategoryResponse categoryResponse = pythonMLService.classifyCategory(resumeFile);
+            if (categoryResponse == null || !categoryResponse.getSuccess() || categoryResponse.getClassification() == null) {
+                throw new IllegalStateException("Failed to classify resume category");
+            }
+
+            classification = categoryResponse.getClassification();
+            searchCategory = classification.getCategory();
+            log.info("Resume classified as category: {} with confidence: {}", searchCategory, classification.getConfidence());
         }
 
-        String category = categoryResponse.getClassification().getCategory();
-        log.info("Resume classified as category: {}", category);
-
         // Call RPC to get similar jobs
-        return rpcService.getSimilarJobsByCategory(embedding, category);
+        SimilarJobsResponse response = rpcService.getSimilarJobsByCategory(embedding, searchCategory, limit);
+
+        // Add category classification details to response
+        response.setCategory(searchCategory);
+        if (classification != null && classification.getTop3() != null) {
+            List<SimilarJobsResponse.CategoryInfo> categoryInfoList = classification.getTop3().stream()
+                    .map(detail -> SimilarJobsResponse.CategoryInfo.builder()
+                            .category(detail.getCategory())
+                            .confidence((int) Math.round(detail.getConfidence() * 100))
+                            .build())
+                    .collect(java.util.stream.Collectors.toList());
+            response.setCategories(categoryInfoList);
+        }
+
+        return response;
     }
 }

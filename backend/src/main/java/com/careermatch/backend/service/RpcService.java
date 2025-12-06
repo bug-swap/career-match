@@ -29,16 +29,18 @@ public class RpcService {
      * Calls Supabase RPC function: get_similar_jobs_by_category
      * @param embedding The resume embedding vector
      * @param category The resume category
+     * @param limit Maximum number of results to return
      * @return Similar jobs with similarity scores from Supabase RPC function
      */
-    public SimilarJobsResponse getSimilarJobsByCategory(Double[] embedding, String category) {
-        log.info("Calling Supabase RPC function get_similar_jobs_by_category for category: {}", category);
+    public SimilarJobsResponse getSimilarJobsByCategory(Double[] embedding, String category, Integer limit) {
+        log.info("Calling Supabase RPC function get_similar_jobs_by_category for category: {} with limit: {}", category, limit);
 
         try {
             // Prepare RPC request payload for Supabase PostgREST
             Map<String, Object> params = new HashMap<>();
             params.put("p_embedding", embedding);
             params.put("p_category", category);
+            params.put("p_limit", limit != null ? limit : 10);
 
             // Call Supabase RPC endpoint using PostgREST format
             List<JobWithScore> jobs = rpcWebClient

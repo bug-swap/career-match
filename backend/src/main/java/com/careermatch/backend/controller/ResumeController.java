@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 @CrossOrigin(origins = "*")
 public class ResumeController {
 
+
     private final ResumeParserService resumeParserService;
 
     /**

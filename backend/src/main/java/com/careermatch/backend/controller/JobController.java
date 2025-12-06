@@ -21,15 +21,20 @@ public class JobController {
      * Get similar jobs based on resume analysis
      * Extracts embeddings and category from resume, then calls RPC to find similar jobs
      * @param resumeFile The resume file to analyze
+     * @param category Optional category to override ML classification
+     * @param limit Maximum number of results to return (optional, default: 10)
      * @return Similar jobs found via RPC
      */
     @PostMapping(value = "/match", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<SimilarJobsResponse> getSimilarJobsByResume(
-            @RequestParam("file") MultipartFile resumeFile) {
-        log.info("Received request to find similar jobs for resume: {}", resumeFile.getOriginalFilename());
+            @RequestParam("file") MultipartFile resumeFile,
+            @RequestParam(value = "category", required = false) String category,
+            @RequestParam(value = "limit", required = false, defaultValue = "10") Integer limit) {
+        log.info("Received request to find similar jobs for resume: {} (category: {}, limit: {})",
+                resumeFile.getOriginalFilename(), category != null ? category : "auto", limit);
 
         try {
-            SimilarJobsResponse response = jobService.getSimilarJobsByResume(resumeFile);
+            SimilarJobsResponse response = jobService.getSimilarJobsByResume(resumeFile, category, limit);
             return ResponseEntity.ok(response);
         } catch (IllegalStateException e) {
             log.error("Resume processing failed: {}", e.getMessage());

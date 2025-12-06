@@ -12,8 +12,19 @@ import java.util.List;
 @AllArgsConstructor
 public class SimilarJobsResponse {
     private Boolean success;
+    private String category;
+    private List<CategoryInfo> categories;
     private List<JobWithScore> jobs;
     private String message;
     private Integer count;
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class CategoryInfo {
+        private String category;
+        private Integer confidence;
+    }
 }
 
