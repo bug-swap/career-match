@@ -133,16 +133,290 @@ The system follows a microservices architecture with the following components:
 - Python 3.8 or higher
 - Node.js 16 or higher
 - PostgreSQL (or Supabase account)
+- Kaggle account (for datasets)
 - Git
 
-### 1. Clone the Repository
+## Quick Start Guide
+
+Follow these steps to get the entire system running from scratch:
+
+### Step 1: Clone the Repository
 
 ```bash
 git clone <repository-url>
 cd career-match
 ```
 
-### 2. Database Setup (Supabase)
+### Step 2: Download Kaggle Datasets
+
+1. **Install Kaggle CLI**:
+   ```bash
+   pip install kaggle
+   ```
+
+2. **Setup Kaggle API credentials** (get from https://www.kaggle.com/settings):
+   ```bash
+   # Place kaggle.json in ~/.kaggle/ (Linux/Mac) or %USERPROFILE%\.kaggle\ (Windows)
+   chmod 600 ~/.kaggle/kaggle.json
+   ```
+
+3. **Download datasets**:
+   ```bash
+   # Create data directories
+   mkdir -p data/raw/pdfs
+   mkdir -p data/raw/structured
+   mkdir -p data/processed
+
+   # Download Resume Dataset (PDFs)
+   kaggle datasets download -d snehaanbhawal/resume-dataset
+   unzip resume-dataset.zip -d data/raw/pdfs/
+
+   # Download Resume Dataset Structured
+   kaggle datasets download -d suriyaganesh/resume-dataset-structured
+   unzip resume-dataset-structured.zip -d data/raw/structured/
+   ```
+
+4. **Verify directory structure**:
+   ```bash
+   tree data -L 3
+   ```
+
+   Expected structure:
+   ```
+   data/
+   ├── processed/
+   │   ├── Resume_Processed.csv
+   │   ├── Resume.csv
+   │   └── skills.json
+   └── raw/
+       ├── pdfs/
+       │   ├── ACCOUNTANT/
+       │   ├── ADVOCATE/
+       │   ├── AGRICULTURE/
+       │   ├── INFORMATION-TECHNOLOGY/
+       │   └── ... (24 categories total)
+       └── structured/
+           ├── abilities.csv
+           ├── education.csv
+           ├── experience.csv
+           ├── people.csv
+           ├── person_skills.csv
+           ├── resume_data.csv
+           └── skills.csv
+   ```
+
+### Step 3: Generate Processed Datasets
+
+Run the data processing notebook:
+
+```bash
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install spaCy model
+python -m spacy download en_core_web_lg
+
+# Run the notebook (convert to script or use jupyter)
+jupyter notebook notebooks/resumes_exploration.ipynb
+# OR
+jupyter nbconvert --to notebook --execute notebooks/resumes_exploration.ipynb
+```
+
+This will generate:
+- `data/processed/Resume.csv` - Raw resume text with categories
+- `data/processed/Resume_Processed.csv` - Cleaned and preprocessed resumes
+- `data/processed/skills.json` - Extracted skills dictionary
+
+### Step 4: Train All ML Models
+
+Train each model in sequence:
+
+```bash
+# Ensure virtual environment is activated
+source .venv/bin/activate
+
+# 1. Train Section Classifier
+python -m app.models.section_classifier.trainer
+
+# 2. Train Resume Classifier (Category)
+python -m app.models.resume_classifier.trainer
+
+# 3. Train Entity Extractor
+python -m app.models.entity_extractor.trainer
+
+# 4. Train Job Matcher (Embedding Model)
+python -m app.models.job_matcher.trainer
+```
+
+Models will be saved to `data/artifacts/` directory:
+- `data/artifacts/section_classifier/` - Section classification model
+- `data/artifacts/resume_classifier/` - Category classification model
+- `data/artifacts/entity_extractor/` - NER model
+- `data/artifacts/job_matcher/` - Job matching encoder
+
+### Step 5: Setup Database (Supabase)
+
+1. **Create Supabase project** at https://supabase.com
+
+2. **Create jobs table**:
+   ```sql
+   CREATE TABLE jobs (
+     id TEXT PRIMARY KEY,
+     title TEXT NOT NULL,
+     category TEXT,
+     company TEXT,
+     location TEXT,
+     date_posted TIMESTAMP,
+     job_type TEXT,
+     is_remote BOOLEAN,
+     min_amount FLOAT,
+     max_amount FLOAT,
+     currency TEXT,
+     job_url TEXT,
+     description TEXT,
+     embedding VECTOR(768)
+   );
+
+   CREATE INDEX idx_jobs_category ON jobs(category);
+   CREATE INDEX idx_jobs_location ON jobs(location);
+   CREATE INDEX idx_jobs_is_remote ON jobs(is_remote);
+   ```
+
+3. **Note your credentials**:
+   - `SUPABASE_URL`
+   - `SUPABASE_API_KEY` (anon/public key)
+
+### Step 6: Run ML Service (FastAPI)
+
+```bash
+cd app
+
+# Create .env file
+cat > .env << EOF
+HOST=0.0.0.0
+PORT=8000
+DEBUG=True
+LOG_LEVEL=INFO
+LOG_FORMAT=text
+CORS_ORIGINS=*
+EOF
+
+# Run with uvicorn
+uvicorn app:app --reload --host 0.0.0.0 --port 8000
+```
+
+ML Service will be available at: http://localhost:8000
+API Docs: http://localhost:8000/docs
+
+### Step 7: Run Backend (Spring Boot)
+
+Open a new terminal:
+
+```bash
+cd backend
+
+# Create .env file
+cat > .env << EOF
+SUPABASE_URL=your_supabase_url_here
+SUPABASE_API_KEY=your_supabase_key_here
+ML_SERVICE_URL=http://localhost:8000
+EOF
+
+# Run with Gradle
+./gradlew bootRun
+```
+
+Backend API will be available at: http://localhost:8080
+
+### Step 8: Run Frontend (React)
+
+Open a new terminal:
+
+```bash
+cd frontend
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+Frontend will be available at: http://localhost:5173
+
+### Step 9: Verify Everything Works
+
+1. **Check ML Service health**:
+   ```bash
+   curl http://localhost:8000/api/v1/health
+   curl http://localhost:8000/api/v1/models/status
+   ```
+
+2. **Test resume parsing** (Backend → ML Service):
+   ```bash
+   curl -X POST "http://localhost:8080/api/v1/resume/category" \
+     -F "file=@path/to/resume.pdf"
+   ```
+
+3. **Open frontend** and test file upload:
+   - Navigate to http://localhost:5173
+   - Upload a resume PDF
+   - View extracted information and job matches
+
+### Optional: Populate Job Database
+
+To scrape and populate jobs (requires Cloud Functions setup):
+
+```bash
+cd scrapper
+
+# Create .env
+cat > .env << EOF
+SUPABASE_URL=your_supabase_url
+SUPABASE_API_KEY=your_supabase_key
+EMBEDDING_API_URL=your_encoder_cloud_function_url
+EOF
+
+# Run scraper
+python main.py
+```
+
+### Quick Command Reference
+
+Once everything is set up, use these commands to start all services:
+
+```bash
+# Terminal 1 - ML Service
+cd app
+source ../.venv/bin/activate
+uvicorn app:app --reload --host 0.0.0.0 --port 8000
+
+# Terminal 2 - Backend
+cd backend
+./gradlew bootRun
+
+# Terminal 3 - Frontend
+cd frontend
+npm run dev
+```
+
+Access points:
+- **Frontend**: http://localhost:5173
+- **Backend API**: http://localhost:8080
+- **ML API**: http://localhost:8000
+- **ML API Docs**: http://localhost:8000/docs
+
+---
+
+## Detailed Setup Instructions
+
+For more detailed setup of individual components, see below:
+
+### Database Setup (Supabase)
 
 1. Create a Supabase project at https://supabase.com
 2. Create a `jobs` table with the following schema:
@@ -166,7 +440,7 @@ cd career-match
    ```
 3. Note your `SUPABASE_URL` and `SUPABASE_API_KEY`
 
-### 3. Backend Setup
+### Backend Setup
 
 ```bash
 cd backend
@@ -186,7 +460,7 @@ The backend API will be available at `http://localhost:8080`
 
 See [backend/README.md](backend/README.md) for detailed API documentation.
 
-### 4. ML App Setup
+### ML App Setup
 
 ```bash
 cd app
@@ -221,7 +495,7 @@ API documentation: `http://localhost:8000/docs`
 
 See [app/README.md](app/README.md) for detailed usage examples.
 
-### 5. Frontend Setup
+### Frontend Setup
 
 ```bash
 cd frontend
@@ -237,7 +511,7 @@ The frontend will be available at `http://localhost:5173`
 
 See [frontend/README.md](frontend/README.md) for more details.
 
-### 6. Scrapper Setup (Optional)
+### Scrapper Setup (Optional)
 
 ```bash
 cd scrapper
@@ -262,7 +536,7 @@ python main.py
 
 For production, deploy to Google Cloud Functions.
 
-### 7. Encoder Setup (Optional)
+### Encoder Setup (Optional)
 
 ```bash
 cd encoder
@@ -448,6 +722,46 @@ career-match/
 - Stores vector embeddings for fast retrieval
 - Returns ranked job matches
 
+## Datasets
+
+The machine learning models in this project were trained using publicly available resume datasets from Kaggle:
+
+### 1. Resume Dataset (Sneha Anbhawal)
+**Source**: [Kaggle - Resume Dataset](https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset)
+
+This dataset contains resumes in PDF format across multiple job categories, used for:
+- Training the resume category classifier
+- Testing PDF parsing capabilities
+- Evaluating section classification accuracy
+
+### 2. Resume Dataset Structured (Suriya Ganesh)
+**Source**: [Kaggle - Resume Dataset Structured](https://www.kaggle.com/datasets/suriyaganesh/resume-dataset-structured)
+
+This structured dataset provides labeled resume data with:
+- Pre-classified job categories
+- Extracted skills and experience
+- Contact information annotations
+- Used for training and validation of entity extraction models
+
+### Dataset Usage
+
+The datasets are stored in the `data/` directory:
+- `data/raw/` - Original downloaded datasets
+- `data/processed/` - Preprocessed and cleaned data ready for training
+
+To use these datasets:
+
+1. Download from Kaggle (requires Kaggle account)
+2. Place in `data/raw/` directory
+3. Run preprocessing notebooks in `notebooks/` to prepare data
+4. Train models using processed data
+
+### Data Exploration
+
+See the Jupyter notebooks in `notebooks/` for detailed data exploration:
+- `data_exploration.ipynb` - General dataset statistics and analysis
+- `resumes_exploration.ipynb` - Resume-specific analysis and visualizations
+
 ## Development
 
 ### Running Tests
@@ -575,6 +889,11 @@ This project is part of an academic course at CU Boulder - OOPS (Object-Oriented
 
 ## Acknowledgments
 
+### Datasets
+- **[Resume Dataset by Sneha Anbhawal](https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset)** - Resume PDFs for training and testing
+- **[Resume Dataset Structured by Suriya Ganesh](https://www.kaggle.com/datasets/suriyaganesh/resume-dataset-structured)** - Labeled resume data for entity extraction
+
+### Technologies & Libraries
 - **Apache Tika** - PDF/DOCX parsing
 - **spaCy** - Named Entity Recognition
 - **Hugging Face Transformers** - SBERT models
